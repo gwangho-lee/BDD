@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/CMakeFiles/robin-map-populate"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/CMakeFiles/robin-map-populate.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/CMakeFiles/robin-map-populate-complete.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-build.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-configure.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-download.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-install.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-patch.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-test.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/robin-map-subbuild/robin-map-populate-prefix/src/robin-map-populate-stamp/robin-map-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"robin-map-populate"
+		],
+		"name" : "robin-map-populate"
+	}
+}

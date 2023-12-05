@@ -1,0 +1,2 @@
+/usr/bin/ar qc libILP_input.a CMakeFiles/ILP_input.dir/ILP_input.cpp.o
+/usr/bin/ranlib libILP_input.a

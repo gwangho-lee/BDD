@@ -1,0 +1,2 @@
+/usr/bin/ar qc libOPB_parser.a CMakeFiles/OPB_parser.dir/OPB_parser.cpp.o
+/usr/bin/ranlib libOPB_parser.a

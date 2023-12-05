@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmrf_input.a CMakeFiles/mrf_input.dir/mrf_input.cpp.o
+/usr/bin/ranlib libmrf_input.a

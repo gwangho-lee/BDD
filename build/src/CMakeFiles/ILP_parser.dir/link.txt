@@ -1,0 +1,2 @@
+/usr/bin/ar qc libILP_parser.a CMakeFiles/ILP_parser.dir/ILP_parser.cpp.o
+/usr/bin/ranlib libILP_parser.a

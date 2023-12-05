@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_cuda.a CMakeFiles/bdd_cuda.dir/bdd_cuda.cpp.o
+/usr/bin/ranlib libbdd_cuda.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_memo_cache.a CMakeFiles/bdd_memo_cache.dir/bdd_memo_cache.cpp.o
+/usr/bin/ranlib libbdd_memo_cache.a

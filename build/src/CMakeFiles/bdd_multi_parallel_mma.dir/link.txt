@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_multi_parallel_mma.a CMakeFiles/bdd_multi_parallel_mma.dir/bdd_multi_parallel_mma.cpp.o
+/usr/bin/ranlib libbdd_multi_parallel_mma.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_node_cache.a CMakeFiles/bdd_node_cache.dir/bdd_node_cache.cpp.o
+/usr/bin/ranlib libbdd_node_cache.a

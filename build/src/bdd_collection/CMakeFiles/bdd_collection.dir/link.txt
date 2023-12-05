@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_collection.a CMakeFiles/bdd_collection.dir/bdd_collection.cpp.o
+/usr/bin/ranlib libbdd_collection.a

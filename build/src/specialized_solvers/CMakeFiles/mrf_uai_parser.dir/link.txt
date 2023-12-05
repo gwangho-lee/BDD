@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmrf_uai_parser.a CMakeFiles/mrf_uai_parser.dir/mrf_uai_parser.cpp.o
+/usr/bin/ranlib libmrf_uai_parser.a

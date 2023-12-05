@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_subgradient.a CMakeFiles/bdd_subgradient.dir/bdd_subgradient.cpp.o
+/usr/bin/ranlib libbdd_subgradient.a

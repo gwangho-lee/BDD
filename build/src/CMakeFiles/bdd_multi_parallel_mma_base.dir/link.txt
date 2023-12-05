@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_multi_parallel_mma_base.a CMakeFiles/bdd_multi_parallel_mma_base.dir/bdd_multi_parallel_mma_base.cu.o
+/usr/bin/ranlib libbdd_multi_parallel_mma_base.a

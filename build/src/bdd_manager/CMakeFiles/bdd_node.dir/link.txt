@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_node.a CMakeFiles/bdd_node.dir/bdd_node.cpp.o
+/usr/bin/ranlib libbdd_node.a

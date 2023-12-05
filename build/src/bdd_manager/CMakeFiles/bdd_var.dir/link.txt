@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_var.a CMakeFiles/bdd_var.dir/bdd_var.cpp.o
+/usr/bin/ranlib libbdd_var.a

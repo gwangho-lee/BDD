@@ -1,0 +1,2 @@
+/usr/bin/ar qc libincremental_mm_agreement_rounding_cuda.a CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/incremental_mm_agreement_rounding_cuda.cu.o
+/usr/bin/ranlib libincremental_mm_agreement_rounding_cuda.a

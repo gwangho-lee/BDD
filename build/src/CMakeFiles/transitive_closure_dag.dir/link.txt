@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtransitive_closure_dag.a CMakeFiles/transitive_closure_dag.dir/transitive_closure_dag.cpp.o
+/usr/bin/ranlib libtransitive_closure_dag.a

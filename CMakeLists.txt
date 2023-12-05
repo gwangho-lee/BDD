@@ -5,9 +5,13 @@ project(LPMP-BDD
     LANGUAGES CXX
 )
 
+link_libraries(stdc++fs)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-option(WITH_CUDA "Compile with CUDA support" OFF)
+set(CMAKE_CUDA_COMPILER /usr/local/cuda-12.2/bin/nvcc)
+
+option(WITH_CUDA "Compile with CUDA support" ON)
 option(WITH_REGRESSION_TEST "Regression tests on additional downloaded instances" OFF)
 
 if(WITH_CUDA)
@@ -21,7 +25,8 @@ endif()
 
 cmake_minimum_required(VERSION 3.20) # does not work with 3.13
 
-set(CMAKE_CUDA_ARCHITECTURES native)
+SET(CMAKE_CUDA_ARCHITECTURES 80)
+# set(CMAKE_CUDA_ARCHITECTURES native)
 
 add_library(LPMP-BDD INTERFACE)
 target_include_directories(LPMP-BDD INTERFACE include/)

@@ -1,0 +1,75 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: /home/gl9102/BDD/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a0784/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a0784.dir/build.make CMakeFiles/cmTC_a0784.dir/build
+gmake[1]: Entering directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a0784.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_Wshorten64to32  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror   -Wshorten-64-to-32 -o CMakeFiles/cmTC_a0784.dir/src.cxx.o -c /home/gl9102/BDD/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+gmake[1]: *** [CMakeFiles/cmTC_a0784.dir/build.make:78: CMakeFiles/cmTC_a0784.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_a0784/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wenumconversion failed with the following output:
+Change Dir: /home/gl9102/BDD/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5dc23/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5dc23.dir/build.make CMakeFiles/cmTC_5dc23.dir/build
+gmake[1]: Entering directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5dc23.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_Wenumconversion  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror   -Wenum-conversion -o CMakeFiles/cmTC_5dc23.dir/src.cxx.o -c /home/gl9102/BDD/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wenum-conversion'; did you mean '-Wno-conversion'?
+gmake[1]: *** [CMakeFiles/cmTC_5dc23.dir/build.make:78: CMakeFiles/cmTC_5dc23.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_5dc23/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions failed with the following output:
+Change Dir: /home/gl9102/BDD/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5e779/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5e779.dir/build.make CMakeFiles/cmTC_5e779.dir/build
+gmake[1]: Entering directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5e779.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_Wcpp11extensions  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Werror   -Wc++11-extensions -o CMakeFiles/cmTC_5e779.dir/src.cxx.o -c /home/gl9102/BDD/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wc++11-extensions'; did you mean '-fms-extensions'?
+gmake[1]: *** [CMakeFiles/cmTC_5e779.dir/build.make:78: CMakeFiles/cmTC_5e779.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_5e779/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /home/gl9102/BDD/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b3e32/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b3e32.dir/build.make CMakeFiles/cmTC_b3e32.dir/build
+gmake[1]: Entering directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b3e32.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_wd981  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd981 -o CMakeFiles/cmTC_b3e32.dir/src.cxx.o -c /home/gl9102/BDD/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd981'
+gmake[1]: *** [CMakeFiles/cmTC_b3e32.dir/build.make:78: CMakeFiles/cmTC_b3e32.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b3e32/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /home/gl9102/BDD/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_edce6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_edce6.dir/build.make CMakeFiles/cmTC_edce6.dir/build
+gmake[1]: Entering directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_edce6.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_wd2304  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd2304 -o CMakeFiles/cmTC_edce6.dir/src.cxx.o -c /home/gl9102/BDD/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd2304'
+gmake[1]: *** [CMakeFiles/cmTC_edce6.dir/build.make:78: CMakeFiles/cmTC_edce6.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/gl9102/BDD/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_edce6/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_mma.a CMakeFiles/bdd_mma.dir/bdd_mma.cpp.o
+/usr/bin/ranlib libbdd_mma.a

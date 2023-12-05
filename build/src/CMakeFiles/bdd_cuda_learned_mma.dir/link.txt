@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_cuda_learned_mma.a CMakeFiles/bdd_cuda_learned_mma.dir/bdd_cuda_learned_mma.cu.o
+/usr/bin/ranlib libbdd_cuda_learned_mma.a

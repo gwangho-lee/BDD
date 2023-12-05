@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_preprocessor.a CMakeFiles/bdd_preprocessor.dir/bdd_preprocessor.cpp.o
+/usr/bin/ranlib libbdd_preprocessor.a

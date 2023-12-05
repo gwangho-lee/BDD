@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/CMakeFiles/pegtl-populate-complete.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-build.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-configure.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-download.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-install.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-patch.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-test.rule"
+		},
+		{
+			"file" : "/home/gl9102/BDD/build/_deps/pegtl-subbuild/pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"pegtl-populate"
+		],
+		"name" : "pegtl-populate"
+	}
+}

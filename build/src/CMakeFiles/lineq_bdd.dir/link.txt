@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblineq_bdd.a CMakeFiles/lineq_bdd.dir/lineq_bdd.cpp.o
+/usr/bin/ranlib liblineq_bdd.a

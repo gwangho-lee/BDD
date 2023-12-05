@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_parallel_mma_smooth.a CMakeFiles/bdd_parallel_mma_smooth.dir/bdd_parallel_mma_smooth.cpp.o
+/usr/bin/ranlib libbdd_parallel_mma_smooth.a

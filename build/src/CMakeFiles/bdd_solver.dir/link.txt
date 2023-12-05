@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_solver.a CMakeFiles/bdd_solver.dir/bdd_solver.cpp.o
+/usr/bin/ranlib libbdd_solver.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmm_primal_decoder.a CMakeFiles/mm_primal_decoder.dir/mm_primal_decoder.cpp.o
+/usr/bin/ranlib libmm_primal_decoder.a
