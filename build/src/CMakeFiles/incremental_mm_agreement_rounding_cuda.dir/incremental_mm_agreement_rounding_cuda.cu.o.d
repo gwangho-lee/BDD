@@ -1749,6 +1749,9 @@ src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/incremental_mm_agreeme
     /usr/include/c++/8/bits/fstream.tcc \
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/iterator/constant_iterator.h \
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/iterator/detail/constant_iterator_base.h \
+    /opt/intel/oneapi/mpi/2021.3.1/include/mpi.h \
+    /opt/intel/oneapi/mpi/2021.3.1/include/mpio.h \
+    /opt/intel/oneapi/mpi/2021.3.1/include/mpicxx.h \
     /home/gl9102/BDD/include/bdd_cuda_parallel_mma.h \
     /home/gl9102/BDD/include/bdd_cuda_base.h \
     /home/gl9102/BDD/include/bdd_collection/bdd_collection.h \

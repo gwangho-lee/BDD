@@ -1780,4 +1780,7 @@ src/CMakeFiles/bdd_cuda_parallel_mma.dir/bdd_cuda_parallel_mma.cu.o : /home/gl91
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/random/detail/uniform_real_distribution.inl \
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/random/normal_distribution.h \
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/random/detail/normal_distribution_base.h \
-    /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/random/detail/normal_distribution.inl
+    /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/random/detail/normal_distribution.inl \
+    /opt/intel/oneapi/mpi/2021.3.1/include/mpi.h \
+    /opt/intel/oneapi/mpi/2021.3.1/include/mpio.h \
+    /opt/intel/oneapi/mpi/2021.3.1/include/mpicxx.h

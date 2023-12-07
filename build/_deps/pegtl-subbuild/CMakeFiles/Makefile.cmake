@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "CMakeLists.txt"
   "pegtl-populate-prefix/tmp/pegtl-populate-cfgcmd.txt.in"
-  "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake"
-  "/usr/share/cmake/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake/Modules/ExternalProject-gitupdate.cmake.in"
@@ -31,7 +29,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "pegtl-populate-prefix/src/pegtl-populate-stamp/pegtl-populate-gitinfo.txt"
   "pegtl-populate-prefix/tmp/pegtl-populate-gitupdate.cmake"
   "pegtl-populate-prefix/tmp/pegtl-populate-cfgcmd.txt"

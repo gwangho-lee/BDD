@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "CMakeLists.txt"
   "pybind11-populate-prefix/tmp/pybind11-populate-cfgcmd.txt.in"
-  "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake"
-  "/usr/share/cmake/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake/Modules/ExternalProject-gitupdate.cmake.in"
@@ -31,7 +29,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "pybind11-populate-prefix/src/pybind11-populate-stamp/pybind11-populate-gitinfo.txt"
   "pybind11-populate-prefix/tmp/pybind11-populate-gitupdate.cmake"
   "pybind11-populate-prefix/tmp/pybind11-populate-cfgcmd.txt"

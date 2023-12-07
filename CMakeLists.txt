@@ -5,6 +5,12 @@ project(LPMP-BDD
     LANGUAGES CXX
 )
 
+find_package(MPI REQUIRED)
+
+include_directories(SYSTEM ${MPI_INCLUDE_PATH})
+
+target_link_libraries(LPMP-BDD ${MPI_C_LIBRARIES})
+
 link_libraries(stdc++fs)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
