@@ -105,6 +105,7 @@ test/bdd/test_bdd_collection_qbdd: src/libbdd_mma_smooth.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_parallel_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_parallel_mma_smooth.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_cuda.a
+test/bdd/test_bdd_collection_qbdd: src/libmulti_gpu.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_multi_parallel_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_lbfgs_parallel_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_lbfgs_cuda_mma.a
@@ -116,6 +117,7 @@ test/bdd/test_bdd_collection_qbdd: src/libILP_input.a
 test/bdd/test_bdd_collection_qbdd: src/libmm_primal_decoder.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_cuda_base.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_cuda_parallel_mma.a
+test/bdd/test_bdd_collection_qbdd: src/libbdd_multi_gpu_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_multi_parallel_mma_base.a
 test/bdd/test_bdd_collection_qbdd: src/libincremental_mm_agreement_rounding_cuda.a
 test/bdd/test_bdd_collection_qbdd: src/libconvert_pb_to_bdd.a
@@ -133,6 +135,7 @@ test/bdd/test_bdd_collection_qbdd: src/libbdd_mma_smooth.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_parallel_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_parallel_mma_smooth.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_cuda.a
+test/bdd/test_bdd_collection_qbdd: src/libmulti_gpu.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_multi_parallel_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_lbfgs_parallel_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_lbfgs_cuda_mma.a
@@ -144,6 +147,7 @@ test/bdd/test_bdd_collection_qbdd: src/libILP_input.a
 test/bdd/test_bdd_collection_qbdd: src/libmm_primal_decoder.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_cuda_base.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_cuda_parallel_mma.a
+test/bdd/test_bdd_collection_qbdd: src/libbdd_multi_gpu_mma.a
 test/bdd/test_bdd_collection_qbdd: src/libbdd_multi_parallel_mma_base.a
 test/bdd/test_bdd_collection_qbdd: src/libincremental_mm_agreement_rounding_cuda.a
 test/bdd/test_bdd_collection_qbdd: src/libconvert_pb_to_bdd.a

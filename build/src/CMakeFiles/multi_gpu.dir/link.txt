@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmulti_gpu.a CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o
+/usr/bin/ranlib libmulti_gpu.a

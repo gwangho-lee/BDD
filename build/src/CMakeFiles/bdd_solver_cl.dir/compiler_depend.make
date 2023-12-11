@@ -481,6 +481,7 @@ src/CMakeFiles/bdd_solver_cl.dir/bdd_solver_cl.cpp.o: ../src/bdd_solver_cl.cpp \
   ../include/bdd_mma.h \
   ../include/bdd_mma_smooth.h \
   ../include/bdd_cuda.h \
+  ../include/multi_gpu.h \
   ../include/bdd_parallel_mma.h \
   ../include/bdd_parallel_mma_smooth.h \
   ../include/bdd_multi_parallel_mma.h \
@@ -1231,6 +1232,8 @@ _deps/eigen-src/Eigen/src/Core/arch/SSE/MathFunctions.h:
 /usr/include/c++/8/bits/istream.tcc:
 
 ../src/bdd_solver_cl.cpp:
+
+../include/multi_gpu.h:
 
 /usr/include/bits/stdio_lim.h:
 

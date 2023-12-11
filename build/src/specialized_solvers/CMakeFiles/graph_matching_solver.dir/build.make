@@ -107,6 +107,7 @@ src/specialized_solvers/graph_matching_solver: src/libbdd_mma_smooth.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_parallel_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_parallel_mma_smooth.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_cuda.a
+src/specialized_solvers/graph_matching_solver: src/libmulti_gpu.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_multi_parallel_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_lbfgs_parallel_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_lbfgs_cuda_mma.a
@@ -117,6 +118,7 @@ src/specialized_solvers/graph_matching_solver: src/libOPB_parser.a
 src/specialized_solvers/graph_matching_solver: src/libmm_primal_decoder.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_cuda_base.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_cuda_parallel_mma.a
+src/specialized_solvers/graph_matching_solver: src/libbdd_multi_gpu_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_multi_parallel_mma_base.a
 src/specialized_solvers/graph_matching_solver: src/libincremental_mm_agreement_rounding_cuda.a
 src/specialized_solvers/graph_matching_solver: src/libconvert_pb_to_bdd.a
@@ -135,6 +137,7 @@ src/specialized_solvers/graph_matching_solver: src/libbdd_mma_smooth.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_parallel_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_parallel_mma_smooth.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_cuda.a
+src/specialized_solvers/graph_matching_solver: src/libmulti_gpu.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_multi_parallel_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_lbfgs_parallel_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_lbfgs_cuda_mma.a
@@ -145,6 +148,7 @@ src/specialized_solvers/graph_matching_solver: src/libOPB_parser.a
 src/specialized_solvers/graph_matching_solver: src/libmm_primal_decoder.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_cuda_base.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_cuda_parallel_mma.a
+src/specialized_solvers/graph_matching_solver: src/libbdd_multi_gpu_mma.a
 src/specialized_solvers/graph_matching_solver: src/libbdd_multi_parallel_mma_base.a
 src/specialized_solvers/graph_matching_solver: src/libincremental_mm_agreement_rounding_cuda.a
 src/specialized_solvers/graph_matching_solver: src/libconvert_pb_to_bdd.a

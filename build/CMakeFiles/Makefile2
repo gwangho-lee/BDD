@@ -340,7 +340,6 @@ _deps/thrust-build/clean:
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
-src/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
 src/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/all: src/CMakeFiles/bdd_parallel_mma.dir/all
 src/all: src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/all
@@ -348,28 +347,31 @@ src/all: src/CMakeFiles/bdd_parallel_mma_smooth.dir/all
 src/all: src/CMakeFiles/bdd_multi_parallel_mma.dir/all
 src/all: src/CMakeFiles/bdd_mma.dir/all
 src/all: src/CMakeFiles/bdd_mma_smooth.dir/all
-src/all: src/CMakeFiles/convert_opb_to_lp.dir/all
-src/all: src/CMakeFiles/lineq_bdd.dir/all
+src/all: src/CMakeFiles/bdd_multi_gpu_mma.dir/all
+src/all: src/CMakeFiles/bdd_solver_cl.dir/all
+src/all: src/CMakeFiles/bdd_preprocessor.dir/all
 src/all: src/CMakeFiles/bdd_cuda.dir/all
 src/all: src/CMakeFiles/ILP_input.dir/all
 src/all: src/CMakeFiles/OPB_parser.dir/all
 src/all: src/CMakeFiles/transitive_closure_dag.dir/all
+src/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/all: src/CMakeFiles/lineq_bdd.dir/all
+src/all: src/CMakeFiles/convert_opb_to_lp.dir/all
 src/all: src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 src/all: src/CMakeFiles/ILP_instance_py.dir/all
-src/all: src/CMakeFiles/convert_pb_to_bdd.dir/all
-src/all: src/CMakeFiles/bdd_subgradient.dir/all
+src/all: src/CMakeFiles/multi_gpu.dir/all
 src/all: src/CMakeFiles/bdd_cuda_base.dir/all
 src/all: src/CMakeFiles/mm_primal_decoder.dir/all
 src/all: src/CMakeFiles/ILP_parser.dir/all
 src/all: src/CMakeFiles/bdd_solver.dir/all
 src/all: src/CMakeFiles/bdd_cuda_parallel_mma.dir/all
+src/all: src/CMakeFiles/convert_pb_to_bdd.dir/all
+src/all: src/CMakeFiles/bdd_subgradient.dir/all
 src/all: src/CMakeFiles/bdd_cuda_learned_mma_py.dir/all
-src/all: src/CMakeFiles/bdd_solver_cl.dir/all
 src/all: src/CMakeFiles/convert_lp_to_opb.dir/all
 src/all: src/CMakeFiles/bdd_mp_py.dir/all
 src/all: src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all
 src/all: src/CMakeFiles/bdd_solver_py.dir/all
-src/all: src/CMakeFiles/bdd_preprocessor.dir/all
 src/all: src/bdd_manager/all
 src/all: src/bdd_collection/all
 src/all: src/specialized_solvers/all
@@ -382,7 +384,6 @@ src/preinstall: src/specialized_solvers/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
-src/clean: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean
 src/clean: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/clean
 src/clean: src/CMakeFiles/bdd_parallel_mma.dir/clean
 src/clean: src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/clean
@@ -390,28 +391,31 @@ src/clean: src/CMakeFiles/bdd_parallel_mma_smooth.dir/clean
 src/clean: src/CMakeFiles/bdd_multi_parallel_mma.dir/clean
 src/clean: src/CMakeFiles/bdd_mma.dir/clean
 src/clean: src/CMakeFiles/bdd_mma_smooth.dir/clean
-src/clean: src/CMakeFiles/convert_opb_to_lp.dir/clean
-src/clean: src/CMakeFiles/lineq_bdd.dir/clean
+src/clean: src/CMakeFiles/bdd_multi_gpu_mma.dir/clean
+src/clean: src/CMakeFiles/bdd_solver_cl.dir/clean
+src/clean: src/CMakeFiles/bdd_preprocessor.dir/clean
 src/clean: src/CMakeFiles/bdd_cuda.dir/clean
 src/clean: src/CMakeFiles/ILP_input.dir/clean
 src/clean: src/CMakeFiles/OPB_parser.dir/clean
 src/clean: src/CMakeFiles/transitive_closure_dag.dir/clean
+src/clean: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean
+src/clean: src/CMakeFiles/lineq_bdd.dir/clean
+src/clean: src/CMakeFiles/convert_opb_to_lp.dir/clean
 src/clean: src/CMakeFiles/bdd_cuda_learned_mma.dir/clean
 src/clean: src/CMakeFiles/ILP_instance_py.dir/clean
-src/clean: src/CMakeFiles/convert_pb_to_bdd.dir/clean
-src/clean: src/CMakeFiles/bdd_subgradient.dir/clean
+src/clean: src/CMakeFiles/multi_gpu.dir/clean
 src/clean: src/CMakeFiles/bdd_cuda_base.dir/clean
 src/clean: src/CMakeFiles/mm_primal_decoder.dir/clean
 src/clean: src/CMakeFiles/ILP_parser.dir/clean
 src/clean: src/CMakeFiles/bdd_solver.dir/clean
 src/clean: src/CMakeFiles/bdd_cuda_parallel_mma.dir/clean
+src/clean: src/CMakeFiles/convert_pb_to_bdd.dir/clean
+src/clean: src/CMakeFiles/bdd_subgradient.dir/clean
 src/clean: src/CMakeFiles/bdd_cuda_learned_mma_py.dir/clean
-src/clean: src/CMakeFiles/bdd_solver_cl.dir/clean
 src/clean: src/CMakeFiles/convert_lp_to_opb.dir/clean
 src/clean: src/CMakeFiles/bdd_mp_py.dir/clean
 src/clean: src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/clean
 src/clean: src/CMakeFiles/bdd_solver_py.dir/clean
-src/clean: src/CMakeFiles/bdd_preprocessor.dir/clean
 src/clean: src/bdd_manager/clean
 src/clean: src/bdd_collection/clean
 src/clean: src/specialized_solvers/clean
@@ -731,32 +735,6 @@ _deps/eigen-build/demos/CMakeFiles/demos.dir/clean:
 .PHONY : _deps/eigen-build/demos/CMakeFiles/demos.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/bdd_multi_parallel_mma_base.dir
-
-# All Build rule for target.
-src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=17 "Built target bdd_multi_parallel_mma_base"
-.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 25
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
-
-# Convenience name for target.
-bdd_multi_parallel_mma_base: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
-.PHONY : bdd_multi_parallel_mma_base
-
-# clean rule for target.
-src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean
-.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean
-
-#=============================================================================
 # Target rules for target src/CMakeFiles/bdd_lbfgs_parallel_mma.dir
 
 # All Build rule for target.
@@ -768,7 +746,7 @@ src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all: src/CMakeFiles/bdd_parallel_mma.d
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/rule
@@ -789,12 +767,12 @@ src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/clean:
 src/CMakeFiles/bdd_parallel_mma.dir/all: src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_parallel_mma.dir/build.make src/CMakeFiles/bdd_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_parallel_mma.dir/build.make src/CMakeFiles/bdd_parallel_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=20 "Built target bdd_parallel_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=21 "Built target bdd_parallel_mma"
 .PHONY : src/CMakeFiles/bdd_parallel_mma.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_parallel_mma.dir/rule
@@ -820,7 +798,7 @@ src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/all: src/CMakeFiles/bd
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/rule
@@ -841,12 +819,12 @@ src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/clean:
 src/CMakeFiles/bdd_parallel_mma_smooth.dir/all: src/CMakeFiles/bdd_multi_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_parallel_mma_smooth.dir/build.make src/CMakeFiles/bdd_parallel_mma_smooth.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_parallel_mma_smooth.dir/build.make src/CMakeFiles/bdd_parallel_mma_smooth.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=21 "Built target bdd_parallel_mma_smooth"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=22 "Built target bdd_parallel_mma_smooth"
 .PHONY : src/CMakeFiles/bdd_parallel_mma_smooth.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_parallel_mma_smooth.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_parallel_mma_smooth.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_parallel_mma_smooth.dir/rule
@@ -867,12 +845,12 @@ src/CMakeFiles/bdd_parallel_mma_smooth.dir/clean:
 src/CMakeFiles/bdd_multi_parallel_mma.dir/all: src/CMakeFiles/bdd_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target bdd_multi_parallel_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=17 "Built target bdd_multi_parallel_mma"
 .PHONY : src/CMakeFiles/bdd_multi_parallel_mma.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_multi_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_multi_parallel_mma.dir/rule
@@ -893,12 +871,12 @@ src/CMakeFiles/bdd_multi_parallel_mma.dir/clean:
 src/CMakeFiles/bdd_mma.dir/all: src/CMakeFiles/bdd_mma_smooth.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mma.dir/build.make src/CMakeFiles/bdd_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mma.dir/build.make src/CMakeFiles/bdd_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=14 "Built target bdd_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=13 "Built target bdd_mma"
 .PHONY : src/CMakeFiles/bdd_mma.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_mma.dir/rule
@@ -916,15 +894,15 @@ src/CMakeFiles/bdd_mma.dir/clean:
 # Target rules for target src/CMakeFiles/bdd_mma_smooth.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_mma_smooth.dir/all: src/CMakeFiles/lineq_bdd.dir/all
+src/CMakeFiles/bdd_mma_smooth.dir/all: src/CMakeFiles/bdd_multi_gpu_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mma_smooth.dir/build.make src/CMakeFiles/bdd_mma_smooth.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mma_smooth.dir/build.make src/CMakeFiles/bdd_mma_smooth.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=15 "Built target bdd_mma_smooth"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=14 "Built target bdd_mma_smooth"
 .PHONY : src/CMakeFiles/bdd_mma_smooth.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_mma_smooth.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_mma_smooth.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_mma_smooth.dir/rule
@@ -939,56 +917,82 @@ src/CMakeFiles/bdd_mma_smooth.dir/clean:
 .PHONY : src/CMakeFiles/bdd_mma_smooth.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/convert_opb_to_lp.dir
+# Target rules for target src/CMakeFiles/bdd_multi_gpu_mma.dir
 
 # All Build rule for target.
-src/CMakeFiles/convert_opb_to_lp.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=29 "Built target convert_opb_to_lp"
-.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/all
+src/CMakeFiles/bdd_multi_gpu_mma.dir/all: src/CMakeFiles/bdd_preprocessor.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=16 "Built target bdd_multi_gpu_mma"
+.PHONY : src/CMakeFiles/bdd_multi_gpu_mma.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/convert_opb_to_lp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_opb_to_lp.dir/all
+src/CMakeFiles/bdd_multi_gpu_mma.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 21
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_gpu_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/rule
+.PHONY : src/CMakeFiles/bdd_multi_gpu_mma.dir/rule
 
 # Convenience name for target.
-convert_opb_to_lp: src/CMakeFiles/convert_opb_to_lp.dir/rule
-.PHONY : convert_opb_to_lp
+bdd_multi_gpu_mma: src/CMakeFiles/bdd_multi_gpu_mma.dir/rule
+.PHONY : bdd_multi_gpu_mma
 
 # clean rule for target.
-src/CMakeFiles/convert_opb_to_lp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/clean
-.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/clean
+src/CMakeFiles/bdd_multi_gpu_mma.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/clean
+.PHONY : src/CMakeFiles/bdd_multi_gpu_mma.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/lineq_bdd.dir
+# Target rules for target src/CMakeFiles/bdd_solver_cl.dir
 
 # All Build rule for target.
-src/CMakeFiles/lineq_bdd.dir/all: src/CMakeFiles/bdd_cuda.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target lineq_bdd"
-.PHONY : src/CMakeFiles/lineq_bdd.dir/all
+src/CMakeFiles/bdd_solver_cl.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=25 "Built target bdd_solver_cl"
+.PHONY : src/CMakeFiles/bdd_solver_cl.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/lineq_bdd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 18
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/lineq_bdd.dir/all
+src/CMakeFiles/bdd_solver_cl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_solver_cl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/lineq_bdd.dir/rule
+.PHONY : src/CMakeFiles/bdd_solver_cl.dir/rule
 
 # Convenience name for target.
-lineq_bdd: src/CMakeFiles/lineq_bdd.dir/rule
-.PHONY : lineq_bdd
+bdd_solver_cl: src/CMakeFiles/bdd_solver_cl.dir/rule
+.PHONY : bdd_solver_cl
 
 # clean rule for target.
-src/CMakeFiles/lineq_bdd.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/clean
-.PHONY : src/CMakeFiles/lineq_bdd.dir/clean
+src/CMakeFiles/bdd_solver_cl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/clean
+.PHONY : src/CMakeFiles/bdd_solver_cl.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/bdd_preprocessor.dir
+
+# All Build rule for target.
+src/CMakeFiles/bdd_preprocessor.dir/all: src/CMakeFiles/bdd_cuda.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=23 "Built target bdd_preprocessor"
+.PHONY : src/CMakeFiles/bdd_preprocessor.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/bdd_preprocessor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_preprocessor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/bdd_preprocessor.dir/rule
+
+# Convenience name for target.
+bdd_preprocessor: src/CMakeFiles/bdd_preprocessor.dir/rule
+.PHONY : bdd_preprocessor
+
+# clean rule for target.
+src/CMakeFiles/bdd_preprocessor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/clean
+.PHONY : src/CMakeFiles/bdd_preprocessor.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/bdd_cuda.dir
@@ -1002,7 +1006,7 @@ src/CMakeFiles/bdd_cuda.dir/all: src/CMakeFiles/ILP_input.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_cuda.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_cuda.dir/rule
@@ -1028,7 +1032,7 @@ src/CMakeFiles/ILP_input.dir/all: src/CMakeFiles/OPB_parser.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/ILP_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ILP_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/ILP_input.dir/rule
@@ -1054,7 +1058,7 @@ src/CMakeFiles/OPB_parser.dir/all: src/CMakeFiles/transitive_closure_dag.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/OPB_parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/OPB_parser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/OPB_parser.dir/rule
@@ -1072,7 +1076,7 @@ src/CMakeFiles/OPB_parser.dir/clean:
 # Target rules for target src/CMakeFiles/transitive_closure_dag.dir
 
 # All Build rule for target.
-src/CMakeFiles/transitive_closure_dag.dir/all: src/CMakeFiles/convert_pb_to_bdd.dir/all
+src/CMakeFiles/transitive_closure_dag.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/transitive_closure_dag.dir/build.make src/CMakeFiles/transitive_closure_dag.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/transitive_closure_dag.dir/build.make src/CMakeFiles/transitive_closure_dag.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=100 "Built target transitive_closure_dag"
@@ -1080,7 +1084,7 @@ src/CMakeFiles/transitive_closure_dag.dir/all: src/CMakeFiles/convert_pb_to_bdd.
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/transitive_closure_dag.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/transitive_closure_dag.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/transitive_closure_dag.dir/rule
@@ -1095,10 +1099,88 @@ src/CMakeFiles/transitive_closure_dag.dir/clean:
 .PHONY : src/CMakeFiles/transitive_closure_dag.dir/clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/bdd_multi_parallel_mma_base.dir
+
+# All Build rule for target.
+src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all: src/CMakeFiles/lineq_bdd.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=18 "Built target bdd_multi_parallel_mma_base"
+.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
+
+# Convenience name for target.
+bdd_multi_parallel_mma_base: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
+.PHONY : bdd_multi_parallel_mma_base
+
+# clean rule for target.
+src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean
+.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/lineq_bdd.dir
+
+# All Build rule for target.
+src/CMakeFiles/lineq_bdd.dir/all: src/CMakeFiles/multi_gpu.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=34 "Built target lineq_bdd"
+.PHONY : src/CMakeFiles/lineq_bdd.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/lineq_bdd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 15
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/lineq_bdd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/lineq_bdd.dir/rule
+
+# Convenience name for target.
+lineq_bdd: src/CMakeFiles/lineq_bdd.dir/rule
+.PHONY : lineq_bdd
+
+# clean rule for target.
+src/CMakeFiles/lineq_bdd.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/clean
+.PHONY : src/CMakeFiles/lineq_bdd.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/convert_opb_to_lp.dir
+
+# All Build rule for target.
+src/CMakeFiles/convert_opb_to_lp.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=29 "Built target convert_opb_to_lp"
+.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/convert_opb_to_lp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_opb_to_lp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/rule
+
+# Convenience name for target.
+convert_opb_to_lp: src/CMakeFiles/convert_opb_to_lp.dir/rule
+.PHONY : convert_opb_to_lp
+
+# clean rule for target.
+src/CMakeFiles/convert_opb_to_lp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/clean
+.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/bdd_cuda_learned_mma.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/CMakeFiles/bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_learned_mma.dir/build.make src/CMakeFiles/bdd_cuda_learned_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_learned_mma.dir/build.make src/CMakeFiles/bdd_cuda_learned_mma.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=7 "Built target bdd_cuda_learned_mma"
@@ -1106,7 +1188,7 @@ src/CMakeFiles/bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_m
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_cuda_learned_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_cuda_learned_mma.dir/rule
@@ -1124,7 +1206,7 @@ src/CMakeFiles/bdd_cuda_learned_mma.dir/clean:
 # Target rules for target src/CMakeFiles/ILP_instance_py.dir
 
 # All Build rule for target.
-src/CMakeFiles/ILP_instance_py.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/CMakeFiles/ILP_instance_py.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/CMakeFiles/ILP_instance_py.dir/all: src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all
 src/CMakeFiles/ILP_instance_py.dir/all: src/specialized_solvers/CMakeFiles/mrf_input.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/ILP_instance_py.dir/build.make src/CMakeFiles/ILP_instance_py.dir/depend
@@ -1134,7 +1216,7 @@ src/CMakeFiles/ILP_instance_py.dir/all: src/specialized_solvers/CMakeFiles/mrf_i
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/ILP_instance_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ILP_instance_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/ILP_instance_py.dir/rule
@@ -1149,56 +1231,30 @@ src/CMakeFiles/ILP_instance_py.dir/clean:
 .PHONY : src/CMakeFiles/ILP_instance_py.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/convert_pb_to_bdd.dir
+# Target rules for target src/CMakeFiles/multi_gpu.dir
 
 # All Build rule for target.
-src/CMakeFiles/convert_pb_to_bdd.dir/all: src/CMakeFiles/bdd_subgradient.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=30 "Built target convert_pb_to_bdd"
-.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/all
+src/CMakeFiles/multi_gpu.dir/all: src/CMakeFiles/bdd_cuda_base.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=38 "Built target multi_gpu"
+.PHONY : src/CMakeFiles/multi_gpu.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/convert_pb_to_bdd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 15
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_pb_to_bdd.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/rule
-
-# Convenience name for target.
-convert_pb_to_bdd: src/CMakeFiles/convert_pb_to_bdd.dir/rule
-.PHONY : convert_pb_to_bdd
-
-# clean rule for target.
-src/CMakeFiles/convert_pb_to_bdd.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/clean
-.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/bdd_subgradient.dir
-
-# All Build rule for target.
-src/CMakeFiles/bdd_subgradient.dir/all: src/CMakeFiles/bdd_cuda_base.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=26 "Built target bdd_subgradient"
-.PHONY : src/CMakeFiles/bdd_subgradient.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/bdd_subgradient.dir/rule: cmake_check_build_system
+src/CMakeFiles/multi_gpu.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 14
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_subgradient.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/multi_gpu.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/bdd_subgradient.dir/rule
+.PHONY : src/CMakeFiles/multi_gpu.dir/rule
 
 # Convenience name for target.
-bdd_subgradient: src/CMakeFiles/bdd_subgradient.dir/rule
-.PHONY : bdd_subgradient
+multi_gpu: src/CMakeFiles/multi_gpu.dir/rule
+.PHONY : multi_gpu
 
 # clean rule for target.
-src/CMakeFiles/bdd_subgradient.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/clean
-.PHONY : src/CMakeFiles/bdd_subgradient.dir/clean
+src/CMakeFiles/multi_gpu.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/clean
+.PHONY : src/CMakeFiles/multi_gpu.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/bdd_cuda_base.dir
@@ -1233,7 +1289,7 @@ src/CMakeFiles/bdd_cuda_base.dir/clean:
 src/CMakeFiles/mm_primal_decoder.dir/all: src/CMakeFiles/ILP_parser.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mm_primal_decoder.dir/build.make src/CMakeFiles/mm_primal_decoder.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mm_primal_decoder.dir/build.make src/CMakeFiles/mm_primal_decoder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=34 "Built target mm_primal_decoder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=35 "Built target mm_primal_decoder"
 .PHONY : src/CMakeFiles/mm_primal_decoder.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1285,7 +1341,7 @@ src/CMakeFiles/ILP_parser.dir/clean:
 src/CMakeFiles/bdd_solver.dir/all: src/CMakeFiles/bdd_cuda_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver.dir/build.make src/CMakeFiles/bdd_solver.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver.dir/build.make src/CMakeFiles/bdd_solver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=23 "Built target bdd_solver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=24 "Built target bdd_solver"
 .PHONY : src/CMakeFiles/bdd_solver.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1308,7 +1364,7 @@ src/CMakeFiles/bdd_solver.dir/clean:
 # Target rules for target src/CMakeFiles/bdd_cuda_parallel_mma.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_cuda_parallel_mma.dir/all: src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all
+src/CMakeFiles/bdd_cuda_parallel_mma.dir/all: src/CMakeFiles/convert_pb_to_bdd.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_parallel_mma.dir/build.make src/CMakeFiles/bdd_cuda_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_parallel_mma.dir/build.make src/CMakeFiles/bdd_cuda_parallel_mma.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=9 "Built target bdd_cuda_parallel_mma"
@@ -1331,10 +1387,62 @@ src/CMakeFiles/bdd_cuda_parallel_mma.dir/clean:
 .PHONY : src/CMakeFiles/bdd_cuda_parallel_mma.dir/clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/convert_pb_to_bdd.dir
+
+# All Build rule for target.
+src/CMakeFiles/convert_pb_to_bdd.dir/all: src/CMakeFiles/bdd_subgradient.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=30 "Built target convert_pb_to_bdd"
+.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/convert_pb_to_bdd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_pb_to_bdd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/rule
+
+# Convenience name for target.
+convert_pb_to_bdd: src/CMakeFiles/convert_pb_to_bdd.dir/rule
+.PHONY : convert_pb_to_bdd
+
+# clean rule for target.
+src/CMakeFiles/convert_pb_to_bdd.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/clean
+.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/bdd_subgradient.dir
+
+# All Build rule for target.
+src/CMakeFiles/bdd_subgradient.dir/all: src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=26 "Built target bdd_subgradient"
+.PHONY : src/CMakeFiles/bdd_subgradient.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/bdd_subgradient.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_subgradient.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/bdd_subgradient.dir/rule
+
+# Convenience name for target.
+bdd_subgradient: src/CMakeFiles/bdd_subgradient.dir/rule
+.PHONY : bdd_subgradient
+
+# clean rule for target.
+src/CMakeFiles/bdd_subgradient.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/clean
+.PHONY : src/CMakeFiles/bdd_subgradient.dir/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/bdd_cuda_learned_mma_py.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_cuda_learned_mma_py.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/CMakeFiles/bdd_cuda_learned_mma_py.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/CMakeFiles/bdd_cuda_learned_mma_py.dir/all: src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build.make src/CMakeFiles/bdd_cuda_learned_mma_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build.make src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build
@@ -1343,7 +1451,7 @@ src/CMakeFiles/bdd_cuda_learned_mma_py.dir/all: src/CMakeFiles/bdd_cuda_learned_
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_cuda_learned_mma_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda_learned_mma_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_cuda_learned_mma_py.dir/rule
@@ -1358,36 +1466,10 @@ src/CMakeFiles/bdd_cuda_learned_mma_py.dir/clean:
 .PHONY : src/CMakeFiles/bdd_cuda_learned_mma_py.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/bdd_solver_cl.dir
-
-# All Build rule for target.
-src/CMakeFiles/bdd_solver_cl.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=24 "Built target bdd_solver_cl"
-.PHONY : src/CMakeFiles/bdd_solver_cl.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/bdd_solver_cl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_solver_cl.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/bdd_solver_cl.dir/rule
-
-# Convenience name for target.
-bdd_solver_cl: src/CMakeFiles/bdd_solver_cl.dir/rule
-.PHONY : bdd_solver_cl
-
-# clean rule for target.
-src/CMakeFiles/bdd_solver_cl.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/clean
-.PHONY : src/CMakeFiles/bdd_solver_cl.dir/clean
-
-#=============================================================================
 # Target rules for target src/CMakeFiles/convert_lp_to_opb.dir
 
 # All Build rule for target.
-src/CMakeFiles/convert_lp_to_opb.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/CMakeFiles/convert_lp_to_opb.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_lp_to_opb.dir/build.make src/CMakeFiles/convert_lp_to_opb.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_lp_to_opb.dir/build.make src/CMakeFiles/convert_lp_to_opb.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=28 "Built target convert_lp_to_opb"
@@ -1395,7 +1477,7 @@ src/CMakeFiles/convert_lp_to_opb.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/convert_lp_to_opb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_lp_to_opb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/convert_lp_to_opb.dir/rule
@@ -1413,15 +1495,15 @@ src/CMakeFiles/convert_lp_to_opb.dir/clean:
 # Target rules for target src/CMakeFiles/bdd_mp_py.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_mp_py.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/CMakeFiles/bdd_mp_py.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mp_py.dir/build.make src/CMakeFiles/bdd_mp_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mp_py.dir/build.make src/CMakeFiles/bdd_mp_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=16 "Built target bdd_mp_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=15 "Built target bdd_mp_py"
 .PHONY : src/CMakeFiles/bdd_mp_py.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_mp_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_mp_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_mp_py.dir/rule
@@ -1439,7 +1521,7 @@ src/CMakeFiles/bdd_mp_py.dir/clean:
 # Target rules for target src/CMakeFiles/bdd_lbfgs_cuda_mma.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all: src/CMakeFiles/bdd_preprocessor.dir/all
+src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all: src/bdd_manager/CMakeFiles/bdd_node_cache.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/build.make src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/build.make src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=10 "Built target bdd_lbfgs_cuda_mma"
@@ -1447,7 +1529,7 @@ src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all: src/CMakeFiles/bdd_preprocessor.dir/a
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/rule
@@ -1465,15 +1547,15 @@ src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/clean:
 # Target rules for target src/CMakeFiles/bdd_solver_py.dir
 
 # All Build rule for target.
-src/CMakeFiles/bdd_solver_py.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/CMakeFiles/bdd_solver_py.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_py.dir/build.make src/CMakeFiles/bdd_solver_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_py.dir/build.make src/CMakeFiles/bdd_solver_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=25 "Built target bdd_solver_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target bdd_solver_py"
 .PHONY : src/CMakeFiles/bdd_solver_py.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/bdd_solver_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_solver_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/bdd_solver_py.dir/rule
@@ -1488,44 +1570,18 @@ src/CMakeFiles/bdd_solver_py.dir/clean:
 .PHONY : src/CMakeFiles/bdd_solver_py.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/bdd_preprocessor.dir
-
-# All Build rule for target.
-src/CMakeFiles/bdd_preprocessor.dir/all: src/bdd_manager/CMakeFiles/bdd_node_cache.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=22 "Built target bdd_preprocessor"
-.PHONY : src/CMakeFiles/bdd_preprocessor.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/bdd_preprocessor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_preprocessor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/bdd_preprocessor.dir/rule
-
-# Convenience name for target.
-bdd_preprocessor: src/CMakeFiles/bdd_preprocessor.dir/rule
-.PHONY : bdd_preprocessor
-
-# clean rule for target.
-src/CMakeFiles/bdd_preprocessor.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/clean
-.PHONY : src/CMakeFiles/bdd_preprocessor.dir/clean
-
-#=============================================================================
 # Target rules for target src/bdd_manager/CMakeFiles/bdd_node_cache.dir
 
 # All Build rule for target.
 src/bdd_manager/CMakeFiles/bdd_node_cache.dir/all: src/bdd_manager/CMakeFiles/bdd_node.dir/all
 	$(MAKE) $(MAKESILENT) -f src/bdd_manager/CMakeFiles/bdd_node_cache.dir/build.make src/bdd_manager/CMakeFiles/bdd_node_cache.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/bdd_manager/CMakeFiles/bdd_node_cache.dir/build.make src/bdd_manager/CMakeFiles/bdd_node_cache.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=19 "Built target bdd_node_cache"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=20 "Built target bdd_node_cache"
 .PHONY : src/bdd_manager/CMakeFiles/bdd_node_cache.dir/all
 
 # Build rule for subdir invocation for target.
 src/bdd_manager/CMakeFiles/bdd_node_cache.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bdd_manager/CMakeFiles/bdd_node_cache.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/bdd_manager/CMakeFiles/bdd_node_cache.dir/rule
@@ -1546,12 +1602,12 @@ src/bdd_manager/CMakeFiles/bdd_node_cache.dir/clean:
 src/bdd_manager/CMakeFiles/bdd_node.dir/all: src/bdd_manager/CMakeFiles/bdd_memo_cache.dir/all
 	$(MAKE) $(MAKESILENT) -f src/bdd_manager/CMakeFiles/bdd_node.dir/build.make src/bdd_manager/CMakeFiles/bdd_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/bdd_manager/CMakeFiles/bdd_node.dir/build.make src/bdd_manager/CMakeFiles/bdd_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=18 "Built target bdd_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=19 "Built target bdd_node"
 .PHONY : src/bdd_manager/CMakeFiles/bdd_node.dir/all
 
 # Build rule for subdir invocation for target.
 src/bdd_manager/CMakeFiles/bdd_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bdd_manager/CMakeFiles/bdd_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/bdd_manager/CMakeFiles/bdd_node.dir/rule
@@ -1577,7 +1633,7 @@ src/bdd_manager/CMakeFiles/bdd_memo_cache.dir/all: src/bdd_manager/CMakeFiles/bd
 
 # Build rule for subdir invocation for target.
 src/bdd_manager/CMakeFiles/bdd_memo_cache.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bdd_manager/CMakeFiles/bdd_memo_cache.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/bdd_manager/CMakeFiles/bdd_memo_cache.dir/rule
@@ -1598,12 +1654,12 @@ src/bdd_manager/CMakeFiles/bdd_memo_cache.dir/clean:
 src/bdd_manager/CMakeFiles/bdd_mgr.dir/all: src/bdd_manager/CMakeFiles/bdd_var.dir/all
 	$(MAKE) $(MAKESILENT) -f src/bdd_manager/CMakeFiles/bdd_mgr.dir/build.make src/bdd_manager/CMakeFiles/bdd_mgr.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/bdd_manager/CMakeFiles/bdd_mgr.dir/build.make src/bdd_manager/CMakeFiles/bdd_mgr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=13 "Built target bdd_mgr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target bdd_mgr"
 .PHONY : src/bdd_manager/CMakeFiles/bdd_mgr.dir/all
 
 # Build rule for subdir invocation for target.
 src/bdd_manager/CMakeFiles/bdd_mgr.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/bdd_manager/CMakeFiles/bdd_mgr.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/bdd_manager/CMakeFiles/bdd_mgr.dir/rule
@@ -1673,17 +1729,17 @@ src/bdd_collection/CMakeFiles/bdd_collection.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/all: src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all
 src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/all: src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/build.make src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/build.make src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=39 "Built target multi_graph_matching_solver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=40 "Built target multi_graph_matching_solver"
 .PHONY : src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/all
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/rule
@@ -1701,15 +1757,15 @@ src/specialized_solvers/CMakeFiles/multi_graph_matching_solver.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/build.make src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/build.make src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=37 "Built target mrf_uai_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target mrf_uai_parser"
 .PHONY : src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/rule
@@ -1727,7 +1783,7 @@ src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/graph_matching_solver.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/all: src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/build.make src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/build.make src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/build
@@ -1736,7 +1792,7 @@ src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/all: src/specialize
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/rule
@@ -1754,15 +1810,15 @@ src/specialized_solvers/CMakeFiles/graph_matching_solver.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/mrf_input.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/mrf_input.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/mrf_input.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/mrf_input.dir/build.make src/specialized_solvers/CMakeFiles/mrf_input.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/mrf_input.dir/build.make src/specialized_solvers/CMakeFiles/mrf_input.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=35 "Built target mrf_input"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=36 "Built target mrf_input"
 .PHONY : src/specialized_solvers/CMakeFiles/mrf_input.dir/all
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/mrf_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/mrf_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/mrf_input.dir/rule
@@ -1780,17 +1836,17 @@ src/specialized_solvers/CMakeFiles/mrf_input.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/mrf_solver.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/mrf_solver.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/mrf_solver.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/specialized_solvers/CMakeFiles/mrf_solver.dir/all: src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all
 src/specialized_solvers/CMakeFiles/mrf_solver.dir/all: src/specialized_solvers/CMakeFiles/mrf_input.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/mrf_solver.dir/build.make src/specialized_solvers/CMakeFiles/mrf_solver.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/mrf_solver.dir/build.make src/specialized_solvers/CMakeFiles/mrf_solver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=36 "Built target mrf_solver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=37 "Built target mrf_solver"
 .PHONY : src/specialized_solvers/CMakeFiles/mrf_solver.dir/all
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/mrf_solver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/mrf_solver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/mrf_solver.dir/rule
@@ -1808,7 +1864,7 @@ src/specialized_solvers/CMakeFiles/mrf_solver.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/graph_matching_input.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/graph_matching_input.dir/build.make src/specialized_solvers/CMakeFiles/graph_matching_input.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/graph_matching_input.dir/build.make src/specialized_solvers/CMakeFiles/graph_matching_input.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=31 "Built target graph_matching_input"
@@ -1816,7 +1872,7 @@ src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all: src/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/graph_matching_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/graph_matching_input.dir/rule
@@ -1834,16 +1890,16 @@ src/specialized_solvers/CMakeFiles/graph_matching_input.dir/clean:
 # Target rules for target src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir
 
 # All Build rule for target.
-src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all: src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/build.make src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/build.make src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=38 "Built target multi_graph_matching_input"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=39 "Built target multi_graph_matching_input"
 .PHONY : src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all
 
 # Build rule for subdir invocation for target.
 src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/rule
@@ -1861,15 +1917,15 @@ src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_parallel_mma_base.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_parallel_mma_base.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_parallel_mma_base.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_parallel_mma_base.dir/build.make test/CMakeFiles/test_bdd_parallel_mma_base.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_parallel_mma_base.dir/build.make test/CMakeFiles/test_bdd_parallel_mma_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=74 "Built target test_bdd_parallel_mma_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=75 "Built target test_bdd_parallel_mma_base"
 .PHONY : test/CMakeFiles/test_bdd_parallel_mma_base.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_parallel_mma_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_parallel_mma_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_parallel_mma_base.dir/rule
@@ -1887,15 +1943,15 @@ test/CMakeFiles/test_bdd_parallel_mma_base.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_preprocessor.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_preprocessor.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_preprocessor.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_preprocessor.dir/build.make test/CMakeFiles/test_bdd_preprocessor.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_preprocessor.dir/build.make test/CMakeFiles/test_bdd_preprocessor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=75 "Built target test_bdd_preprocessor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_bdd_preprocessor"
 .PHONY : test/CMakeFiles/test_bdd_preprocessor.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_preprocessor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_preprocessor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_preprocessor.dir/rule
@@ -1913,7 +1969,7 @@ test/CMakeFiles/test_bdd_preprocessor.dir/clean:
 # Target rules for target test/CMakeFiles/test_loose_covering_problem.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_loose_covering_problem.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_loose_covering_problem.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_loose_covering_problem.dir/build.make test/CMakeFiles/test_loose_covering_problem.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_loose_covering_problem.dir/build.make test/CMakeFiles/test_loose_covering_problem.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=88 "Built target test_loose_covering_problem"
@@ -1921,7 +1977,7 @@ test/CMakeFiles/test_loose_covering_problem.dir/all: src/CMakeFiles/bdd_multi_pa
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_loose_covering_problem.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_loose_covering_problem.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_loose_covering_problem.dir/rule
@@ -1939,15 +1995,15 @@ test/CMakeFiles/test_loose_covering_problem.dir/clean:
 # Target rules for target test/CMakeFiles/test_ILP_input_to_bdd.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_ILP_input_to_bdd.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_ILP_input_to_bdd.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input_to_bdd.dir/build.make test/CMakeFiles/test_ILP_input_to_bdd.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input_to_bdd.dir/build.make test/CMakeFiles/test_ILP_input_to_bdd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=42 "Built target test_ILP_input_to_bdd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=43 "Built target test_ILP_input_to_bdd"
 .PHONY : test/CMakeFiles/test_ILP_input_to_bdd.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_ILP_input_to_bdd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_ILP_input_to_bdd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_ILP_input_to_bdd.dir/rule
@@ -1965,15 +2021,15 @@ test/CMakeFiles/test_ILP_input_to_bdd.dir/clean:
 # Target rules for target test/CMakeFiles/test_ILP_input.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_ILP_input.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_ILP_input.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input.dir/build.make test/CMakeFiles/test_ILP_input.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input.dir/build.make test/CMakeFiles/test_ILP_input.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=40 "Built target test_ILP_input"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=41 "Built target test_ILP_input"
 .PHONY : test/CMakeFiles/test_ILP_input.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_ILP_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_ILP_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_ILP_input.dir/rule
@@ -1991,15 +2047,15 @@ test/CMakeFiles/test_ILP_input.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/build.make test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/build.make test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=49 "Built target test_bdd_cardinality_sum_marginals"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=50 "Built target test_bdd_cardinality_sum_marginals"
 .PHONY : test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/rule
@@ -2017,7 +2073,7 @@ test/CMakeFiles/test_bdd_cardinality_sum_marginals.dir/clean:
 # Target rules for target test/CMakeFiles/test_loose_gm_tightening.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_loose_gm_tightening.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_loose_gm_tightening.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_loose_gm_tightening.dir/build.make test/CMakeFiles/test_loose_gm_tightening.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_loose_gm_tightening.dir/build.make test/CMakeFiles/test_loose_gm_tightening.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=89 "Built target test_loose_gm_tightening"
@@ -2025,7 +2081,7 @@ test/CMakeFiles/test_loose_gm_tightening.dir/all: src/CMakeFiles/bdd_multi_paral
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_loose_gm_tightening.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_loose_gm_tightening.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_loose_gm_tightening.dir/rule
@@ -2043,15 +2099,15 @@ test/CMakeFiles/test_loose_gm_tightening.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_parallel_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_parallel_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_parallel_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_parallel_mma.dir/build.make test/CMakeFiles/test_bdd_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_parallel_mma.dir/build.make test/CMakeFiles/test_bdd_parallel_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=73 "Built target test_bdd_parallel_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=74 "Built target test_bdd_parallel_mma"
 .PHONY : test/CMakeFiles/test_bdd_parallel_mma.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_parallel_mma.dir/rule
@@ -2069,7 +2125,7 @@ test/CMakeFiles/test_bdd_parallel_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_solvers_update_costs.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_solvers_update_costs.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_solvers_update_costs.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_solvers_update_costs.dir/build.make test/CMakeFiles/test_bdd_solvers_update_costs.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_solvers_update_costs.dir/build.make test/CMakeFiles/test_bdd_solvers_update_costs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=83 "Built target test_bdd_solvers_update_costs"
@@ -2077,7 +2133,7 @@ test/CMakeFiles/test_bdd_solvers_update_costs.dir/all: src/CMakeFiles/bdd_multi_
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_solvers_update_costs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_solvers_update_costs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_solvers_update_costs.dir/rule
@@ -2095,7 +2151,7 @@ test/CMakeFiles/test_bdd_solvers_update_costs.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_simplex_sum_marginals.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/build.make test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/build.make test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=77 "Built target test_bdd_simplex_sum_marginals"
@@ -2103,7 +2159,7 @@ test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/all: src/CMakeFiles/bdd_multi
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/rule
@@ -2121,15 +2177,15 @@ test/CMakeFiles/test_bdd_simplex_sum_marginals.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_min_marginals.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_min_marginals.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_min_marginals.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_min_marginals.dir/build.make test/CMakeFiles/test_bdd_min_marginals.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_min_marginals.dir/build.make test/CMakeFiles/test_bdd_min_marginals.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=69 "Built target test_bdd_min_marginals"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=70 "Built target test_bdd_min_marginals"
 .PHONY : test/CMakeFiles/test_bdd_min_marginals.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_min_marginals.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_min_marginals.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_min_marginals.dir/rule
@@ -2147,7 +2203,7 @@ test/CMakeFiles/test_bdd_min_marginals.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_small_binary_mrfs.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_small_binary_mrfs.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_small_binary_mrfs.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_small_binary_mrfs.dir/build.make test/CMakeFiles/test_bdd_small_binary_mrfs.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_small_binary_mrfs.dir/build.make test/CMakeFiles/test_bdd_small_binary_mrfs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=78 "Built target test_bdd_small_binary_mrfs"
@@ -2155,7 +2211,7 @@ test/CMakeFiles/test_bdd_small_binary_mrfs.dir/all: src/CMakeFiles/bdd_multi_par
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_small_binary_mrfs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_small_binary_mrfs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_small_binary_mrfs.dir/rule
@@ -2173,7 +2229,7 @@ test/CMakeFiles/test_bdd_small_binary_mrfs.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_smooth_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_smooth_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_smooth_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_smooth_mma.dir/build.make test/CMakeFiles/test_bdd_smooth_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_smooth_mma.dir/build.make test/CMakeFiles/test_bdd_smooth_mma.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=79 "Built target test_bdd_smooth_mma"
@@ -2181,7 +2237,7 @@ test/CMakeFiles/test_bdd_smooth_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_m
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_smooth_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_smooth_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_smooth_mma.dir/rule
@@ -2199,15 +2255,15 @@ test/CMakeFiles/test_bdd_smooth_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_exp_sum.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_exp_sum.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_exp_sum.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_exp_sum.dir/build.make test/CMakeFiles/test_exp_sum.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_exp_sum.dir/build.make test/CMakeFiles/test_exp_sum.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=85 "Built target test_exp_sum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=86 "Built target test_exp_sum"
 .PHONY : test/CMakeFiles/test_exp_sum.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_exp_sum.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_exp_sum.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_exp_sum.dir/rule
@@ -2225,15 +2281,15 @@ test/CMakeFiles/test_exp_sum.dir/clean:
 # Target rules for target test/CMakeFiles/test_ILP_parser.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_ILP_parser.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_ILP_parser.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_parser.dir/build.make test/CMakeFiles/test_ILP_parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_parser.dir/build.make test/CMakeFiles/test_ILP_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=44 "Built target test_ILP_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=45 "Built target test_ILP_parser"
 .PHONY : test/CMakeFiles/test_ILP_parser.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_ILP_parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_ILP_parser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_ILP_parser.dir/rule
@@ -2251,15 +2307,15 @@ test/CMakeFiles/test_ILP_parser.dir/clean:
 # Target rules for target test/CMakeFiles/test_avl_tree.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_avl_tree.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_avl_tree.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_avl_tree.dir/build.make test/CMakeFiles/test_avl_tree.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_avl_tree.dir/build.make test/CMakeFiles/test_avl_tree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=45 "Built target test_avl_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=46 "Built target test_avl_tree"
 .PHONY : test/CMakeFiles/test_avl_tree.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_avl_tree.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_avl_tree.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_avl_tree.dir/rule
@@ -2277,15 +2333,15 @@ test/CMakeFiles/test_avl_tree.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_base_sol.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_base_sol.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_base_sol.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_base_sol.dir/build.make test/CMakeFiles/test_bdd_cuda_base_sol.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_base_sol.dir/build.make test/CMakeFiles/test_bdd_cuda_base_sol.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=61 "Built target test_bdd_cuda_base_sol"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=62 "Built target test_bdd_cuda_base_sol"
 .PHONY : test/CMakeFiles/test_bdd_cuda_base_sol.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_base_sol.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_base_sol.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_base_sol.dir/rule
@@ -2303,15 +2359,15 @@ test/CMakeFiles/test_bdd_cuda_base_sol.dir/clean:
 # Target rules for target test/CMakeFiles/test_ILP_input_variable_fixation.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_ILP_input_variable_fixation.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_ILP_input_variable_fixation.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input_variable_fixation.dir/build.make test/CMakeFiles/test_ILP_input_variable_fixation.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input_variable_fixation.dir/build.make test/CMakeFiles/test_ILP_input_variable_fixation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=43 "Built target test_ILP_input_variable_fixation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=44 "Built target test_ILP_input_variable_fixation"
 .PHONY : test/CMakeFiles/test_ILP_input_variable_fixation.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_ILP_input_variable_fixation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_ILP_input_variable_fixation.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_ILP_input_variable_fixation.dir/rule
@@ -2329,7 +2385,7 @@ test/CMakeFiles/test_ILP_input_variable_fixation.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_learned_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 test/CMakeFiles/test_bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_learned_mma.dir/build.make test/CMakeFiles/test_bdd_cuda_learned_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_learned_mma.dir/build.make test/CMakeFiles/test_bdd_cuda_learned_mma.dir/build
@@ -2338,7 +2394,7 @@ test/CMakeFiles/test_bdd_cuda_learned_mma.dir/all: src/CMakeFiles/bdd_cuda_learn
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_learned_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_learned_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_learned_mma.dir/rule
@@ -2356,16 +2412,16 @@ test/CMakeFiles/test_bdd_cuda_learned_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/all: src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/build.make test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/build.make test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=62 "Built target test_bdd_cuda_grad_learned_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_bdd_cuda_grad_learned_mma"
 .PHONY : test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/rule
@@ -2383,7 +2439,7 @@ test/CMakeFiles/test_bdd_cuda_grad_learned_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_smooth_parallel_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/build.make test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/build.make test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=80 "Built target test_bdd_smooth_parallel_mma"
@@ -2391,7 +2447,7 @@ test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/all: src/CMakeFiles/bdd_multi_p
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/rule
@@ -2409,15 +2465,15 @@ test/CMakeFiles/test_bdd_smooth_parallel_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_base.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_base.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_base.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_base.dir/build.make test/CMakeFiles/test_bdd_cuda_base.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_base.dir/build.make test/CMakeFiles/test_bdd_cuda_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=59 "Built target test_bdd_cuda_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=60 "Built target test_bdd_cuda_base"
 .PHONY : test/CMakeFiles/test_bdd_cuda_base.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_base.dir/rule
@@ -2435,15 +2491,15 @@ test/CMakeFiles/test_bdd_cuda_base.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_base_serialization.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_base_serialization.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_base_serialization.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_base_serialization.dir/build.make test/CMakeFiles/test_bdd_cuda_base_serialization.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_base_serialization.dir/build.make test/CMakeFiles/test_bdd_cuda_base_serialization.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=60 "Built target test_bdd_cuda_base_serialization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=61 "Built target test_bdd_cuda_base_serialization"
 .PHONY : test/CMakeFiles/test_bdd_cuda_base_serialization.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_base_serialization.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_base_serialization.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_base_serialization.dir/rule
@@ -2461,15 +2517,15 @@ test/CMakeFiles/test_bdd_cuda_base_serialization.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_bipartite_matching_problem.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/build.make test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/build.make test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=48 "Built target test_bdd_bipartite_matching_problem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=49 "Built target test_bdd_bipartite_matching_problem"
 .PHONY : test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/rule
@@ -2487,15 +2543,15 @@ test/CMakeFiles/test_bdd_bipartite_matching_problem.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_parallel_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/build.make test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/build.make test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_bdd_cuda_parallel_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=67 "Built target test_bdd_cuda_parallel_mma"
 .PHONY : test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/rule
@@ -2513,15 +2569,15 @@ test/CMakeFiles/test_bdd_cuda_parallel_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_ILP_input_export.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_ILP_input_export.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_ILP_input_export.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input_export.dir/build.make test/CMakeFiles/test_ILP_input_export.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_ILP_input_export.dir/build.make test/CMakeFiles/test_ILP_input_export.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=41 "Built target test_ILP_input_export"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=42 "Built target test_ILP_input_export"
 .PHONY : test/CMakeFiles/test_ILP_input_export.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_ILP_input_export.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_ILP_input_export.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_ILP_input_export.dir/rule
@@ -2539,15 +2595,15 @@ test/CMakeFiles/test_ILP_input_export.dir/clean:
 # Target rules for target test/CMakeFiles/test_cuda_parallel_mma.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_cuda_parallel_mma.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_cuda_parallel_mma.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_cuda_parallel_mma.dir/build.make test/CMakeFiles/test_cuda_parallel_mma.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_cuda_parallel_mma.dir/build.make test/CMakeFiles/test_cuda_parallel_mma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=84 "Built target test_cuda_parallel_mma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=85 "Built target test_cuda_parallel_mma"
 .PHONY : test/CMakeFiles/test_cuda_parallel_mma.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_cuda_parallel_mma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_cuda_parallel_mma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_cuda_parallel_mma.dir/rule
@@ -2565,7 +2621,7 @@ test/CMakeFiles/test_cuda_parallel_mma.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_min_marginals.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_min_marginals.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_min_marginals.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_min_marginals.dir/build.make test/CMakeFiles/test_bdd_cuda_min_marginals.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_min_marginals.dir/build.make test/CMakeFiles/test_bdd_cuda_min_marginals.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=66 "Built target test_bdd_cuda_min_marginals"
@@ -2573,7 +2629,7 @@ test/CMakeFiles/test_bdd_cuda_min_marginals.dir/all: src/CMakeFiles/bdd_multi_pa
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_min_marginals.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_min_marginals.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_min_marginals.dir/rule
@@ -2591,7 +2647,7 @@ test/CMakeFiles/test_bdd_cuda_min_marginals.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/all: src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/build.make test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/build.make test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/build
@@ -2600,7 +2656,7 @@ test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/all: src/CMakeFiles/bdd_cuda
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/rule
@@ -2618,7 +2674,7 @@ test/CMakeFiles/test_bdd_cuda_grad_learned_pert.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_cuda_learned_omega.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_cuda_learned_omega.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_cuda_learned_omega.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 test/CMakeFiles/test_bdd_cuda_learned_omega.dir/all: src/CMakeFiles/bdd_cuda_learned_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_learned_omega.dir/build.make test/CMakeFiles/test_bdd_cuda_learned_omega.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_cuda_learned_omega.dir/build.make test/CMakeFiles/test_bdd_cuda_learned_omega.dir/build
@@ -2627,7 +2683,7 @@ test/CMakeFiles/test_bdd_cuda_learned_omega.dir/all: src/CMakeFiles/bdd_cuda_lea
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_cuda_learned_omega.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_cuda_learned_omega.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_cuda_learned_omega.dir/rule
@@ -2645,15 +2701,15 @@ test/CMakeFiles/test_bdd_cuda_learned_omega.dir/clean:
 # Target rules for target test/CMakeFiles/test_hybrid_parallel_mma_base.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_hybrid_parallel_mma_base.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_hybrid_parallel_mma_base.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_hybrid_parallel_mma_base.dir/build.make test/CMakeFiles/test_hybrid_parallel_mma_base.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_hybrid_parallel_mma_base.dir/build.make test/CMakeFiles/test_hybrid_parallel_mma_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=86 "Built target test_hybrid_parallel_mma_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=87 "Built target test_hybrid_parallel_mma_base"
 .PHONY : test/CMakeFiles/test_hybrid_parallel_mma_base.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_hybrid_parallel_mma_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_hybrid_parallel_mma_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_hybrid_parallel_mma_base.dir/rule
@@ -2671,7 +2727,7 @@ test/CMakeFiles/test_hybrid_parallel_mma_base.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_solver_fix_variable.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_solver_fix_variable.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_solver_fix_variable.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_solver_fix_variable.dir/build.make test/CMakeFiles/test_bdd_solver_fix_variable.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_solver_fix_variable.dir/build.make test/CMakeFiles/test_bdd_solver_fix_variable.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=82 "Built target test_bdd_solver_fix_variable"
@@ -2679,7 +2735,7 @@ test/CMakeFiles/test_bdd_solver_fix_variable.dir/all: src/CMakeFiles/bdd_multi_p
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_solver_fix_variable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_solver_fix_variable.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_solver_fix_variable.dir/rule
@@ -2697,7 +2753,7 @@ test/CMakeFiles/test_bdd_solver_fix_variable.dir/clean:
 # Target rules for target test/CMakeFiles/test_variable_reordering_invariance.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_variable_reordering_invariance.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_variable_reordering_invariance.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_variable_reordering_invariance.dir/build.make test/CMakeFiles/test_variable_reordering_invariance.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_variable_reordering_invariance.dir/build.make test/CMakeFiles/test_variable_reordering_invariance.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=99 "Built target test_variable_reordering_invariance"
@@ -2705,7 +2761,7 @@ test/CMakeFiles/test_variable_reordering_invariance.dir/all: src/CMakeFiles/bdd_
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_variable_reordering_invariance.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_variable_reordering_invariance.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_variable_reordering_invariance.dir/rule
@@ -2723,15 +2779,15 @@ test/CMakeFiles/test_variable_reordering_invariance.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_infeasible_problem.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_infeasible_problem.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_infeasible_problem.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_infeasible_problem.dir/build.make test/CMakeFiles/test_bdd_infeasible_problem.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_infeasible_problem.dir/build.make test/CMakeFiles/test_bdd_infeasible_problem.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=68 "Built target test_bdd_infeasible_problem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=69 "Built target test_bdd_infeasible_problem"
 .PHONY : test/CMakeFiles/test_bdd_infeasible_problem.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_infeasible_problem.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_infeasible_problem.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_infeasible_problem.dir/rule
@@ -2749,7 +2805,7 @@ test/CMakeFiles/test_bdd_infeasible_problem.dir/clean:
 # Target rules for target test/CMakeFiles/test_bdd_solver_feasibility.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_bdd_solver_feasibility.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_bdd_solver_feasibility.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_solver_feasibility.dir/build.make test/CMakeFiles/test_bdd_solver_feasibility.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_bdd_solver_feasibility.dir/build.make test/CMakeFiles/test_bdd_solver_feasibility.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=81 "Built target test_bdd_solver_feasibility"
@@ -2757,7 +2813,7 @@ test/CMakeFiles/test_bdd_solver_feasibility.dir/all: src/CMakeFiles/bdd_multi_pa
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_bdd_solver_feasibility.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_bdd_solver_feasibility.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_bdd_solver_feasibility.dir/rule
@@ -2775,7 +2831,7 @@ test/CMakeFiles/test_bdd_solver_feasibility.dir/clean:
 # Target rules for target test/CMakeFiles/test_transitive_closure_dag.dir
 
 # All Build rule for target.
-test/CMakeFiles/test_transitive_closure_dag.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/CMakeFiles/test_transitive_closure_dag.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_transitive_closure_dag.dir/build.make test/CMakeFiles/test_transitive_closure_dag.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_transitive_closure_dag.dir/build.make test/CMakeFiles/test_transitive_closure_dag.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=95 "Built target test_transitive_closure_dag"
@@ -2783,7 +2839,7 @@ test/CMakeFiles/test_transitive_closure_dag.dir/all: src/CMakeFiles/bdd_multi_pa
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_transitive_closure_dag.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_transitive_closure_dag.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_transitive_closure_dag.dir/rule
@@ -2801,15 +2857,15 @@ test/CMakeFiles/test_transitive_closure_dag.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=51 "Built target test_bdd_collection_layer_offsets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=52 "Built target test_bdd_collection_layer_offsets"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/rule
@@ -2827,15 +2883,15 @@ test/bdd/CMakeFiles/test_bdd_collection_layer_offsets.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_variables.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_variables.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_variables.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_variables.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_variables.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_variables.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_variables.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=58 "Built target test_bdd_collection_variables"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=59 "Built target test_bdd_collection_variables"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_variables.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_variables.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_variables.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_variables.dir/rule
@@ -2853,15 +2909,15 @@ test/bdd/CMakeFiles/test_bdd_collection_variables.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=54 "Built target test_bdd_collection_qbdd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=55 "Built target test_bdd_collection_qbdd"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/rule
@@ -2879,15 +2935,15 @@ test/bdd/CMakeFiles/test_bdd_collection_qbdd.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_remove.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_remove.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_remove.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_remove.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_remove.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_remove.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_remove.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=55 "Built target test_bdd_collection_remove"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=56 "Built target test_bdd_collection_remove"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_remove.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_remove.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_remove.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_remove.dir/rule
@@ -2905,15 +2961,15 @@ test/bdd/CMakeFiles/test_bdd_collection_remove.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_variables.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_variables.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_variables.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_variables.dir/build.make test/bdd/CMakeFiles/test_bdd_variables.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_variables.dir/build.make test/bdd/CMakeFiles/test_bdd_variables.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_bdd_variables"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=84 "Built target test_bdd_variables"
 .PHONY : test/bdd/CMakeFiles/test_bdd_variables.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_variables.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_variables.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_variables.dir/rule
@@ -2931,15 +2987,15 @@ test/bdd/CMakeFiles/test_bdd_variables.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_nr_solutions.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/build.make test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/build.make test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=72 "Built target test_bdd_nr_solutions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=73 "Built target test_bdd_nr_solutions"
 .PHONY : test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/rule
@@ -2957,7 +3013,7 @@ test/bdd/CMakeFiles/test_bdd_nr_solutions.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_variable_addition.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_variable_addition.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_variable_addition.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_variable_addition.dir/build.make test/bdd/CMakeFiles/test_variable_addition.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_variable_addition.dir/build.make test/bdd/CMakeFiles/test_variable_addition.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=98 "Built target test_variable_addition"
@@ -2965,7 +3021,7 @@ test/bdd/CMakeFiles/test_variable_addition.dir/all: src/CMakeFiles/bdd_multi_par
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_variable_addition.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_variable_addition.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_variable_addition.dir/rule
@@ -2983,15 +3039,15 @@ test/bdd/CMakeFiles/test_variable_addition.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=52 "Built target test_bdd_collection_layer_widths"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=53 "Built target test_bdd_collection_layer_widths"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/rule
@@ -3009,15 +3065,15 @@ test/bdd/CMakeFiles/test_bdd_collection_layer_widths.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_and_or.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_and_or.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_and_or.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_and_or.dir/build.make test/bdd/CMakeFiles/test_bdd_and_or.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_and_or.dir/build.make test/bdd/CMakeFiles/test_bdd_and_or.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=47 "Built target test_bdd_and_or"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=48 "Built target test_bdd_and_or"
 .PHONY : test/bdd/CMakeFiles/test_bdd_and_or.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_and_or.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_and_or.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_and_or.dir/rule
@@ -3035,15 +3091,15 @@ test/bdd/CMakeFiles/test_bdd_and_or.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_node_cache.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_node_cache.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_node_cache.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_node_cache.dir/build.make test/bdd/CMakeFiles/test_bdd_node_cache.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_node_cache.dir/build.make test/bdd/CMakeFiles/test_bdd_node_cache.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=71 "Built target test_bdd_node_cache"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=72 "Built target test_bdd_node_cache"
 .PHONY : test/bdd/CMakeFiles/test_bdd_node_cache.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_node_cache.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_node_cache.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_node_cache.dir/rule
@@ -3061,15 +3117,15 @@ test/bdd/CMakeFiles/test_bdd_node_cache.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=56 "Built target test_bdd_collection_split_qbdd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=57 "Built target test_bdd_collection_split_qbdd"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/rule
@@ -3087,15 +3143,15 @@ test/bdd/CMakeFiles/test_bdd_collection_split_qbdd.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_and_limited.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_and_limited.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_and_limited.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_and_limited.dir/build.make test/bdd/CMakeFiles/test_bdd_and_limited.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_and_limited.dir/build.make test/bdd/CMakeFiles/test_bdd_and_limited.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=46 "Built target test_bdd_and_limited"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=47 "Built target test_bdd_and_limited"
 .PHONY : test/bdd/CMakeFiles/test_bdd_and_limited.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_and_limited.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_and_limited.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_and_limited.dir/rule
@@ -3113,7 +3169,7 @@ test/bdd/CMakeFiles/test_bdd_and_limited.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_unique_table_page_cache.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_unique_table_page_cache.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_unique_table_page_cache.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_unique_table_page_cache.dir/build.make test/bdd/CMakeFiles/test_unique_table_page_cache.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_unique_table_page_cache.dir/build.make test/bdd/CMakeFiles/test_unique_table_page_cache.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=96 "Built target test_unique_table_page_cache"
@@ -3121,7 +3177,7 @@ test/bdd/CMakeFiles/test_unique_table_page_cache.dir/all: src/CMakeFiles/bdd_mul
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_unique_table_page_cache.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_unique_table_page_cache.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_unique_table_page_cache.dir/rule
@@ -3139,7 +3195,7 @@ test/bdd/CMakeFiles/test_unique_table_page_cache.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_projection.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_projection.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_projection.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_projection.dir/build.make test/bdd/CMakeFiles/test_bdd_projection.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_projection.dir/build.make test/bdd/CMakeFiles/test_bdd_projection.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=76 "Built target test_bdd_projection"
@@ -3147,7 +3203,7 @@ test/bdd/CMakeFiles/test_bdd_projection.dir/all: src/CMakeFiles/bdd_multi_parall
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_projection.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_projection.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_projection.dir/rule
@@ -3165,7 +3221,7 @@ test/bdd/CMakeFiles/test_bdd_projection.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_nodes_postorder.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_nodes_postorder.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_nodes_postorder.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_nodes_postorder.dir/build.make test/bdd/CMakeFiles/test_nodes_postorder.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_nodes_postorder.dir/build.make test/bdd/CMakeFiles/test_nodes_postorder.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=94 "Built target test_nodes_postorder"
@@ -3173,7 +3229,7 @@ test/bdd/CMakeFiles/test_nodes_postorder.dir/all: src/CMakeFiles/bdd_multi_paral
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_nodes_postorder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_nodes_postorder.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_nodes_postorder.dir/rule
@@ -3191,7 +3247,7 @@ test/bdd/CMakeFiles/test_nodes_postorder.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_utility_functions.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_utility_functions.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_utility_functions.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_utility_functions.dir/build.make test/bdd/CMakeFiles/test_utility_functions.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_utility_functions.dir/build.make test/bdd/CMakeFiles/test_utility_functions.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=97 "Built target test_utility_functions"
@@ -3199,7 +3255,7 @@ test/bdd/CMakeFiles/test_utility_functions.dir/all: src/CMakeFiles/bdd_multi_par
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_utility_functions.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_utility_functions.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_utility_functions.dir/rule
@@ -3217,7 +3273,7 @@ test/bdd/CMakeFiles/test_utility_functions.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_nodes_bfs.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_nodes_bfs.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_nodes_bfs.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_nodes_bfs.dir/build.make test/bdd/CMakeFiles/test_nodes_bfs.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_nodes_bfs.dir/build.make test/bdd/CMakeFiles/test_nodes_bfs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=93 "Built target test_nodes_bfs"
@@ -3225,7 +3281,7 @@ test/bdd/CMakeFiles/test_nodes_bfs.dir/all: src/CMakeFiles/bdd_multi_parallel_mm
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_nodes_bfs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_nodes_bfs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_nodes_bfs.dir/rule
@@ -3243,7 +3299,7 @@ test/bdd/CMakeFiles/test_nodes_bfs.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_mrf_chain.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_mrf_chain.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_mrf_chain.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_mrf_chain.dir/build.make test/bdd/CMakeFiles/test_mrf_chain.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_mrf_chain.dir/build.make test/bdd/CMakeFiles/test_mrf_chain.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=90 "Built target test_mrf_chain"
@@ -3251,7 +3307,7 @@ test/bdd/CMakeFiles/test_mrf_chain.dir/all: src/CMakeFiles/bdd_multi_parallel_mm
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_mrf_chain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_mrf_chain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_mrf_chain.dir/rule
@@ -3269,15 +3325,15 @@ test/bdd/CMakeFiles/test_mrf_chain.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_multi_and.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_multi_and.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_multi_and.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_multi_and.dir/build.make test/bdd/CMakeFiles/test_bdd_multi_and.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_multi_and.dir/build.make test/bdd/CMakeFiles/test_bdd_multi_and.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=70 "Built target test_bdd_multi_and"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=71 "Built target test_bdd_multi_and"
 .PHONY : test/bdd/CMakeFiles/test_bdd_multi_and.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_multi_and.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_multi_and.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_multi_and.dir/rule
@@ -3295,15 +3351,15 @@ test/bdd/CMakeFiles/test_bdd_multi_and.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection.dir/build.make test/bdd/CMakeFiles/test_bdd_collection.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection.dir/build.make test/bdd/CMakeFiles/test_bdd_collection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=50 "Built target test_bdd_collection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_bdd_collection"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection.dir/rule
@@ -3321,15 +3377,15 @@ test/bdd/CMakeFiles/test_bdd_collection.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_utility.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_utility.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_utility.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_utility.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_utility.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_utility.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_utility.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=57 "Built target test_bdd_collection_utility"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=58 "Built target test_bdd_collection_utility"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_utility.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_utility.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_utility.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_utility.dir/rule
@@ -3347,15 +3403,15 @@ test/bdd/CMakeFiles/test_bdd_collection_utility.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/build.make test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/build.make test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=67 "Built target test_bdd_exactly_one_solution"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=68 "Built target test_bdd_exactly_one_solution"
 .PHONY : test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/rule
@@ -3373,15 +3429,15 @@ test/bdd/CMakeFiles/test_bdd_exactly_one_solution.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_and.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_and.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_and.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_and.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_and.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_and.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_and.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_bdd_collection_and"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=51 "Built target test_bdd_collection_and"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_and.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_and.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_and.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_and.dir/rule
@@ -3399,15 +3455,15 @@ test/bdd/CMakeFiles/test_bdd_collection_and.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_ite.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_ite.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_ite.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_ite.dir/build.make test/bdd/CMakeFiles/test_ite.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_ite.dir/build.make test/bdd/CMakeFiles/test_ite.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=87 "Built target test_ite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num= "Built target test_ite"
 .PHONY : test/bdd/CMakeFiles/test_ite.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_ite.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_ite.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_ite.dir/rule
@@ -3425,15 +3481,15 @@ test/bdd/CMakeFiles/test_ite.dir/clean:
 # Target rules for target test/bdd/CMakeFiles/test_bdd_collection_or_var.dir
 
 # All Build rule for target.
-test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/build.make test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=53 "Built target test_bdd_collection_or_var"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gl9102/BDD/build/CMakeFiles --progress-num=54 "Built target test_bdd_collection_or_var"
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/all
 
 # Build rule for subdir invocation for target.
 test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/rule
@@ -3451,7 +3507,7 @@ test/bdd/CMakeFiles/test_bdd_collection_or_var.dir/clean:
 # Target rules for target test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir
 
 # All Build rule for target.
-test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/all: src/specialized_solvers/CMakeFiles/mrf_uai_parser.dir/all
 test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/all: src/specialized_solvers/CMakeFiles/mrf_input.dir/all
 	$(MAKE) $(MAKESILENT) -f test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/build.make test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/depend
@@ -3461,7 +3517,7 @@ test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/all: src/specialized_
 
 # Build rule for subdir invocation for target.
 test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/rule
@@ -3479,7 +3535,7 @@ test/specialized_solvers/CMakeFiles/test_mrf_uai_input.dir/clean:
 # Target rules for target test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir
 
 # All Build rule for target.
-test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/all: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/all
+test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/all: src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/all
 test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/all: src/specialized_solvers/CMakeFiles/graph_matching_input.dir/all
 test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/all: src/specialized_solvers/CMakeFiles/multi_graph_matching_input.dir/all
 	$(MAKE) $(MAKESILENT) -f test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/build.make test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/depend
@@ -3489,7 +3545,7 @@ test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/all: src
 
 # Build rule for subdir invocation for target.
 test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl9102/BDD/build/CMakeFiles 0
 .PHONY : test/specialized_solvers/CMakeFiles/test_multi_graph_matching_input.dir/rule

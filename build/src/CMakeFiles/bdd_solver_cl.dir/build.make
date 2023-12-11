@@ -98,6 +98,7 @@ src/bdd_solver_cl: src/libbdd_mma_smooth.a
 src/bdd_solver_cl: src/libbdd_parallel_mma.a
 src/bdd_solver_cl: src/libbdd_parallel_mma_smooth.a
 src/bdd_solver_cl: src/libbdd_cuda.a
+src/bdd_solver_cl: src/libmulti_gpu.a
 src/bdd_solver_cl: src/libbdd_multi_parallel_mma.a
 src/bdd_solver_cl: src/libbdd_lbfgs_parallel_mma.a
 src/bdd_solver_cl: src/libbdd_lbfgs_cuda_mma.a
@@ -110,6 +111,7 @@ src/bdd_solver_cl: src/libILP_input.a
 src/bdd_solver_cl: src/libmm_primal_decoder.a
 src/bdd_solver_cl: src/libbdd_cuda_base.a
 src/bdd_solver_cl: src/libbdd_cuda_parallel_mma.a
+src/bdd_solver_cl: src/libbdd_multi_gpu_mma.a
 src/bdd_solver_cl: src/libbdd_multi_parallel_mma_base.a
 src/bdd_solver_cl: src/libincremental_mm_agreement_rounding_cuda.a
 src/bdd_solver_cl: src/bdd_manager/libbdd_node.a
@@ -126,6 +128,7 @@ src/bdd_solver_cl: src/libbdd_mma_smooth.a
 src/bdd_solver_cl: src/libbdd_parallel_mma.a
 src/bdd_solver_cl: src/libbdd_parallel_mma_smooth.a
 src/bdd_solver_cl: src/libbdd_cuda.a
+src/bdd_solver_cl: src/libmulti_gpu.a
 src/bdd_solver_cl: src/libbdd_multi_parallel_mma.a
 src/bdd_solver_cl: src/libbdd_lbfgs_parallel_mma.a
 src/bdd_solver_cl: src/libbdd_lbfgs_cuda_mma.a
@@ -138,6 +141,7 @@ src/bdd_solver_cl: src/libILP_input.a
 src/bdd_solver_cl: src/libmm_primal_decoder.a
 src/bdd_solver_cl: src/libbdd_cuda_base.a
 src/bdd_solver_cl: src/libbdd_cuda_parallel_mma.a
+src/bdd_solver_cl: src/libbdd_multi_gpu_mma.a
 src/bdd_solver_cl: src/libbdd_multi_parallel_mma_base.a
 src/bdd_solver_cl: src/libincremental_mm_agreement_rounding_cuda.a
 src/bdd_solver_cl: src/bdd_manager/libbdd_node.a

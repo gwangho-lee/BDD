@@ -107,6 +107,7 @@ test/test_exp_sum: src/libbdd_mma_smooth.a
 test/test_exp_sum: src/libbdd_parallel_mma.a
 test/test_exp_sum: src/libbdd_parallel_mma_smooth.a
 test/test_exp_sum: src/libbdd_cuda.a
+test/test_exp_sum: src/libmulti_gpu.a
 test/test_exp_sum: src/libbdd_multi_parallel_mma.a
 test/test_exp_sum: src/libbdd_lbfgs_parallel_mma.a
 test/test_exp_sum: src/libbdd_lbfgs_cuda_mma.a
@@ -117,6 +118,7 @@ test/test_exp_sum: src/libOPB_parser.a
 test/test_exp_sum: src/libmm_primal_decoder.a
 test/test_exp_sum: src/libbdd_cuda_base.a
 test/test_exp_sum: src/libbdd_cuda_parallel_mma.a
+test/test_exp_sum: src/libbdd_multi_gpu_mma.a
 test/test_exp_sum: src/libbdd_multi_parallel_mma_base.a
 test/test_exp_sum: src/libincremental_mm_agreement_rounding_cuda.a
 test/test_exp_sum: src/libconvert_pb_to_bdd.a
@@ -135,6 +137,7 @@ test/test_exp_sum: src/libbdd_mma_smooth.a
 test/test_exp_sum: src/libbdd_parallel_mma.a
 test/test_exp_sum: src/libbdd_parallel_mma_smooth.a
 test/test_exp_sum: src/libbdd_cuda.a
+test/test_exp_sum: src/libmulti_gpu.a
 test/test_exp_sum: src/libbdd_multi_parallel_mma.a
 test/test_exp_sum: src/libbdd_lbfgs_parallel_mma.a
 test/test_exp_sum: src/libbdd_lbfgs_cuda_mma.a
@@ -145,6 +148,7 @@ test/test_exp_sum: src/libOPB_parser.a
 test/test_exp_sum: src/libmm_primal_decoder.a
 test/test_exp_sum: src/libbdd_cuda_base.a
 test/test_exp_sum: src/libbdd_cuda_parallel_mma.a
+test/test_exp_sum: src/libbdd_multi_gpu_mma.a
 test/test_exp_sum: src/libbdd_multi_parallel_mma_base.a
 test/test_exp_sum: src/libincremental_mm_agreement_rounding_cuda.a
 test/test_exp_sum: src/libconvert_pb_to_bdd.a

@@ -386,7 +386,7 @@ src/CMakeFiles/bdd_solver.dir/bdd_solver.cpp.o: \
  /usr/include/c++/8/bits/stl_list.h /usr/include/c++/8/bits/list.tcc \
  /home/gl9102/BDD/include/bdd_mma.h \
  /home/gl9102/BDD/include/bdd_mma_smooth.h \
- /home/gl9102/BDD/include/bdd_cuda.h \
+ /home/gl9102/BDD/include/bdd_cuda.h /home/gl9102/BDD/include/multi_gpu.h \
  /home/gl9102/BDD/include/bdd_parallel_mma.h \
  /home/gl9102/BDD/include/bdd_parallel_mma_smooth.h \
  /home/gl9102/BDD/include/bdd_multi_parallel_mma.h \

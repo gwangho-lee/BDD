@@ -21,6 +21,7 @@ namespace LPMP {
                 void add_to_constant(const double c);
                 double lower_bound();
                 void iteration();
+                void iteration(const int num_gpus, const size_t max_iter, const double lb_initial);
                 void backward_run(); 
                 two_dim_variable_array<std::array<double,2>> min_marginals();
                 void fix_variable(const size_t var, const bool value);

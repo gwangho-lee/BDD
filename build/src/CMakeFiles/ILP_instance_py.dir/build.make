@@ -108,6 +108,7 @@ src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_mma_smooth.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma_smooth.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda.a
+src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libmulti_gpu.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_parallel_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_cuda_mma.a
@@ -118,6 +119,7 @@ src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libOPB_parser.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libmm_primal_decoder.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_base.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_parallel_mma.a
+src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_gpu_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma_base.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libincremental_mm_agreement_rounding_cuda.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libconvert_pb_to_bdd.a
@@ -136,6 +138,7 @@ src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_mma_smooth.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma_smooth.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda.a
+src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libmulti_gpu.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_parallel_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_cuda_mma.a
@@ -146,6 +149,7 @@ src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libOPB_parser.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libmm_primal_decoder.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_base.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_parallel_mma.a
+src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_gpu_mma.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma_base.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libincremental_mm_agreement_rounding_cuda.a
 src/ILP_instance_py.cpython-36m-x86_64-linux-gnu.so: src/libconvert_pb_to_bdd.a

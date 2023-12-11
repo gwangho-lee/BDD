@@ -76,6 +76,10 @@ namespace LPMP {
     }
 
     template<typename REAL>
+    void bdd_parallel_mma<REAL>::iteration(const int num_gpus, const size_t max_iter, const double lb_initial)
+    {}
+
+    template<typename REAL>
     void bdd_parallel_mma<REAL>::distribute_delta()
     {
         pimpl->base.distribute_delta();

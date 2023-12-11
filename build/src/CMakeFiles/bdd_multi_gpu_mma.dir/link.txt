@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbdd_multi_gpu_mma.a CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o
+/usr/bin/ranlib libbdd_multi_gpu_mma.a

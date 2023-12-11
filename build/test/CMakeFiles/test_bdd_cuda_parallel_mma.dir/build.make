@@ -108,6 +108,7 @@ test/test_bdd_cuda_parallel_mma: src/libbdd_mma_smooth.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_parallel_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_parallel_mma_smooth.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_cuda.a
+test/test_bdd_cuda_parallel_mma: src/libmulti_gpu.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_multi_parallel_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_lbfgs_parallel_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_lbfgs_cuda_mma.a
@@ -117,6 +118,7 @@ test/test_bdd_cuda_parallel_mma: src/libILP_parser.a
 test/test_bdd_cuda_parallel_mma: src/libOPB_parser.a
 test/test_bdd_cuda_parallel_mma: src/libILP_input.a
 test/test_bdd_cuda_parallel_mma: src/libmm_primal_decoder.a
+test/test_bdd_cuda_parallel_mma: src/libbdd_multi_gpu_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_multi_parallel_mma_base.a
 test/test_bdd_cuda_parallel_mma: src/libconvert_pb_to_bdd.a
 test/test_bdd_cuda_parallel_mma: src/liblineq_bdd.a
@@ -136,6 +138,7 @@ test/test_bdd_cuda_parallel_mma: src/libbdd_mma_smooth.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_parallel_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_parallel_mma_smooth.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_cuda.a
+test/test_bdd_cuda_parallel_mma: src/libmulti_gpu.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_multi_parallel_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_lbfgs_parallel_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_lbfgs_cuda_mma.a
@@ -145,6 +148,7 @@ test/test_bdd_cuda_parallel_mma: src/libILP_parser.a
 test/test_bdd_cuda_parallel_mma: src/libOPB_parser.a
 test/test_bdd_cuda_parallel_mma: src/libILP_input.a
 test/test_bdd_cuda_parallel_mma: src/libmm_primal_decoder.a
+test/test_bdd_cuda_parallel_mma: src/libbdd_multi_gpu_mma.a
 test/test_bdd_cuda_parallel_mma: src/libbdd_multi_parallel_mma_base.a
 test/test_bdd_cuda_parallel_mma: src/libconvert_pb_to_bdd.a
 test/test_bdd_cuda_parallel_mma: src/liblineq_bdd.a

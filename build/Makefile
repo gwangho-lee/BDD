@@ -211,19 +211,6 @@ demos/fast:
 .PHONY : demos/fast
 
 #=============================================================================
-# Target rules for targets named bdd_multi_parallel_mma_base
-
-# Build rule for target.
-bdd_multi_parallel_mma_base: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_multi_parallel_mma_base
-.PHONY : bdd_multi_parallel_mma_base
-
-# fast build rule for target.
-bdd_multi_parallel_mma_base/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build
-.PHONY : bdd_multi_parallel_mma_base/fast
-
-#=============================================================================
 # Target rules for targets named bdd_lbfgs_parallel_mma
 
 # Build rule for target.
@@ -315,30 +302,43 @@ bdd_mma_smooth/fast:
 .PHONY : bdd_mma_smooth/fast
 
 #=============================================================================
-# Target rules for targets named convert_opb_to_lp
+# Target rules for targets named bdd_multi_gpu_mma
 
 # Build rule for target.
-convert_opb_to_lp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 convert_opb_to_lp
-.PHONY : convert_opb_to_lp
+bdd_multi_gpu_mma: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_multi_gpu_mma
+.PHONY : bdd_multi_gpu_mma
 
 # fast build rule for target.
-convert_opb_to_lp/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
-.PHONY : convert_opb_to_lp/fast
+bdd_multi_gpu_mma/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/build
+.PHONY : bdd_multi_gpu_mma/fast
 
 #=============================================================================
-# Target rules for targets named lineq_bdd
+# Target rules for targets named bdd_solver_cl
 
 # Build rule for target.
-lineq_bdd: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lineq_bdd
-.PHONY : lineq_bdd
+bdd_solver_cl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_solver_cl
+.PHONY : bdd_solver_cl
 
 # fast build rule for target.
-lineq_bdd/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/build
-.PHONY : lineq_bdd/fast
+bdd_solver_cl/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/build
+.PHONY : bdd_solver_cl/fast
+
+#=============================================================================
+# Target rules for targets named bdd_preprocessor
+
+# Build rule for target.
+bdd_preprocessor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_preprocessor
+.PHONY : bdd_preprocessor
+
+# fast build rule for target.
+bdd_preprocessor/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/build
+.PHONY : bdd_preprocessor/fast
 
 #=============================================================================
 # Target rules for targets named bdd_cuda
@@ -393,6 +393,45 @@ transitive_closure_dag/fast:
 .PHONY : transitive_closure_dag/fast
 
 #=============================================================================
+# Target rules for targets named bdd_multi_parallel_mma_base
+
+# Build rule for target.
+bdd_multi_parallel_mma_base: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_multi_parallel_mma_base
+.PHONY : bdd_multi_parallel_mma_base
+
+# fast build rule for target.
+bdd_multi_parallel_mma_base/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build
+.PHONY : bdd_multi_parallel_mma_base/fast
+
+#=============================================================================
+# Target rules for targets named lineq_bdd
+
+# Build rule for target.
+lineq_bdd: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lineq_bdd
+.PHONY : lineq_bdd
+
+# fast build rule for target.
+lineq_bdd/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/build
+.PHONY : lineq_bdd/fast
+
+#=============================================================================
+# Target rules for targets named convert_opb_to_lp
+
+# Build rule for target.
+convert_opb_to_lp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 convert_opb_to_lp
+.PHONY : convert_opb_to_lp
+
+# fast build rule for target.
+convert_opb_to_lp/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
+.PHONY : convert_opb_to_lp/fast
+
+#=============================================================================
 # Target rules for targets named bdd_cuda_learned_mma
 
 # Build rule for target.
@@ -419,30 +458,17 @@ ILP_instance_py/fast:
 .PHONY : ILP_instance_py/fast
 
 #=============================================================================
-# Target rules for targets named convert_pb_to_bdd
+# Target rules for targets named multi_gpu
 
 # Build rule for target.
-convert_pb_to_bdd: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 convert_pb_to_bdd
-.PHONY : convert_pb_to_bdd
+multi_gpu: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_gpu
+.PHONY : multi_gpu
 
 # fast build rule for target.
-convert_pb_to_bdd/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/build
-.PHONY : convert_pb_to_bdd/fast
-
-#=============================================================================
-# Target rules for targets named bdd_subgradient
-
-# Build rule for target.
-bdd_subgradient: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_subgradient
-.PHONY : bdd_subgradient
-
-# fast build rule for target.
-bdd_subgradient/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/build
-.PHONY : bdd_subgradient/fast
+multi_gpu/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/build
+.PHONY : multi_gpu/fast
 
 #=============================================================================
 # Target rules for targets named bdd_cuda_base
@@ -510,6 +536,32 @@ bdd_cuda_parallel_mma/fast:
 .PHONY : bdd_cuda_parallel_mma/fast
 
 #=============================================================================
+# Target rules for targets named convert_pb_to_bdd
+
+# Build rule for target.
+convert_pb_to_bdd: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 convert_pb_to_bdd
+.PHONY : convert_pb_to_bdd
+
+# fast build rule for target.
+convert_pb_to_bdd/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/build
+.PHONY : convert_pb_to_bdd/fast
+
+#=============================================================================
+# Target rules for targets named bdd_subgradient
+
+# Build rule for target.
+bdd_subgradient: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_subgradient
+.PHONY : bdd_subgradient
+
+# fast build rule for target.
+bdd_subgradient/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/build
+.PHONY : bdd_subgradient/fast
+
+#=============================================================================
 # Target rules for targets named bdd_cuda_learned_mma_py
 
 # Build rule for target.
@@ -521,19 +573,6 @@ bdd_cuda_learned_mma_py: cmake_check_build_system
 bdd_cuda_learned_mma_py/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build.make src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build
 .PHONY : bdd_cuda_learned_mma_py/fast
-
-#=============================================================================
-# Target rules for targets named bdd_solver_cl
-
-# Build rule for target.
-bdd_solver_cl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_solver_cl
-.PHONY : bdd_solver_cl
-
-# fast build rule for target.
-bdd_solver_cl/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/build
-.PHONY : bdd_solver_cl/fast
 
 #=============================================================================
 # Target rules for targets named convert_lp_to_opb
@@ -586,19 +625,6 @@ bdd_solver_py: cmake_check_build_system
 bdd_solver_py/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_py.dir/build.make src/CMakeFiles/bdd_solver_py.dir/build
 .PHONY : bdd_solver_py/fast
-
-#=============================================================================
-# Target rules for targets named bdd_preprocessor
-
-# Build rule for target.
-bdd_preprocessor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_preprocessor
-.PHONY : bdd_preprocessor
-
-# fast build rule for target.
-bdd_preprocessor/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/build
-.PHONY : bdd_preprocessor/fast
 
 #=============================================================================
 # Target rules for targets named bdd_node_cache
@@ -1621,6 +1647,7 @@ help:
 	@echo "... bdd_mma"
 	@echo "... bdd_mma_smooth"
 	@echo "... bdd_mp_py"
+	@echo "... bdd_multi_gpu_mma"
 	@echo "... bdd_multi_parallel_mma"
 	@echo "... bdd_multi_parallel_mma_base"
 	@echo "... bdd_node"
@@ -1644,6 +1671,7 @@ help:
 	@echo "... mrf_input"
 	@echo "... mrf_solver"
 	@echo "... mrf_uai_parser"
+	@echo "... multi_gpu"
 	@echo "... multi_graph_matching_input"
 	@echo "... multi_graph_matching_solver"
 	@echo "... test_ILP_input"

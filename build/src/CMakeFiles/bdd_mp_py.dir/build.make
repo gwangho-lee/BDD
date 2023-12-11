@@ -109,6 +109,7 @@ src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_mma_smooth.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma_smooth.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda.a
+src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libmulti_gpu.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_parallel_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_cuda_mma.a
@@ -118,6 +119,7 @@ src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libOPB_parser.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libmm_primal_decoder.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_base.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_parallel_mma.a
+src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_gpu_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma_base.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libincremental_mm_agreement_rounding_cuda.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libILP_input.a
@@ -137,6 +139,7 @@ src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_mma_smooth.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_parallel_mma_smooth.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda.a
+src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libmulti_gpu.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_parallel_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_lbfgs_cuda_mma.a
@@ -146,6 +149,7 @@ src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libOPB_parser.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libmm_primal_decoder.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_base.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_cuda_parallel_mma.a
+src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_gpu_mma.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libbdd_multi_parallel_mma_base.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: src/libincremental_mm_agreement_rounding_cuda.a
 src/bdd_mp_py.cpython-36m-x86_64-linux-gnu.so: /usr/lib/gcc/x86_64-redhat-linux/8/libgomp.so

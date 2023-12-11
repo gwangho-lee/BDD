@@ -77,6 +77,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -97,37 +109,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Devel\" \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -139,6 +120,25 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Devel\" \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -170,20 +170,6 @@ preinstall/fast:
 depend:
 	cd /home/gl9102/BDD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
-.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
-
-# Convenience name for target.
-bdd_multi_parallel_mma_base: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
-.PHONY : bdd_multi_parallel_mma_base
-
-# fast build rule for target.
-bdd_multi_parallel_mma_base/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build
-.PHONY : bdd_multi_parallel_mma_base/fast
 
 # Convenience name for target.
 src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/rule:
@@ -284,32 +270,46 @@ bdd_mma_smooth/fast:
 .PHONY : bdd_mma_smooth/fast
 
 # Convenience name for target.
-src/CMakeFiles/convert_opb_to_lp.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_opb_to_lp.dir/rule
-.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/rule
+src/CMakeFiles/bdd_multi_gpu_mma.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_gpu_mma.dir/rule
+.PHONY : src/CMakeFiles/bdd_multi_gpu_mma.dir/rule
 
 # Convenience name for target.
-convert_opb_to_lp: src/CMakeFiles/convert_opb_to_lp.dir/rule
-.PHONY : convert_opb_to_lp
+bdd_multi_gpu_mma: src/CMakeFiles/bdd_multi_gpu_mma.dir/rule
+.PHONY : bdd_multi_gpu_mma
 
 # fast build rule for target.
-convert_opb_to_lp/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
-.PHONY : convert_opb_to_lp/fast
+bdd_multi_gpu_mma/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/build
+.PHONY : bdd_multi_gpu_mma/fast
 
 # Convenience name for target.
-src/CMakeFiles/lineq_bdd.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/lineq_bdd.dir/rule
-.PHONY : src/CMakeFiles/lineq_bdd.dir/rule
+src/CMakeFiles/bdd_solver_cl.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_solver_cl.dir/rule
+.PHONY : src/CMakeFiles/bdd_solver_cl.dir/rule
 
 # Convenience name for target.
-lineq_bdd: src/CMakeFiles/lineq_bdd.dir/rule
-.PHONY : lineq_bdd
+bdd_solver_cl: src/CMakeFiles/bdd_solver_cl.dir/rule
+.PHONY : bdd_solver_cl
 
 # fast build rule for target.
-lineq_bdd/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/build
-.PHONY : lineq_bdd/fast
+bdd_solver_cl/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/build
+.PHONY : bdd_solver_cl/fast
+
+# Convenience name for target.
+src/CMakeFiles/bdd_preprocessor.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_preprocessor.dir/rule
+.PHONY : src/CMakeFiles/bdd_preprocessor.dir/rule
+
+# Convenience name for target.
+bdd_preprocessor: src/CMakeFiles/bdd_preprocessor.dir/rule
+.PHONY : bdd_preprocessor
+
+# fast build rule for target.
+bdd_preprocessor/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/build
+.PHONY : bdd_preprocessor/fast
 
 # Convenience name for target.
 src/CMakeFiles/bdd_cuda.dir/rule:
@@ -368,6 +368,48 @@ transitive_closure_dag/fast:
 .PHONY : transitive_closure_dag/fast
 
 # Convenience name for target.
+src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
+.PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
+
+# Convenience name for target.
+bdd_multi_parallel_mma_base: src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
+.PHONY : bdd_multi_parallel_mma_base
+
+# fast build rule for target.
+bdd_multi_parallel_mma_base/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build.make src/CMakeFiles/bdd_multi_parallel_mma_base.dir/build
+.PHONY : bdd_multi_parallel_mma_base/fast
+
+# Convenience name for target.
+src/CMakeFiles/lineq_bdd.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/lineq_bdd.dir/rule
+.PHONY : src/CMakeFiles/lineq_bdd.dir/rule
+
+# Convenience name for target.
+lineq_bdd: src/CMakeFiles/lineq_bdd.dir/rule
+.PHONY : lineq_bdd
+
+# fast build rule for target.
+lineq_bdd/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/lineq_bdd.dir/build.make src/CMakeFiles/lineq_bdd.dir/build
+.PHONY : lineq_bdd/fast
+
+# Convenience name for target.
+src/CMakeFiles/convert_opb_to_lp.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_opb_to_lp.dir/rule
+.PHONY : src/CMakeFiles/convert_opb_to_lp.dir/rule
+
+# Convenience name for target.
+convert_opb_to_lp: src/CMakeFiles/convert_opb_to_lp.dir/rule
+.PHONY : convert_opb_to_lp
+
+# fast build rule for target.
+convert_opb_to_lp/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
+.PHONY : convert_opb_to_lp/fast
+
+# Convenience name for target.
 src/CMakeFiles/bdd_cuda_learned_mma.dir/rule:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda_learned_mma.dir/rule
 .PHONY : src/CMakeFiles/bdd_cuda_learned_mma.dir/rule
@@ -396,32 +438,18 @@ ILP_instance_py/fast:
 .PHONY : ILP_instance_py/fast
 
 # Convenience name for target.
-src/CMakeFiles/convert_pb_to_bdd.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_pb_to_bdd.dir/rule
-.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/rule
+src/CMakeFiles/multi_gpu.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/multi_gpu.dir/rule
+.PHONY : src/CMakeFiles/multi_gpu.dir/rule
 
 # Convenience name for target.
-convert_pb_to_bdd: src/CMakeFiles/convert_pb_to_bdd.dir/rule
-.PHONY : convert_pb_to_bdd
+multi_gpu: src/CMakeFiles/multi_gpu.dir/rule
+.PHONY : multi_gpu
 
 # fast build rule for target.
-convert_pb_to_bdd/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/build
-.PHONY : convert_pb_to_bdd/fast
-
-# Convenience name for target.
-src/CMakeFiles/bdd_subgradient.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_subgradient.dir/rule
-.PHONY : src/CMakeFiles/bdd_subgradient.dir/rule
-
-# Convenience name for target.
-bdd_subgradient: src/CMakeFiles/bdd_subgradient.dir/rule
-.PHONY : bdd_subgradient
-
-# fast build rule for target.
-bdd_subgradient/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/build
-.PHONY : bdd_subgradient/fast
+multi_gpu/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/build
+.PHONY : multi_gpu/fast
 
 # Convenience name for target.
 src/CMakeFiles/bdd_cuda_base.dir/rule:
@@ -494,6 +522,34 @@ bdd_cuda_parallel_mma/fast:
 .PHONY : bdd_cuda_parallel_mma/fast
 
 # Convenience name for target.
+src/CMakeFiles/convert_pb_to_bdd.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/convert_pb_to_bdd.dir/rule
+.PHONY : src/CMakeFiles/convert_pb_to_bdd.dir/rule
+
+# Convenience name for target.
+convert_pb_to_bdd: src/CMakeFiles/convert_pb_to_bdd.dir/rule
+.PHONY : convert_pb_to_bdd
+
+# fast build rule for target.
+convert_pb_to_bdd/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_pb_to_bdd.dir/build.make src/CMakeFiles/convert_pb_to_bdd.dir/build
+.PHONY : convert_pb_to_bdd/fast
+
+# Convenience name for target.
+src/CMakeFiles/bdd_subgradient.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_subgradient.dir/rule
+.PHONY : src/CMakeFiles/bdd_subgradient.dir/rule
+
+# Convenience name for target.
+bdd_subgradient: src/CMakeFiles/bdd_subgradient.dir/rule
+.PHONY : bdd_subgradient
+
+# fast build rule for target.
+bdd_subgradient/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_subgradient.dir/build.make src/CMakeFiles/bdd_subgradient.dir/build
+.PHONY : bdd_subgradient/fast
+
+# Convenience name for target.
 src/CMakeFiles/bdd_cuda_learned_mma_py.dir/rule:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda_learned_mma_py.dir/rule
 .PHONY : src/CMakeFiles/bdd_cuda_learned_mma_py.dir/rule
@@ -506,20 +562,6 @@ bdd_cuda_learned_mma_py: src/CMakeFiles/bdd_cuda_learned_mma_py.dir/rule
 bdd_cuda_learned_mma_py/fast:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build.make src/CMakeFiles/bdd_cuda_learned_mma_py.dir/build
 .PHONY : bdd_cuda_learned_mma_py/fast
-
-# Convenience name for target.
-src/CMakeFiles/bdd_solver_cl.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_solver_cl.dir/rule
-.PHONY : src/CMakeFiles/bdd_solver_cl.dir/rule
-
-# Convenience name for target.
-bdd_solver_cl: src/CMakeFiles/bdd_solver_cl.dir/rule
-.PHONY : bdd_solver_cl
-
-# fast build rule for target.
-bdd_solver_cl/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/build
-.PHONY : bdd_solver_cl/fast
 
 # Convenience name for target.
 src/CMakeFiles/convert_lp_to_opb.dir/rule:
@@ -576,20 +618,6 @@ bdd_solver_py: src/CMakeFiles/bdd_solver_py.dir/rule
 bdd_solver_py/fast:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_py.dir/build.make src/CMakeFiles/bdd_solver_py.dir/build
 .PHONY : bdd_solver_py/fast
-
-# Convenience name for target.
-src/CMakeFiles/bdd_preprocessor.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_preprocessor.dir/rule
-.PHONY : src/CMakeFiles/bdd_preprocessor.dir/rule
-
-# Convenience name for target.
-bdd_preprocessor: src/CMakeFiles/bdd_preprocessor.dir/rule
-.PHONY : bdd_preprocessor
-
-# fast build rule for target.
-bdd_preprocessor/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_preprocessor.dir/build.make src/CMakeFiles/bdd_preprocessor.dir/build
-.PHONY : bdd_preprocessor/fast
 
 ILP_input.o: ILP_input.cpp.o
 .PHONY : ILP_input.o
@@ -926,6 +954,30 @@ bdd_mp_py.s: bdd_mp_py.cpp.s
 bdd_mp_py.cpp.s:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_mp_py.dir/build.make src/CMakeFiles/bdd_mp_py.dir/bdd_mp_py.cpp.s
 .PHONY : bdd_mp_py.cpp.s
+
+bdd_multi_gpu_mma.o: bdd_multi_gpu_mma.cu.o
+.PHONY : bdd_multi_gpu_mma.o
+
+# target to build an object file
+bdd_multi_gpu_mma.cu.o:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o
+.PHONY : bdd_multi_gpu_mma.cu.o
+
+bdd_multi_gpu_mma.i: bdd_multi_gpu_mma.cu.i
+.PHONY : bdd_multi_gpu_mma.i
+
+# target to preprocess a source file
+bdd_multi_gpu_mma.cu.i:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.i
+.PHONY : bdd_multi_gpu_mma.cu.i
+
+bdd_multi_gpu_mma.s: bdd_multi_gpu_mma.cu.s
+.PHONY : bdd_multi_gpu_mma.s
+
+# target to generate assembly for a file
+bdd_multi_gpu_mma.cu.s:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_multi_gpu_mma.dir/build.make src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.s
+.PHONY : bdd_multi_gpu_mma.cu.s
 
 bdd_multi_parallel_mma.o: bdd_multi_parallel_mma.cpp.o
 .PHONY : bdd_multi_parallel_mma.o
@@ -1287,6 +1339,30 @@ mm_primal_decoder.cpp.s:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mm_primal_decoder.dir/build.make src/CMakeFiles/mm_primal_decoder.dir/mm_primal_decoder.cpp.s
 .PHONY : mm_primal_decoder.cpp.s
 
+multi_gpu.o: multi_gpu.cpp.o
+.PHONY : multi_gpu.o
+
+# target to build an object file
+multi_gpu.cpp.o:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o
+.PHONY : multi_gpu.cpp.o
+
+multi_gpu.i: multi_gpu.cpp.i
+.PHONY : multi_gpu.i
+
+# target to preprocess a source file
+multi_gpu.cpp.i:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.i
+.PHONY : multi_gpu.cpp.i
+
+multi_gpu.s: multi_gpu.cpp.s
+.PHONY : multi_gpu.s
+
+# target to generate assembly for a file
+multi_gpu.cpp.s:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/multi_gpu.dir/build.make src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.s
+.PHONY : multi_gpu.cpp.s
+
 transitive_closure_dag.o: transitive_closure_dag.cpp.o
 .PHONY : transitive_closure_dag.o
 
@@ -1338,6 +1414,7 @@ help:
 	@echo "... bdd_mma"
 	@echo "... bdd_mma_smooth"
 	@echo "... bdd_mp_py"
+	@echo "... bdd_multi_gpu_mma"
 	@echo "... bdd_multi_parallel_mma"
 	@echo "... bdd_multi_parallel_mma_base"
 	@echo "... bdd_parallel_mma"
@@ -1353,6 +1430,7 @@ help:
 	@echo "... incremental_mm_agreement_rounding_cuda"
 	@echo "... lineq_bdd"
 	@echo "... mm_primal_decoder"
+	@echo "... multi_gpu"
 	@echo "... transitive_closure_dag"
 	@echo "... ILP_input.o"
 	@echo "... ILP_input.i"
@@ -1396,6 +1474,9 @@ help:
 	@echo "... bdd_mp_py.o"
 	@echo "... bdd_mp_py.i"
 	@echo "... bdd_mp_py.s"
+	@echo "... bdd_multi_gpu_mma.o"
+	@echo "... bdd_multi_gpu_mma.i"
+	@echo "... bdd_multi_gpu_mma.s"
 	@echo "... bdd_multi_parallel_mma.o"
 	@echo "... bdd_multi_parallel_mma.i"
 	@echo "... bdd_multi_parallel_mma.s"
@@ -1441,6 +1522,9 @@ help:
 	@echo "... mm_primal_decoder.o"
 	@echo "... mm_primal_decoder.i"
 	@echo "... mm_primal_decoder.s"
+	@echo "... multi_gpu.o"
+	@echo "... multi_gpu.i"
+	@echo "... multi_gpu.s"
 	@echo "... transitive_closure_dag.o"
 	@echo "... transitive_closure_dag.i"
 	@echo "... transitive_closure_dag.s"

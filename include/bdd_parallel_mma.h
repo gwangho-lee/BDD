@@ -24,6 +24,7 @@ namespace LPMP {
             size_t nr_bdds(const size_t var) const;
             double lower_bound();
             void iteration();
+            void iteration(const int num_gpus, const size_t max_iter, const double lb_initial);
             void distribute_delta();
             void backward_run(); 
             two_dim_variable_array<std::array<double,2>> min_marginals();

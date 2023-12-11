@@ -1788,6 +1788,7 @@ src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/incremental_mm_agreeme
   _deps/cereal-src/include/cereal/archives/binary.hpp \
   /usr/include/c++/8/sstream \
   /usr/include/c++/8/bits/sstream.tcc \
+  ../include/bdd_multi_gpu_mma.h \
   ../include/bdd_cuda_learned_mma.h \
   ../include/lbfgs.h \
   /usr/include/c++/8/deque \
@@ -1811,6 +1812,8 @@ src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/incremental_mm_agreeme
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/adl/inner_product.h:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/inner_product.h:
+
+../include/bdd_multi_gpu_mma.h:
 
 _deps/cereal-src/include/cereal/archives/binary.hpp:
 

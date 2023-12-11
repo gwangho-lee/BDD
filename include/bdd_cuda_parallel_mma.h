@@ -14,13 +14,18 @@ namespace LPMP {
             bdd_cuda_parallel_mma(const BDD::bdd_collection& bdd_col);
 
             void iteration(const REAL omega = 0.5);
+            void iteration(const size_t max_ter, const double lb_initial, const REAL omega = 0.5);
 
             void forward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi);
             void backward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi);
 
+            void fast_forward_mm(const REAL omega, REAL *delta_lo_hi);
+            void fast_backward_mm(const REAL omega, REAL *delta_lo_hi);
+
             // Normalize delta by num BDDs to distribute isotropically.
             // delta_lo_ -> delta_hi_/#BDDs, delta_hi_ -> delta_hi_/#BDDs
             void normalize_delta(thrust::device_vector<REAL>& delta_lo_hi) const;
+            void fast_normalize_delta(REAL *delta_lo_hi) const;
 
             thrust::device_vector<REAL> net_solver_costs() const;
 
@@ -35,6 +40,7 @@ namespace LPMP {
 
             // compute delta_lo_ and delta_hi_ (per variable) from mm_to_distribute (per bdd node)
             void compute_delta(const thrust::device_ptr<const REAL> mm_to_distribute, thrust::device_ptr<REAL> delta_lo_hi) const;
+            void fast_compute_delta(const thrust::device_ptr<const REAL> mm_to_distribute, REAL *delta_lo_hi) const;
 
             // set argument to all infinity
             void flush_mm(thrust::device_ptr<REAL> mm_diff_ptr);

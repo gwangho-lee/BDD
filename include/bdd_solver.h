@@ -6,6 +6,7 @@
 #include "bdd_mma.h"
 #include "bdd_mma_smooth.h"
 #include "bdd_cuda.h"
+#include "multi_gpu.h"
 #include "bdd_parallel_mma.h"
 #include "bdd_parallel_mma_smooth.h"
 #include "bdd_multi_parallel_mma.h"
@@ -42,6 +43,9 @@ namespace LPMP {
         ILP_input ilp;
         ILP_input::variable_order var_order = ILP_input::variable_order::input;
 
+        // multi GPU //
+        int num_gpus = 1;
+
         // termination criteria //
         size_t max_iter = 1000;
         double tolerance = 1e-9;
@@ -49,7 +53,7 @@ namespace LPMP {
         double time_limit = 3600;
         //////////////////////////
 
-        enum class bdd_solver_impl { sequential_mma, mma_cuda, parallel_mma, hybrid_parallel_mma, lbfgs_cuda_mma, lbfgs_parallel_mma, subgradient } bdd_solver_impl_;
+        enum class bdd_solver_impl { sequential_mma, mma_cuda, mma_multi_gpu, parallel_mma, hybrid_parallel_mma, lbfgs_cuda_mma, lbfgs_parallel_mma, subgradient } bdd_solver_impl_;
         enum class bdd_solver_precision { single_prec, double_prec } bdd_solver_precision_ = bdd_solver_precision::double_prec;
         bool solution_statistics = false;
 
@@ -125,6 +129,7 @@ namespace LPMP {
             using solver_type = std::variant<
                 bdd_mma<float>, bdd_mma<double>, bdd_mma_smooth<float>, bdd_mma_smooth<double>,
                 bdd_cuda<float>, bdd_cuda<double>,
+                multi_gpu<float>, multi_gpu<double>,
                 bdd_parallel_mma<float>, bdd_parallel_mma<double>, bdd_parallel_mma_smooth<float>, bdd_parallel_mma_smooth<double>,
                 bdd_multi_parallel_mma<float>, bdd_multi_parallel_mma<double>,
                 bdd_lbfgs_parallel_mma<double>,

@@ -72,6 +72,10 @@ namespace LPMP {
         }
 
     template<typename REAL>
+        void bdd_parallel_mma_smooth<REAL>::iteration(const int num_gpus, const size_t max_iter, const double lb_initial)
+        {}
+
+    template<typename REAL>
         double bdd_parallel_mma_smooth<REAL>::lower_bound()
         {
             return pimpl->parallel_mma.smooth_lower_bound();

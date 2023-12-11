@@ -1131,6 +1131,7 @@ namespace LPMP {
     template <class Archive>
     void bdd_cuda_base<REAL>::save(Archive& archive) const
     {
+        printf("TEST || save function\n");
         archive(
             primal_variable_index_,
             bdd_index_,

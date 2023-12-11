@@ -27,6 +27,7 @@ namespace LPMP {
             void set_avg_type(const averaging_type avg_type);
             double lower_bound();
             void iteration();
+            void iteration(const int num_gpus, const size_t max_iter, const double lb_initial);
             void backward_run();  // to do: remove, internals should not be exposed outside!
             two_dim_variable_array<std::array<double,2>> min_marginals();
             template<typename ITERATOR>

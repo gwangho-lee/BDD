@@ -72,7 +72,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/8/include;/usr/local/include;/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/opt/intel/oneapi/mpi/2021.3.1/include;/opt/intel/oneapi/dpl/2021.1.2/linux/include;/opt/intel/oneapi/mkl/2021.1.1/include;/opt/intel/oneapi/tbb/2021.1.1/include;/opt/intel/oneapi/compiler/2021.1.2/linux/include;/usr/lib/gcc/x86_64-redhat-linux/8/include;/usr/local/include;/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/8;/usr/lib64;/lib64;/usr/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/8;/usr/lib64;/lib64;/opt/intel/oneapi/mpi/2021.3.1/libfabric/lib;/opt/intel/oneapi/mpi/2021.3.1/lib/release;/opt/intel/oneapi/mpi/2021.3.1/lib;/opt/intel/oneapi/mkl/2021.1.1/lib/intel64;/opt/intel/oneapi/tbb/2021.1.1/lib/intel64/gcc4.8;/opt/intel/oneapi/compiler/2021.1.2/linux/lib;/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

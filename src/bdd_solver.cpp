@@ -56,7 +56,7 @@ namespace LPMP {
         bdd_log << "[print_statistics] minimum num. constraints per var = " << *std::min_element(num_constraints_per_var.begin(), num_constraints_per_var.end()) << "\n";
         bdd_log << "[print_statistics] maximum num. constraints per var = " << *std::max_element(num_constraints_per_var.begin(), num_constraints_per_var.end()) << "\n";
         bdd_log << "[print_statistics] mean num. constraints per var = " << std::accumulate(num_constraints_per_var.begin(), num_constraints_per_var.end(), 0.0) / num_constraints_per_var.size() << "\n";
-        
+
     }
 
     ILP_input parse_ilp_file(const std::string& filename)
@@ -117,7 +117,7 @@ namespace LPMP {
         // setup command line arguemnts
         CLI::App app("LPMP BDD solver");
         app.allow_extras();
- 
+
         auto input_group = app.add_option_group("input", "input either from file or as string");
         auto input_file_arg = input_group->add_option("-i, --input_file", input_file, "ILP input file name")
             ->check(CLI::ExistingPath);
@@ -132,18 +132,21 @@ namespace LPMP {
         optimization_group->add_flag("--minimization", [this](const size_t count) { assert(count > 0); this->optimization = optimization_type::minimization; }, "minimize problem");
         optimization_group->add_flag("--maximization", [this](const size_t count) { assert(count > 0); this->optimization = optimization_type::maximization; }, "maximization problem");
         optimization_group->require_option(0,1);
-        
+
         std::unordered_map<std::string, ILP_input::variable_order> variable_order_map{
             {"input", ILP_input::variable_order::input},
-            {"bfs", ILP_input::variable_order::bfs},
-            {"cuthill", ILP_input::variable_order::cuthill},
-            {"mindegree", ILP_input::variable_order::mindegree}
+                {"bfs", ILP_input::variable_order::bfs},
+                {"cuthill", ILP_input::variable_order::cuthill},
+                {"mindegree", ILP_input::variable_order::mindegree}
         };
 
         app.add_option("-o, --order", var_order, "variable order")
             ->transform(CLI::CheckedTransformer(variable_order_map, CLI::ignore_case));
 
         app.add_option("-m, --max_iter", max_iter, "maximal number of iterations, default value = 10000")
+            ->check(CLI::NonNegativeNumber);
+
+        app.add_option("-n, --num_gpus", num_gpus, "number of GPUs to use, default value = 1")
             ->check(CLI::NonNegativeNumber);
 
         app.add_option("--tolerance", tolerance, "termination criterion: lower bound relative progress tolerance, default value = " + std::to_string(tolerance))
@@ -157,14 +160,15 @@ namespace LPMP {
 
         std::unordered_map<std::string, bdd_solver_impl> bdd_solver_impl_map{
             {"mma",bdd_solver_impl::sequential_mma},
-            {"sequential_mma",bdd_solver_impl::sequential_mma},
-            {"parallel_mma",bdd_solver_impl::parallel_mma},
-            {"mma_cuda",bdd_solver_impl::mma_cuda},
-            {"cuda_mma",bdd_solver_impl::mma_cuda},
-            {"hybrid_parallel_mma",bdd_solver_impl::hybrid_parallel_mma},
-            {"lbfgs_cuda_mma", bdd_solver_impl::lbfgs_cuda_mma},
-            {"lbfgs_parallel_mma", bdd_solver_impl::lbfgs_parallel_mma},
-            {"subgradient", bdd_solver_impl::subgradient}
+                {"sequential_mma",bdd_solver_impl::sequential_mma},
+                {"parallel_mma",bdd_solver_impl::parallel_mma},
+                {"mma_cuda",bdd_solver_impl::mma_cuda},
+                {"cuda_mma",bdd_solver_impl::mma_cuda},
+                {"mma_multi_gpu",bdd_solver_impl::mma_multi_gpu},
+                {"hybrid_parallel_mma",bdd_solver_impl::hybrid_parallel_mma},
+                {"lbfgs_cuda_mma", bdd_solver_impl::lbfgs_cuda_mma},
+                {"lbfgs_parallel_mma", bdd_solver_impl::lbfgs_parallel_mma},
+                {"subgradient", bdd_solver_impl::subgradient}
         };
 
         auto solver_group = app.add_option_group("solver", "solver either a BDD solver, output of statistics or export of LP solved by BDD relaxation");
@@ -175,15 +179,15 @@ namespace LPMP {
 
         std::unordered_map<std::string, bdd_solver_precision> bdd_solver_precision_map{
             {"float",bdd_solver_precision::single_prec},
-            {"single",bdd_solver_precision::single_prec},
-            {"double",bdd_solver_precision::double_prec}
+                {"single",bdd_solver_precision::single_prec},
+                {"double",bdd_solver_precision::double_prec}
         };
 
         auto bdd_solver_precision_arg = app.add_option("--precision", bdd_solver_precision_, "floating point precision used in solver (default double)")
             ->transform(CLI::CheckedTransformer(bdd_solver_precision_map, CLI::ignore_case));
 
         app.add_option("--smoothing", smoothing, "smoothing, default value = 0 (no smoothing)")
-                ->check(CLI::PositiveNumber);
+            ->check(CLI::PositiveNumber);
 
         app.add_flag("--cuda_split_long_bdds", cuda_split_long_bdds, "split long BDDs into short ones, might make cuda mma faster for problems with a few long inequalities");
         app.add_flag("--cuda_split_long_bdds_with_implication_bdd", cuda_split_long_bdds_implication_bdd, "split long BDDs into short ones and additionally construct implication BDD");
@@ -234,7 +238,7 @@ namespace LPMP {
 
 
         auto tighten_arg = app.add_flag("--tighten", tighten, "tighten relaxation flag");
-        
+
         solver_group->add_flag("--statistics", statistics, "statistics of the problem");
 
         solver_group->add_option("--export_bdd_lp", export_bdd_lp_file, "filename for export of LP of the BDD relaxation");
@@ -271,14 +275,14 @@ namespace LPMP {
     bdd_solver_options::bdd_solver_options(ILP_input& _ilp) : ilp(_ilp) {}
 
     /*
-    bdd_solver::bdd_solver(int argc, char** argv)
-        : bdd_solver(bdd_solver_options(argc, argv))
-    {}
+       bdd_solver::bdd_solver(int argc, char** argv)
+       : bdd_solver(bdd_solver_options(argc, argv))
+       {}
 
-    bdd_solver::bdd_solver(const std::vector<std::string>& args)
-        : bdd_solver(bdd_solver_options(args))
-    {}
-    */
+       bdd_solver::bdd_solver(const std::vector<std::string>& args)
+       : bdd_solver(bdd_solver_options(args))
+       {}
+       */
 
     //bdd_solver::bdd_solver(bdd_solver_options&& opt)
     //    : options(opt)
@@ -454,6 +458,18 @@ namespace LPMP {
                 throw std::runtime_error("only float and double precision allowed");
             bdd_log << "[bdd solver] constructed CUDA based mma solver\n"; 
         }
+        else if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::mma_multi_gpu)
+        {
+            if(options.smoothing != 0)
+                throw std::runtime_error("no smoothing implemented for multi gpu");
+            if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::single_prec)
+                solver = std::move(multi_gpu<float>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
+            else if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::double_prec)
+                solver = std::move(multi_gpu<double>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
+            else
+                throw std::runtime_error("only float and double precision allowed");
+            bdd_log << "[fast solver] constructed multi gpu mma solver\n"; 
+        }
         else if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::hybrid_parallel_mma)
         {
             if(options.smoothing != 0)
@@ -472,16 +488,16 @@ namespace LPMP {
                 throw std::runtime_error("no smoothing implemented for LBFGS mma cuda");
             if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::single_prec)
                 solver = std::move(bdd_lbfgs_cuda_mma<float>(
-                    bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
-                    options.lbfgs_history_size,
-                    options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
-                    options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
+                            bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
+                            options.lbfgs_history_size,
+                            options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
+                            options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
             else if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::double_prec)
                 solver = std::move(bdd_lbfgs_cuda_mma<double>(
-                    bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
-                    options.lbfgs_history_size,
-                    options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
-                    options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
+                            bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
+                            options.lbfgs_history_size,
+                            options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
+                            options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
             else
                 throw std::runtime_error("only float and double precision allowed");
             bdd_log << "[bdd solver] constructed LBFGS CUDA based mma solver\n"; 
@@ -492,16 +508,16 @@ namespace LPMP {
                 throw std::runtime_error("no smoothing implemented for LBFGS parallel mma");
             if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::single_prec)
                 solver = std::move(bdd_lbfgs_parallel_mma<float>(
-                    bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
-                    options.lbfgs_history_size,
-                    options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
-                    options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
+                            bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
+                            options.lbfgs_history_size,
+                            options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
+                            options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
             else if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::double_prec)
                 solver = std::move(bdd_lbfgs_parallel_mma<double>(
-                    bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
-                    options.lbfgs_history_size,
-                    options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
-                    options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
+                            bdd_pre.get_bdd_collection(), costs.begin(), costs.end(),
+                            options.lbfgs_history_size,
+                            options.lbfgs_step_size, options.lbfgs_required_relative_lb_increase, 
+                            options.lbfgs_step_size_decrease_factor, options.lbfgs_step_size_increase_factor));
             else
                 throw std::runtime_error("only float and double precision allowed");
             bdd_log << "[bdd solver] constructed LBFGS parallel mma solver\n"; 
@@ -549,10 +565,16 @@ namespace LPMP {
                     s.add_to_constant(options.ilp.constant());
                     else
                     throw std::runtime_error("constants not implemented for chosen solver");
-            }, *solver);
+                    }, *solver);
 
         auto setup_time = (double) std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start_time).count() / 1000;
-        bdd_log << "[bdd solver] setup time = " << setup_time << " s" << "\n";
+        if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::mma_multi_gpu) {
+            bdd_log << "[fast solver] setup time = " << setup_time << " s" << "\n";
+        }
+        else{
+            bdd_log << "[bdd solver] setup time = " << setup_time << " s" << "\n";
+        }
+
         options.time_limit -= setup_time;
     }
 
@@ -564,21 +586,28 @@ namespace LPMP {
             bdd_log << "[bdd_solver] Time limit exceeded.\n";
             return;
         }
-        std::visit([&](auto&& s) {
 
-                run_solver(s, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
-                }, *solver);
+        if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::mma_multi_gpu) {
+            std::visit([&](auto&& s) {
+                    fast_solver(s, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
+                    }, *solver);
+        }
+        else {
+            std::visit([&](auto&& s) {
+                    run_solver(s, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
+                    }, *solver);
+        }
 
         // TODO: improve, do periodic tightening
         if(options.tighten)
         {
             for(size_t tighten_iter=0; tighten_iter<10; ++tighten_iter)
             {
-            tighten();
-            std::visit([&](auto&& s) {
-                    for(size_t iter=0; iter<10; ++iter)
+                tighten();
+                std::visit([&](auto&& s) {
+                        for(size_t iter=0; iter<10; ++iter)
                         s.iteration();
-                    }, *solver);
+                        }, *solver);
             }
         }
 
@@ -618,7 +647,7 @@ namespace LPMP {
         {
             bdd_log << "[incremental primal rounding] start rounding\n";
             const auto sol = std::visit([&](auto &&s)
-                                        {
+                    {
                     if constexpr( // CPU rounding
                             std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<double>>
@@ -631,24 +660,26 @@ namespace LPMP {
                             //|| std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<double>>
                             //////////////////////////////////////////
                             )
-                            {
+                    {
                     return incremental_mm_agreement_rounding_iter(s, options.incremental_initial_perturbation, options.incremental_growth_rate, options.incremental_primal_num_itr_lb, options.incremental_primal_rounding_num_itr);
-                            }
+                    }
                     else if constexpr( // GPU rounding
                             std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<double>>
+                            || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<float>>
+                            || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<double>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_lbfgs_cuda_mma<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_lbfgs_cuda_mma<double>>
                             )
                     {
-                    return s.incremental_mm_agreement_rounding(options.incremental_initial_perturbation, options.incremental_growth_rate, options.incremental_primal_num_itr_lb, options.incremental_primal_rounding_num_itr);
+                        return s.incremental_mm_agreement_rounding(options.incremental_initial_perturbation, options.incremental_growth_rate, options.incremental_primal_num_itr_lb, options.incremental_primal_rounding_num_itr);
                     }
                     else
                     {
-                    throw std::runtime_error("solver not supported for incremental rounding");
-                    return std::vector<char>{};
+                        throw std::runtime_error("solver not supported for incremental rounding");
+                        return std::vector<char>{};
                     } },
-                                        *solver);
+                *solver);
 
             double obj = std::numeric_limits<double>::infinity();
             if (sol.size() >= options.ilp.nr_variables())
@@ -679,16 +710,18 @@ namespace LPMP {
                     else if constexpr( // GPU rounding
                             std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<double>>
+                            || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<float>>
+                            || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<double>>
                             )
                     {
-                    throw std::runtime_error("Wedelin rounding not implemented for GPU solver yet");
+                        throw std::runtime_error("Wedelin rounding not implemented for GPU solver yet");
                     }
 
                     {
-                    throw std::runtime_error("solver not supported for incremental rounding");
-                    return std::vector<char>{};
+                        throw std::runtime_error("solver not supported for incremental rounding");
+                        return std::vector<char>{};
                     }
-                    }, *solver);
+            }, *solver);
 
             const double obj = options.ilp.evaluate(sol.begin(), sol.end());
             bdd_log << "[incremental primal rounding] solution objective = " << obj << "\n";
@@ -713,25 +746,25 @@ namespace LPMP {
 
         bdd_log << "Tighten...\n";
         std::visit([](auto&& s) {
-            if constexpr(std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<float>>)
-            s.tighten();
-            else
+                if constexpr(std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<float>>)
+                s.tighten();
+                else
                 throw std::runtime_error("tighten not implemented");
-            }, *solver);
+                }, *solver);
     }
 
     void bdd_solver::fix_variable(const size_t var, const bool value)
     {
         std::visit([var, value](auto&& s) {
-            if constexpr(
-                    std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<float>> || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<double>>
-                    ||
-                    std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_parallel_mma<float>> || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_parallel_mma<double>>
-                    )
-            s.fix_variable(var, value);
-            else
+                if constexpr(
+                        std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<float>> || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_mma<double>>
+                        ||
+                        std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_parallel_mma<float>> || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_parallel_mma<double>>
+                        )
+                s.fix_variable(var, value);
+                else
                 throw std::runtime_error("fix variable not implemented");
-            }, *solver);
+                }, *solver);
     }
 
     void bdd_solver::fix_variable(const std::string& var, const bool value)

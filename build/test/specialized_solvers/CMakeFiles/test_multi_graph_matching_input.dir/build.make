@@ -108,6 +108,7 @@ test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_mma_smooth.
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_parallel_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_parallel_mma_smooth.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_cuda.a
+test/specialized_solvers/test_multi_graph_matching_input: src/libmulti_gpu.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_multi_parallel_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_lbfgs_parallel_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_lbfgs_cuda_mma.a
@@ -118,6 +119,7 @@ test/specialized_solvers/test_multi_graph_matching_input: src/libOPB_parser.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libmm_primal_decoder.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_cuda_base.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_cuda_parallel_mma.a
+test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_multi_gpu_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_multi_parallel_mma_base.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libincremental_mm_agreement_rounding_cuda.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libconvert_pb_to_bdd.a
@@ -136,6 +138,7 @@ test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_mma_smooth.
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_parallel_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_parallel_mma_smooth.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_cuda.a
+test/specialized_solvers/test_multi_graph_matching_input: src/libmulti_gpu.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_multi_parallel_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_lbfgs_parallel_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_lbfgs_cuda_mma.a
@@ -146,6 +149,7 @@ test/specialized_solvers/test_multi_graph_matching_input: src/libOPB_parser.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libmm_primal_decoder.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_cuda_base.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_cuda_parallel_mma.a
+test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_multi_gpu_mma.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libbdd_multi_parallel_mma_base.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libincremental_mm_agreement_rounding_cuda.a
 test/specialized_solvers/test_multi_graph_matching_input: src/libconvert_pb_to_bdd.a

@@ -21,6 +21,7 @@ namespace LPMP {
             size_t nr_variables();
             two_dim_variable_array<std::array<double,2>> min_marginals();
             void iteration();
+            void iteration(const int num_gpus, const size_t max_iter, const double lb_initial);
             void backward_run(); 
 
             std::vector<char> incremental_mm_agreement_rounding(const double init_delta, const double delta_grwoth_rate, const int num_itr_lb, const int num_rounds = 500);

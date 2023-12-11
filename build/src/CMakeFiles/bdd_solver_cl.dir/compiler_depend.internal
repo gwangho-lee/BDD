@@ -482,6 +482,7 @@ src/CMakeFiles/bdd_solver_cl.dir/bdd_solver_cl.cpp.o
  /home/gl9102/BDD/include/bdd_mma.h
  /home/gl9102/BDD/include/bdd_mma_smooth.h
  /home/gl9102/BDD/include/bdd_cuda.h
+ /home/gl9102/BDD/include/multi_gpu.h
  /home/gl9102/BDD/include/bdd_parallel_mma.h
  /home/gl9102/BDD/include/bdd_parallel_mma_smooth.h
  /home/gl9102/BDD/include/bdd_multi_parallel_mma.h

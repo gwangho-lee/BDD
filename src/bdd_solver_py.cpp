@@ -51,6 +51,7 @@ PYBIND11_MODULE(bdd_solver_py, m) {
     py::enum_<LPMP::bdd_solver_options::bdd_solver_impl>(bdd_opts, "bdd_solver_types")
         .value("sequential_mma", LPMP::bdd_solver_options::bdd_solver_impl::sequential_mma)
         .value("mma_cuda", LPMP::bdd_solver_options::bdd_solver_impl::mma_cuda)
+        .value("mma_multi_gpu", LPMP::bdd_solver_options::bdd_solver_impl::mma_multi_gpu)
         .value("parallel_mma", LPMP::bdd_solver_options::bdd_solver_impl::parallel_mma)
         .value("hybrid_parallel_mma", LPMP::bdd_solver_options::bdd_solver_impl::hybrid_parallel_mma)
         .value("lbfgs_parallel_mma", LPMP::bdd_solver_options::bdd_solver_impl::lbfgs_parallel_mma)

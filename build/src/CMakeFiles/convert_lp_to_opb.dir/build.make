@@ -105,6 +105,7 @@ src/convert_lp_to_opb: src/libbdd_mma_smooth.a
 src/convert_lp_to_opb: src/libbdd_parallel_mma.a
 src/convert_lp_to_opb: src/libbdd_parallel_mma_smooth.a
 src/convert_lp_to_opb: src/libbdd_cuda.a
+src/convert_lp_to_opb: src/libmulti_gpu.a
 src/convert_lp_to_opb: src/libbdd_multi_parallel_mma.a
 src/convert_lp_to_opb: src/libbdd_lbfgs_parallel_mma.a
 src/convert_lp_to_opb: src/libbdd_lbfgs_cuda_mma.a
@@ -116,6 +117,7 @@ src/convert_lp_to_opb: src/libILP_input.a
 src/convert_lp_to_opb: src/libmm_primal_decoder.a
 src/convert_lp_to_opb: src/libbdd_cuda_base.a
 src/convert_lp_to_opb: src/libbdd_cuda_parallel_mma.a
+src/convert_lp_to_opb: src/libbdd_multi_gpu_mma.a
 src/convert_lp_to_opb: src/libbdd_multi_parallel_mma_base.a
 src/convert_lp_to_opb: src/libincremental_mm_agreement_rounding_cuda.a
 src/convert_lp_to_opb: src/libconvert_pb_to_bdd.a
@@ -133,6 +135,7 @@ src/convert_lp_to_opb: src/libbdd_mma_smooth.a
 src/convert_lp_to_opb: src/libbdd_parallel_mma.a
 src/convert_lp_to_opb: src/libbdd_parallel_mma_smooth.a
 src/convert_lp_to_opb: src/libbdd_cuda.a
+src/convert_lp_to_opb: src/libmulti_gpu.a
 src/convert_lp_to_opb: src/libbdd_multi_parallel_mma.a
 src/convert_lp_to_opb: src/libbdd_lbfgs_parallel_mma.a
 src/convert_lp_to_opb: src/libbdd_lbfgs_cuda_mma.a
@@ -144,6 +147,7 @@ src/convert_lp_to_opb: src/libILP_input.a
 src/convert_lp_to_opb: src/libmm_primal_decoder.a
 src/convert_lp_to_opb: src/libbdd_cuda_base.a
 src/convert_lp_to_opb: src/libbdd_cuda_parallel_mma.a
+src/convert_lp_to_opb: src/libbdd_multi_gpu_mma.a
 src/convert_lp_to_opb: src/libbdd_multi_parallel_mma_base.a
 src/convert_lp_to_opb: src/libincremental_mm_agreement_rounding_cuda.a
 src/convert_lp_to_opb: src/libconvert_pb_to_bdd.a

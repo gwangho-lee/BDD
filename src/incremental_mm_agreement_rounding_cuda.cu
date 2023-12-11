@@ -9,6 +9,7 @@
 #include "time_measure_util.h"
 
 #include "bdd_cuda_parallel_mma.h"
+#include "bdd_multi_gpu_mma.h"
 #include "bdd_cuda_learned_mma.h"
 #include "lbfgs.h"
 #include "run_solver_util.h"
@@ -359,7 +360,8 @@ struct mm_type_to_sol {
     template std::vector<char> incremental_mm_agreement_rounding_cuda(bdd_cuda_learned_mma<double>& , double , const double, const int, const bool, const int);
     template std::vector<char> incremental_mm_agreement_rounding_cuda(lbfgs<bdd_cuda_parallel_mma<float>, thrust::device_vector<float>, float, thrust::device_vector<char>>& , double , const double, const int, const bool, const int);
     template std::vector<char> incremental_mm_agreement_rounding_cuda(lbfgs<bdd_cuda_parallel_mma<double>, thrust::device_vector<double>, double, thrust::device_vector<char>>& , double , const double, const int, const bool, const int);
-
+    template std::vector<char> incremental_mm_agreement_rounding_cuda(bdd_multi_gpu_mma<float>& , double , const double, const int, const bool, const int);
+    template std::vector<char> incremental_mm_agreement_rounding_cuda(bdd_multi_gpu_mma<double>& , double , const double, const int, const bool, const int);
 
     template std::vector<char> perturb_primal_costs(bdd_cuda_parallel_mma<float>& , const double, const bool );
     template std::vector<char> perturb_primal_costs(bdd_cuda_parallel_mma<double>& , const double, const bool );
