@@ -9,9 +9,9 @@ namespace LPMP {
     template<typename REAL>
     class multi_gpu {
         public:
-            multi_gpu(BDD::bdd_collection& bdd_col);
+            multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID);
             template<typename ITERATOR>
-            multi_gpu(BDD::bdd_collection& bdd_col, ITERATOR cost_begin, ITERATOR cost_end);
+            multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID, ITERATOR cost_begin, ITERATOR cost_end);
             multi_gpu(multi_gpu&&);
             multi_gpu& operator=(multi_gpu&&);
             ~multi_gpu();
@@ -33,9 +33,10 @@ namespace LPMP {
 
     template<typename REAL>
         template<typename ITERATOR>
-        multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, ITERATOR cost_begin, ITERATOR cost_end)
-        : multi_gpu(bdd_col)
+        multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID, ITERATOR cost_begin, ITERATOR cost_end)
+        : multi_gpu(bdd_col, deviceID)
         {
+            printf("TEST || ERROR!\n");
             update_costs(cost_begin, cost_begin, cost_begin, cost_end);
         }
 

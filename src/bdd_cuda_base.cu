@@ -46,6 +46,24 @@ namespace LPMP {
     }
 
     template<typename REAL>
+    bdd_cuda_base<REAL>::bdd_cuda_base(const BDD::bdd_collection& bdd_col, const int deviceID)
+    {
+        assert(bdd_col.nr_bdds() > 0);
+        cudaSetDevice(deviceID);
+        initialize(bdd_col);
+        thrust::device_vector<int> bdd_hop_dist_root, bdd_depth;
+        std::tie(bdd_hop_dist_root, bdd_depth) = populate_bdd_nodes(bdd_col);
+        reorder_bdd_nodes(bdd_hop_dist_root, bdd_depth);
+        compress_bdd_nodes_to_layer(bdd_hop_dist_root);
+        reorder_within_bdd_layers();
+        set_special_nodes_indices(bdd_hop_dist_root);
+        set_special_nodes_costs();
+        find_primal_variable_ordering();
+        print_num_bdd_nodes_per_hop();
+        deffered_mm_diff_ = thrust::device_vector<REAL>(this->nr_layers(), 0.0); // Initially deferred min-marginals are zero.
+    }
+
+    template<typename REAL>
     void bdd_cuda_base<REAL>::initialize(const BDD::bdd_collection& bdd_col)
     {
         MEASURE_FUNCTION_EXECUTION_TIME
@@ -470,6 +488,7 @@ namespace LPMP {
     template<typename COST_ITERATOR> 
     void bdd_cuda_base<REAL>::update_costs(COST_ITERATOR cost_lo_begin, COST_ITERATOR cost_lo_end, COST_ITERATOR cost_hi_begin, COST_ITERATOR cost_hi_end)
     {
+        printf("TEST || update_costs\n");
         MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME;
         assert(std::distance(cost_lo_begin, cost_lo_end) <= this->nr_variables());
         assert(std::distance(cost_hi_begin, cost_hi_end) <= this->nr_variables());
@@ -1131,7 +1150,6 @@ namespace LPMP {
     template <class Archive>
     void bdd_cuda_base<REAL>::save(Archive& archive) const
     {
-        printf("TEST || save function\n");
         archive(
             primal_variable_index_,
             bdd_index_,

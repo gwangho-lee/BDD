@@ -60,6 +60,7 @@ namespace LPMP {
             using SOLVER_COSTS_VECS = std::tuple<thrust::device_vector<REAL>, thrust::device_vector<REAL>, thrust::device_vector<REAL>>;
             bdd_cuda_base() {}
             bdd_cuda_base(const BDD::bdd_collection& bdd_col);
+            bdd_cuda_base(const BDD::bdd_collection& bdd_col, const int deviceID);
 
             void flush_forward_states();
             void flush_backward_states();

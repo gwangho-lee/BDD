@@ -5,8 +5,9 @@
 namespace LPMP {
 
     template<typename REAL>
-        bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col) : bdd_cuda_base<REAL>(bdd_col)
+        bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID) : bdd_cuda_base<REAL>(bdd_col, deviceID)
     {
+        cudaSetDevice(deviceID);
         init();
     }
 
@@ -63,8 +64,7 @@ namespace LPMP {
         {
             const int start_index = blockIdx.x * blockDim.x + threadIdx.x;
             const int num_threads = blockDim.x * gridDim.x;
-            for (int bdd_node_idx = start_index + start_offset; bdd_node_idx < cur_num_bdd_nodes + start_offset; bdd_node_idx += num_threads) 
-            {
+            for (int bdd_node_idx = start_index + start_offset; bdd_node_idx < cur_num_bdd_nodes + start_offset; bdd_node_idx += num_threads) {
                 const int next_lo_node = lo_bdd_node_index[bdd_node_idx];
                 if (next_lo_node < 0) // will matter when one row contains multiple BDDs, otherwise the terminal nodes are at the end anyway.
                     continue; // nothing needs to be done for terminal node.
@@ -73,6 +73,12 @@ namespace LPMP {
 
                 const REAL cur_c_from_root = cost_from_root[bdd_node_idx];
                 const int layer_idx = bdd_node_to_layer_map[bdd_node_idx];
+
+                printf("TEST || cur_c_from_root: %f\n", cur_c_from_root);
+                printf("TEST || lo_cost[%d]: %f\n", layer_idx, lo_cost[layer_idx]);
+                printf("TEST || hi_cost[%d]: %f\n", layer_idx, hi_cost[layer_idx]);
+                printf("TEST || cost_from_terminal[%d]: %f\n", next_lo_node, cost_from_terminal[next_lo_node]);
+                printf("TEST || cost_from_terminal[%d]: %f\n", next_hi_node, cost_from_terminal[next_hi_node]);
 
                 atomicMin(&mm_lo_local[layer_idx - start_offset_layer], cur_c_from_root + lo_cost[layer_idx] + cost_from_terminal[next_lo_node]);
                 atomicMin(&mm_hi[layer_idx], cur_c_from_root + hi_cost[layer_idx] + cost_from_terminal[next_hi_node]);
@@ -86,14 +92,16 @@ namespace LPMP {
         {
             MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME
 
-                const int num_nodes_processed = hop_index > 0 ? this->cum_nr_bdd_nodes_per_hop_dist_[hop_index - 1] : 0;
+            const int num_nodes_processed = hop_index > 0 ? this->cum_nr_bdd_nodes_per_hop_dist_[hop_index - 1] : 0;
             const int end_node = this->cum_nr_bdd_nodes_per_hop_dist_[hop_index];
-            const int cur_num_bdd_nodes = this->cum_nr_bdd_nodes_per_hop_dist_[hop_index] - num_nodes_processed;
+            const int cur_num_bdd_nodes = end_node - num_nodes_processed;
             const int blockCount = ceil(cur_num_bdd_nodes / (REAL) NUM_THREADS_CUDA);
 
             const int start_offset_layer = hop_index > 0 ? this->cum_nr_layers_per_hop_dist_[hop_index - 1]: 0;
             const int end_offset_layer = this->cum_nr_layers_per_hop_dist_[hop_index];
             const int cur_num_layers = end_offset_layer - start_offset_layer;
+
+            printf("TEST || cur_num_layers : %d\n", cur_num_layers);
 
             min_marginals_from_directional_costs_cuda<<<blockCount, NUM_THREADS_CUDA>>>(cur_num_bdd_nodes, num_nodes_processed, start_offset_layer,
                     thrust::raw_pointer_cast(this->lo_bdd_node_index_.data()),
@@ -155,12 +163,10 @@ namespace LPMP {
             cudaMalloc(&delta_lo_hi_, size_delta_lo_hi_);
             cudaMemset(delta_lo_hi_, 0, size_delta_lo_hi_);
 
-            for (int i = 0; i < max_iter; i++) {
-                fast_forward_mm(omega, (REAL *) delta_lo_hi_);
-                fast_normalize_delta((REAL *) delta_lo_hi_);
-                fast_backward_mm(omega, (REAL *) delta_lo_hi_);
-                fast_normalize_delta((REAL *) delta_lo_hi_);
-            }
+            fast_forward_mm(omega, (REAL *) delta_lo_hi_);
+            fast_normalize_delta((REAL *) delta_lo_hi_);
+            fast_backward_mm(omega, (REAL *) delta_lo_hi_);
+            fast_normalize_delta((REAL *) delta_lo_hi_);
 
             cudaFree(delta_lo_hi_);
         }
@@ -225,12 +231,18 @@ namespace LPMP {
                 this->backward_run(false); //For the first iteration need to have costs from terminal. 
 
             // Clear states.
-            this->flush_costs_from_root();
-            flush_mm(this->deffered_mm_diff_.data());
+            //this->flush_costs_from_root();
+            thrust::fill(this->cost_from_root_.begin(), this->cost_from_root_.end(), CUDART_INF_F_HOST);
+            thrust::scatter(thrust::make_constant_iterator<REAL>(0.0), thrust::make_constant_iterator<REAL>(0.0) + this->root_indices_.size(), this->root_indices_.begin(), this->cost_from_root_.begin());
+
+            //flush_mm(this->deffered_mm_diff_.data());
+            printf("TEST || mm_lo_local_ size : %d\n", mm_lo_local_.size());
+            printf("TEST || this->nr_layers : %d\n", this->nr_layers());
+            thrust::fill(mm_lo_local_.begin(), mm_lo_local_.end(), CUDART_INF_F_HOST);
+            thrust::fill(this->deffered_mm_diff_.data(), this->deffered_mm_diff_.data() + this->nr_layers(), CUDART_INF_F_HOST);
 
             const int num_steps = this->cum_nr_bdd_nodes_per_hop_dist_.size() - 1;
-            for (int s = 0; s < num_steps; s++)
-            {
+            for (int s = 0; s < num_steps; s++) {
                 // 1. Compute min-marginals using costs from root, costs from terminal and hi_costs, lo_costs for current hop
                 min_marginals_from_directional_costs(s, omega);
 

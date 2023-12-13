@@ -313,6 +313,10 @@ namespace LPMP {
 
         costs = options.ilp.objective();
 
+        for (size_t i = 0; i < costs.size(); i++) {
+            printf("TEST || cost[%d]: %f\n", i, costs[i]);
+        }
+
         if(options.take_cost_logarithms)
         {
             bdd_log << "[bdd solver] Take logarithms of costs\n";
@@ -338,6 +342,25 @@ namespace LPMP {
 
         bdd_preprocessor bdd_pre(options.ilp, normalize_constraints, options.cuda_split_long_bdds, options.cuda_split_long_bdds_implication_bdd, options.cuda_split_long_bdds_length);
 
+        size_t number_of_bdds = bdd_pre.get_bdd_collection().nr_bdds();
+
+        BDD::bdd_collection *bdd_collection_arr;
+
+        bdd_collection_arr = new BDD::bdd_collection[options.num_gpus];
+
+        for (int i = 0; i < options.num_gpus; i++) {
+            bdd_collection_arr[i] = bdd_pre.get_bdd_collection();
+        }
+
+        for (int i = number_of_bdds - 1; i >= 0; i--) {
+            int index = i % options.num_gpus;
+            for (int j = 0; j < options.num_gpus; j++) {
+                if (index != j) {
+                    bdd_collection_arr[j].remove(i);
+                }
+            }
+        }
+       
         bdd_log << std::setprecision(10);
 
         if(options.statistics)
@@ -462,12 +485,27 @@ namespace LPMP {
         {
             if(options.smoothing != 0)
                 throw std::runtime_error("no smoothing implemented for multi gpu");
-            if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::single_prec)
-                solver = std::move(multi_gpu<float>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
-            else if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::double_prec)
-                solver = std::move(multi_gpu<double>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
-            else
-                throw std::runtime_error("only float and double precision allowed");
+
+            //std::vector<multi_gpu<double>> solver_arr;
+
+            //if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::single_prec)
+            //    for (int i = 0; i < options.num_gpus; i++) {
+            //        solver_arr[i] = std::move(multi_gpu<float>(bdd_collection_arr[i], i, costs.begin(), costs.end()));
+            //    }
+            //    // solver = std::move(multi_gpu<float>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
+            //    //solver = std::move(multi_gpu<float>(bdd_collection_arr, options.num_gpus, costs.begin(), costs.end()));
+            //else if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::double_prec)
+            for (int i = 0; i < options.num_gpus; i++) {
+                //solver_arr[i] = std::move(multi_gpu<double>(bdd_collection_arr[i], i, costs.begin(), costs.end()));
+                //LPMP::multi_gpu<double> mg(bdd_collection_arr[i], i, costs.begin(), costs.end());
+                //multi_gpu<double> mg(bdd_collection_arr[i], i, costs.begin(), costs.end());
+                solver_arr.emplace_back(bdd_collection_arr[i], i, costs.begin(), costs.end());
+                //solver_arr.emplace_back(mg);
+            }
+                // solver = std::move(multi_gpu<double>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
+                //solver = std::move(multi_gpu<double>(bdd_collection_arr, options.num_gpus, costs.begin(), costs.end()));
+            //else
+            //    throw std::runtime_error("only float and double precision allowed");
             bdd_log << "[fast solver] constructed multi gpu mma solver\n"; 
         }
         else if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::hybrid_parallel_mma)
@@ -588,9 +626,11 @@ namespace LPMP {
         }
 
         if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::mma_multi_gpu) {
-            std::visit([&](auto&& s) {
-                    fast_solver(s, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
-                    }, *solver);
+            //std::visit([&](auto&& s) {
+            //        fast_solver(s, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
+            //        }, solver_arr);
+            //fast_solver<LPMP::multi_gpu<double>>(solver_arr, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
+            fast_solver<multi_gpu<double>>(solver_arr, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
         }
         else {
             std::visit([&](auto&& s) {

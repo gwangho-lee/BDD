@@ -140,6 +140,8 @@ namespace LPMP {
                 bdd_subgradient<double>
                     >;
             std::optional<solver_type> solver;
+            std::vector<multi_gpu<double>> solver_arr;
+            //std::vector<std::optional<solver_type>> solver_arr;
             std::vector<double> costs;
     };
 

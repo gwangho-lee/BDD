@@ -10,7 +10,7 @@ namespace LPMP {
     template<typename REAL>
     class multi_gpu<REAL>::impl {
         public:
-            impl(BDD::bdd_collection& bdd_col);
+            impl(BDD::bdd_collection& bdd_col, const int deviceID);
 
 #ifdef WITH_CUDA
             bdd_multi_gpu_mma<REAL> pmma;
@@ -18,9 +18,9 @@ namespace LPMP {
     };
 
     template<typename REAL>
-    multi_gpu<REAL>::impl::impl(BDD::bdd_collection& bdd_col)
+    multi_gpu<REAL>::impl::impl(BDD::bdd_collection& bdd_col, const int deviceID)
 #ifdef WITH_CUDA
-    : pmma(bdd_col)
+    : pmma(bdd_col, deviceID)
 #endif
     {
 #ifndef WITH_CUDA
@@ -29,11 +29,11 @@ namespace LPMP {
     }
 
     template<typename REAL>
-    multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col)
+    multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID)
     {
 #ifdef WITH_CUDA
         MEASURE_FUNCTION_EXECUTION_TIME; 
-        pimpl = std::make_unique<impl>(bdd_col);
+        pimpl = std::make_unique<impl>(bdd_col, deviceID);
 #else
         throw std::runtime_error("bdd_solver not compiled with CUDA support");
 #endif
@@ -59,6 +59,7 @@ namespace LPMP {
     template<typename COST_ITERATOR>
     void multi_gpu<REAL>::update_costs(COST_ITERATOR costs_lo_begin, COST_ITERATOR costs_lo_end, COST_ITERATOR costs_hi_begin, COST_ITERATOR costs_hi_end)
     {
+        printf("TEST || multi_gpu.cpp update_costs\n");
 #ifdef WITH_CUDA
         pimpl->pmma.update_costs(costs_lo_begin, costs_lo_end, costs_hi_begin, costs_hi_end);
 #endif
