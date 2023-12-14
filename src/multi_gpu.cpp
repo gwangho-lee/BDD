@@ -59,7 +59,6 @@ namespace LPMP {
     template<typename COST_ITERATOR>
     void multi_gpu<REAL>::update_costs(COST_ITERATOR costs_lo_begin, COST_ITERATOR costs_lo_end, COST_ITERATOR costs_hi_begin, COST_ITERATOR costs_hi_end)
     {
-        printf("TEST || multi_gpu.cpp update_costs\n");
 #ifdef WITH_CUDA
         pimpl->pmma.update_costs(costs_lo_begin, costs_lo_end, costs_hi_begin, costs_hi_end);
 #endif

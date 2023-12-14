@@ -11,7 +11,6 @@ namespace LPMP {
         //void fast_solver(std::vector<LPMP::multi_gpu<double>>& s, const int num_gpus, const size_t max_iter, const double tolerance, const double improvement_slope, const double time_limit, const bool verbose = true)
         void fast_solver(std::vector<SOLVER>& s, const int num_gpus, const size_t max_iter, const double tolerance, const double improvement_slope, const double time_limit, const bool verbose = true)
         {
-            fprintf(stderr, "TEST || fast solver start!\n");
             assert(improvement_slope > 0.0 && improvement_slope < 1.0);
             assert(time_limit >= 0.0);
             assert(tolerance >= 0.0);
@@ -26,9 +25,7 @@ namespace LPMP {
             }
 
             const auto start_time = std::chrono::steady_clock::now();
-            fprintf(stderr, "TEST || lower_bound start\n");
             const double lb_initial = s[0].lower_bound();
-            fprintf(stderr, "TEST || lower_bound end\n");
             double lb_first_iter = std::numeric_limits<double>::max();
             double lb_prev = lb_initial;
             double lb_post = lb_prev;
@@ -40,13 +37,10 @@ namespace LPMP {
             }
             for(size_t iter=0; iter<max_iter; ++iter)
             {
-                fprintf(stderr, "TEST || fast solver iteration started\n");
                 for (int i = 0; i < num_gpus; i++) {
-                    fprintf(stderr, "TEST || fast solver forward: %d\n", i);
                     s[i].forward_mm();
                 }
                 for (int i = 0; i < num_gpus; i++) {
-                    fprintf(stderr, "TEST || fast solver normalize_delta: %d\n", i);
                     s[i].normalize_delta();
                 }
                 for (int i = 0; i < num_gpus; i++) {

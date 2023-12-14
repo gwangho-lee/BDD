@@ -31,7 +31,6 @@ namespace LPMP {
     template<typename REAL>
     bdd_cuda_base<REAL>::bdd_cuda_base(const BDD::bdd_collection& bdd_col)
     {
-        printf("TEST || ERROR!\n");
         assert(bdd_col.nr_bdds() > 0);
         initialize(bdd_col);
         thrust::device_vector<int> bdd_hop_dist_root, bdd_depth;
@@ -63,7 +62,6 @@ namespace LPMP {
         print_num_bdd_nodes_per_hop();
         int currentDevice;
         cudaGetDevice(&currentDevice);
-        printf("TEST || cuda base current GPU: %d\n", currentDevice);
         deffered_mm_diff_ = thrust::device_vector<REAL>(this->nr_layers(), 0.0); // Initially deferred min-marginals are zero.
     }
 
@@ -501,7 +499,6 @@ namespace LPMP {
     template<typename COST_ITERATOR> 
     void bdd_cuda_base<REAL>::update_costs(COST_ITERATOR cost_lo_begin, COST_ITERATOR cost_lo_end, COST_ITERATOR cost_hi_begin, COST_ITERATOR cost_hi_end)
     {
-        printf("TEST || update_costs\n");
         cudaSetDevice(deviceID);
         MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME;
         assert(std::distance(cost_lo_begin, cost_lo_end) <= this->nr_variables());

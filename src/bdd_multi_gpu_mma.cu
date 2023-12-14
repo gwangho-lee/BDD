@@ -23,7 +23,6 @@ namespace LPMP {
             int currentDevice;
             cudaGetDevice(&currentDevice);
 
-            fprintf(stderr, "TEST || current GPU: %d\n", currentDevice);
             mm_lo_local_ = thrust::device_vector<REAL>(*std::max_element(this->cum_nr_layers_per_hop_dist_.begin(), this->cum_nr_layers_per_hop_dist_.end())); // size of largest layer.
 
             delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);

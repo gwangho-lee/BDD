@@ -495,7 +495,6 @@ namespace LPMP {
             //    // solver = std::move(multi_gpu<float>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
             //    //solver = std::move(multi_gpu<float>(bdd_collection_arr, options.num_gpus, costs.begin(), costs.end()));
             //else if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::double_prec)
-            fprintf(stderr, "TEST || solver_arr creation start\n");
             for (int i = 0; i < options.num_gpus; i++) {
                 //solver_arr[i] = std::move(multi_gpu<double>(bdd_collection_arr[i], i, costs.begin(), costs.end()));
                 //LPMP::multi_gpu<double> mg(bdd_collection_arr[i], i, costs.begin(), costs.end());
@@ -503,7 +502,6 @@ namespace LPMP {
                 solver_arr.emplace_back(bdd_collection_arr[i], i, costs.begin(), costs.end());
                 //solver_arr.emplace_back(mg);
             }
-            fprintf(stderr, "TEST || solver_arr created!\n");
                 // solver = std::move(multi_gpu<double>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
                 //solver = std::move(multi_gpu<double>(bdd_collection_arr, options.num_gpus, costs.begin(), costs.end()));
             //else
@@ -609,7 +607,6 @@ namespace LPMP {
 
         auto setup_time = (double) std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start_time).count() / 1000;
         if(options.bdd_solver_impl_ == bdd_solver_options::bdd_solver_impl::mma_multi_gpu) {
-            fprintf(stderr, "TEST || SetUP!\n");
             bdd_log << "[fast solver] setup time = " << setup_time << " s" << "\n";
         }
         else{
@@ -633,7 +630,6 @@ namespace LPMP {
             //        fast_solver(s, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
             //        }, solver_arr);
             //fast_solver<LPMP::multi_gpu<double>>(solver_arr, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
-            fprintf(stderr, "TEST || Calling fast_solver\n");
             fast_solver<multi_gpu<double>>(solver_arr, options.num_gpus, options.max_iter, options.tolerance, options.improvement_slope, options.time_limit);
         }
         else {
