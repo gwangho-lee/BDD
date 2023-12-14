@@ -31,6 +31,7 @@ namespace LPMP {
     template<typename REAL>
     bdd_cuda_base<REAL>::bdd_cuda_base(const BDD::bdd_collection& bdd_col)
     {
+        printf("TEST || ERROR!\n");
         assert(bdd_col.nr_bdds() > 0);
         initialize(bdd_col);
         thrust::device_vector<int> bdd_hop_dist_root, bdd_depth;
@@ -46,7 +47,7 @@ namespace LPMP {
     }
 
     template<typename REAL>
-    bdd_cuda_base<REAL>::bdd_cuda_base(const BDD::bdd_collection& bdd_col, const int deviceID)
+    bdd_cuda_base<REAL>::bdd_cuda_base(const BDD::bdd_collection& bdd_col, const int deviceID) : deviceID(deviceID)
     {
         assert(bdd_col.nr_bdds() > 0);
         cudaSetDevice(deviceID);
@@ -60,12 +61,16 @@ namespace LPMP {
         set_special_nodes_costs();
         find_primal_variable_ordering();
         print_num_bdd_nodes_per_hop();
+        int currentDevice;
+        cudaGetDevice(&currentDevice);
+        printf("TEST || cuda base current GPU: %d\n", currentDevice);
         deffered_mm_diff_ = thrust::device_vector<REAL>(this->nr_layers(), 0.0); // Initially deferred min-marginals are zero.
     }
 
     template<typename REAL>
     void bdd_cuda_base<REAL>::initialize(const BDD::bdd_collection& bdd_col)
     {
+        cudaSetDevice(deviceID);
         MEASURE_FUNCTION_EXECUTION_TIME
         nr_vars_ = [&]() {
             size_t max_v=0;
@@ -97,6 +102,7 @@ namespace LPMP {
     template<typename REAL>
     std::tuple<thrust::device_vector<int>, thrust::device_vector<int>> bdd_cuda_base<REAL>::populate_bdd_nodes(const BDD::bdd_collection& bdd_col)
     {
+        cudaSetDevice(deviceID);
         MEASURE_FUNCTION_EXECUTION_TIME
         std::vector<int> primal_variable_index;
         std::vector<int> lo_bdd_node_index;
@@ -157,6 +163,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::reorder_bdd_nodes(thrust::device_vector<int>& bdd_hop_dist_dev, thrust::device_vector<int>& bdd_depth_dev)
     {
+        cudaSetDevice(deviceID);
         MEASURE_FUNCTION_EXECUTION_TIME
         // Make nodes with same hop distance, BDD depth and bdd index contiguous in that order.
         thrust::device_vector<int> sorting_order(nr_bdd_nodes_);
@@ -201,6 +208,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::set_special_nodes_indices(const thrust::device_vector<int>& bdd_hop_dist_dev)
     {
+        cudaSetDevice(deviceID);
         MEASURE_FUNCTION_EXECUTION_TIME
         // Set indices of BDD nodes which are root, top, bot sinks.
         root_indices_ = thrust::device_vector<int>(nr_bdd_nodes_);
@@ -228,6 +236,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::set_special_nodes_costs()
     {
+        cudaSetDevice(deviceID);
         // Set costs of top sinks to itself to 0:
         thrust::scatter(thrust::make_constant_iterator<REAL>(0.0), thrust::make_constant_iterator<REAL>(0.0) + top_sink_indices_.size(),
                         top_sink_indices_.begin(), cost_from_terminal_.begin());
@@ -251,6 +260,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::compress_bdd_nodes_to_layer(const thrust::device_vector<int>& bdd_hop_dist_dev)
     {
+        cudaSetDevice(deviceID);
         MEASURE_FUNCTION_EXECUTION_TIME
         thrust::device_vector<REAL> hi_cost_compressed(hi_cost_.size());
         thrust::device_vector<REAL> lo_cost_compressed(lo_cost_.size());
@@ -335,6 +345,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::reorder_within_bdd_layers()
     {
+        cudaSetDevice(deviceID);
         const int num_steps = this->cum_nr_bdd_nodes_per_hop_dist_.size() - 1;
         thrust::device_vector<int> sorting_order(nr_bdd_nodes_);
         thrust::sequence(sorting_order.begin(), sorting_order.end());
@@ -389,6 +400,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::find_primal_variable_ordering()
     {
+        cudaSetDevice(deviceID);
         // Populate primal variables sorting order to permute min-marginals such that reduction over adjacent values can be performed 
         // to compute values for each primal variable e.g. min-marginals sum for each primal variable. etc.
         primal_variable_sorting_order_ = thrust::device_vector<int>(primal_variable_index_.size());
@@ -416,6 +428,7 @@ namespace LPMP {
     template<typename REAL>
     void bdd_cuda_base<REAL>::print_num_bdd_nodes_per_hop()
     {
+        cudaSetDevice(deviceID);
         int prev = 0;
         int last_num_nodes = cum_nr_bdd_nodes_per_hop_dist_[0];
         int last_hop = 0;
@@ -489,6 +502,7 @@ namespace LPMP {
     void bdd_cuda_base<REAL>::update_costs(COST_ITERATOR cost_lo_begin, COST_ITERATOR cost_lo_end, COST_ITERATOR cost_hi_begin, COST_ITERATOR cost_hi_end)
     {
         printf("TEST || update_costs\n");
+        cudaSetDevice(deviceID);
         MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME;
         assert(std::distance(cost_lo_begin, cost_lo_end) <= this->nr_variables());
         assert(std::distance(cost_hi_begin, cost_hi_end) <= this->nr_variables());
@@ -677,6 +691,7 @@ namespace LPMP {
     template<typename REAL>
     std::tuple<thrust::device_vector<REAL>, thrust::device_vector<REAL>> bdd_cuda_base<REAL>::backward_run(bool compute_path_costs)
     {
+        cudaSetDevice(deviceID);
         MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME
         thrust::device_vector<REAL> hi_path_cost, lo_path_cost; 
         if (backward_state_valid_ && !compute_path_costs)
@@ -927,6 +942,7 @@ namespace LPMP {
     template<typename REAL>
     double bdd_cuda_base<REAL>::lower_bound()
     {
+        cudaSetDevice(deviceID);
         MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME
         backward_run(false);
         // Sum costs_from_terminal of all root nodes. Since root nodes are always at the start (unless one row contains > 1 BDD then have to change.)

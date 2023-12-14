@@ -5,17 +5,29 @@
 namespace LPMP {
 
     template<typename REAL>
-        bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID) : bdd_cuda_base<REAL>(bdd_col, deviceID)
+        bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID) : deviceID(deviceID), bdd_cuda_base<REAL>(bdd_col, deviceID)
     {
-        cudaSetDevice(deviceID);
+        fprintf(stderr, "TEST || deviceID: %d\n", deviceID);
+        int deviceCount = 0;
+        cudaGetDeviceCount(&deviceCount);
+
+        fprintf(stderr, "TEST || # GPUs: %d\n", deviceCount);
+        //cudaSetDevice(deviceID);
         init();
     }
 
     template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::init()
         {
+            cudaSetDevice(deviceID);
+            int currentDevice;
+            cudaGetDevice(&currentDevice);
+
+            fprintf(stderr, "TEST || current GPU: %d\n", currentDevice);
             mm_lo_local_ = thrust::device_vector<REAL>(*std::max_element(this->cum_nr_layers_per_hop_dist_.begin(), this->cum_nr_layers_per_hop_dist_.end())); // size of largest layer.
 
+            delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);
+            
             // Copy from arc costs because it contains infinity for arcs to bot sink
             hi_cost_out_ = thrust::device_vector<REAL>(this->hi_cost_);
             lo_cost_out_ = thrust::device_vector<REAL>(this->lo_cost_);
@@ -145,13 +157,19 @@ namespace LPMP {
         void bdd_multi_gpu_mma<REAL>::iteration(const REAL omega)
         {
             MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME;
-            if(delta_lo_hi_.size() == 0)
-                delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);
+            //if(delta_lo_hi_.size() == 0) {
+                //printf("TEST || delta_lo_hi_\n");
+                //delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);
+            //}
 
-            forward_mm(omega, delta_lo_hi_);
-            normalize_delta(delta_lo_hi_);
+            //forward_mm(omega, delta_lo_hi_);
+            forward_mm(omega);
+            //normalize_delta(delta_lo_hi_);
+            normalize_delta();
             backward_mm(omega, delta_lo_hi_);
-            normalize_delta(delta_lo_hi_);
+            //backward_mm(omega);
+            //normalize_delta(delta_lo_hi_);
+            normalize_delta();
         }
 
     template<typename REAL>
@@ -280,6 +298,61 @@ namespace LPMP {
         }
 
     template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::forward_mm(const REAL omega)
+        {
+            cudaSetDevice(deviceID);
+            MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME2("cuda mma forward mma");
+            if(!this->backward_state_valid_)
+                this->backward_run(false); //For the first iteration need to have costs from terminal. 
+
+            //assert(delta_lo_hi.size() == 2 * this->nr_variables());
+
+            // Clear states.
+            this->flush_costs_from_root();
+            flush_mm(this->deffered_mm_diff_.data());
+
+            const int num_steps = this->cum_nr_bdd_nodes_per_hop_dist_.size() - 1;
+            for (int s = 0; s < num_steps; s++)
+            {
+                // 1. Compute min-marginals using costs from root, costs from terminal and hi_costs, lo_costs for current hop
+                min_marginals_from_directional_costs(s, omega);
+
+                const int num_nodes_processed = s > 0 ? this->cum_nr_bdd_nodes_per_hop_dist_[s - 1] : 0;
+                const int cur_num_bdd_nodes = this->cum_nr_bdd_nodes_per_hop_dist_[s] - num_nodes_processed;
+                const int blockCount = ceil(cur_num_bdd_nodes / (float) NUM_THREADS_CUDA);
+
+                // 2. Subtract from hi_costs, update costs from root.
+                forward_step_with_solve<<<blockCount, NUM_THREADS_CUDA>>>(cur_num_bdd_nodes, num_nodes_processed,
+                        thrust::raw_pointer_cast(this->lo_bdd_node_index_.data()),
+                        thrust::raw_pointer_cast(this->hi_bdd_node_index_.data()),
+                        thrust::raw_pointer_cast(this->bdd_node_to_layer_map_.data()),
+                        thrust::raw_pointer_cast(this->primal_variable_index_.data()),
+                        // in
+                        //thrust::raw_pointer_cast(delta_lo_hi.data()),
+                        thrust::raw_pointer_cast(delta_lo_hi_.data()),
+                        thrust::raw_pointer_cast(this->deffered_mm_diff_.data()),
+                        thrust::raw_pointer_cast(this->lo_cost_.data()),
+                        thrust::raw_pointer_cast(this->hi_cost_.data()),
+                        // out
+                        thrust::raw_pointer_cast(this->lo_cost_out_.data()),
+                        thrust::raw_pointer_cast(this->hi_cost_out_.data()),
+                        thrust::raw_pointer_cast(this->cost_from_root_.data()));
+            }
+            thrust::swap(this->lo_cost_, lo_cost_out_);
+            thrust::swap(this->hi_cost_, hi_cost_out_);
+
+            //compute_delta(this->deffered_mm_diff_.data(), delta_lo_hi.data());
+            compute_delta(this->deffered_mm_diff_.data(), delta_lo_hi_.data());
+
+            this->forward_state_valid_ = true;
+            this->flush_backward_states();
+
+#ifndef NDEBUG
+            cudaDeviceSynchronize();  // Not necessary, only to compute exact timing of this function.
+#endif
+        }
+
+    template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::forward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi)
         {
             MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME2("cuda mma forward mma");
@@ -309,7 +382,8 @@ namespace LPMP {
                         thrust::raw_pointer_cast(this->bdd_node_to_layer_map_.data()),
                         thrust::raw_pointer_cast(this->primal_variable_index_.data()),
                         // in
-                        thrust::raw_pointer_cast(delta_lo_hi.data()),
+                        //thrust::raw_pointer_cast(delta_lo_hi.data()),
+                        thrust::raw_pointer_cast(this->delta_lo_hi_.data()),
                         thrust::raw_pointer_cast(this->deffered_mm_diff_.data()),
                         thrust::raw_pointer_cast(this->lo_cost_.data()),
                         thrust::raw_pointer_cast(this->hi_cost_.data()),
@@ -321,7 +395,8 @@ namespace LPMP {
             thrust::swap(this->lo_cost_, lo_cost_out_);
             thrust::swap(this->hi_cost_, hi_cost_out_);
 
-            compute_delta(this->deffered_mm_diff_.data(), delta_lo_hi.data());
+            //compute_delta(this->deffered_mm_diff_.data(), delta_lo_hi.data());
+            compute_delta(this->deffered_mm_diff_.data(), this->delta_lo_hi_.data());
 
             this->forward_state_valid_ = true;
             this->flush_backward_states();
@@ -421,8 +496,16 @@ namespace LPMP {
         }
 
     template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::backward_mm(const REAL omega)
+        {
+            cudaSetDevice(deviceID);
+            backward_mm(omega, this->delta_lo_hi_);
+        }
+
+    template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::backward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi)
         {
+            cudaSetDevice(deviceID);
             MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME2("cuda mma backward mma");
             assert(this->forward_state_valid_); 
 
@@ -446,7 +529,8 @@ namespace LPMP {
                         thrust::raw_pointer_cast(this->hi_bdd_node_index_.data()),
                         thrust::raw_pointer_cast(this->bdd_node_to_layer_map_.data()),
                         thrust::raw_pointer_cast(this->primal_variable_index_.data()),
-                        thrust::raw_pointer_cast(delta_lo_hi.data()),
+                        //thrust::raw_pointer_cast(delta_lo_hi.data()),
+                        thrust::raw_pointer_cast(this->delta_lo_hi_.data()),
                         thrust::raw_pointer_cast(this->deffered_mm_diff_.data()),
                         thrust::raw_pointer_cast(this->lo_cost_.data()),
                         thrust::raw_pointer_cast(this->hi_cost_.data()),
@@ -457,7 +541,8 @@ namespace LPMP {
             thrust::swap(this->lo_cost_, lo_cost_out_);
             thrust::swap(this->hi_cost_, hi_cost_out_);
 
-            compute_delta(this->deffered_mm_diff_.data(), delta_lo_hi.data());
+            //compute_delta(this->deffered_mm_diff_.data(), delta_lo_hi.data());
+            compute_delta(this->deffered_mm_diff_.data(), this->delta_lo_hi_.data());
 
             this->flush_forward_states();
             this->backward_state_valid_ = true;
@@ -571,12 +656,20 @@ namespace LPMP {
     template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::normalize_delta(thrust::device_vector<REAL>& delta_lo_hi) const
         {
+            cudaSetDevice(deviceID);
             assert(delta_lo_hi.size() == 2 * this->nr_variables());
             normalize_delta_st<REAL> normalize_delta_func({
                     thrust::raw_pointer_cast(this->num_bdds_per_var_.data()),
                     thrust::raw_pointer_cast(delta_lo_hi.data())});
 
             thrust::for_each(thrust::make_counting_iterator<int>(0), thrust::make_counting_iterator<int>(0) + 2 * this->num_bdds_per_var_.size(), normalize_delta_func);
+        }
+
+    template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::normalize_delta()
+        {
+            cudaSetDevice(deviceID);
+            normalize_delta(delta_lo_hi_);
         }
 
     template<typename REAL>

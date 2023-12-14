@@ -18,7 +18,9 @@ namespace LPMP {
             void iteration(const int num_gpus, const size_t max_ter, const double lb_initial, const REAL omega = 0.5);
 
             void forward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi);
+            void forward_mm(const REAL omega = 0.5);
             void backward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi);
+            void backward_mm(const REAL omega = 0.5);
 
             void fast_forward_mm(const REAL omega, REAL *delta_lo_hi);
             void fast_backward_mm(const REAL omega, REAL *delta_lo_hi);
@@ -26,6 +28,7 @@ namespace LPMP {
             // Normalize delta by num BDDs to distribute isotropically.
             // delta_lo_ -> delta_hi_/#BDDs, delta_hi_ -> delta_hi_/#BDDs
             void normalize_delta(thrust::device_vector<REAL>& delta_lo_hi) const;
+            void normalize_delta();
             void fast_normalize_delta(REAL *delta_lo_hi) const;
 
             thrust::device_vector<REAL> net_solver_costs() const;
@@ -53,6 +56,8 @@ namespace LPMP {
 
 
         private:
+            int deviceID = 0;
+
             //void forward_iteration(const REAL omega);
             //void backward_iteration(const REAL omega);
 

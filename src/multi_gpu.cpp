@@ -99,6 +99,30 @@ namespace LPMP {
     }
 
     template<typename REAL>
+    void multi_gpu<REAL>::forward_mm()
+    {
+#ifdef WITH_CUDA
+        pimpl->pmma.forward_mm();
+#endif
+    }
+
+    template<typename REAL>
+    void multi_gpu<REAL>::backward_mm()
+    {
+#ifdef WITH_CUDA
+        pimpl->pmma.backward_mm();
+#endif
+    }
+
+    template<typename REAL>
+    void multi_gpu<REAL>::normalize_delta()
+    {
+#ifdef WITH_CUDA
+        pimpl->pmma.normalize_delta();
+#endif
+    }
+
+    template<typename REAL>
     void multi_gpu<REAL>::iteration(const int num_gpus, const size_t max_iter, const double lb_initial)
     {
 #ifdef WITH_CUDA

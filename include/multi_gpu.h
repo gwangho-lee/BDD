@@ -21,6 +21,9 @@ namespace LPMP {
             two_dim_variable_array<std::array<double,2>> min_marginals();
             void iteration();
             void iteration(const int num_gpus, const size_t max_iter, const double lb_initial);
+            void forward_mm();
+            void backward_mm();
+            void normalize_delta();
             void backward_run(); 
 
             std::vector<char> incremental_mm_agreement_rounding(const double init_delta, const double delta_grwoth_rate, const int num_itr_lb, const int num_rounds = 500);
@@ -36,7 +39,6 @@ namespace LPMP {
         multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID, ITERATOR cost_begin, ITERATOR cost_end)
         : multi_gpu(bdd_col, deviceID)
         {
-            printf("TEST || ERROR!\n");
             update_costs(cost_begin, cost_begin, cost_begin, cost_end);
         }
 
