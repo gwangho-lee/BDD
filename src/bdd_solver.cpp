@@ -486,8 +486,8 @@ namespace LPMP {
             if(options.smoothing != 0)
                 throw std::runtime_error("no smoothing implemented for multi gpu");
 
-            //std::vector<multi_gpu<double>> solver_arr;
-
+            multi_gpu<double> solver_origin = std::move(multi_gpu<double>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
+            std::vector<int> nbpv = solver_origin.nbpv();
             //if(options.bdd_solver_precision_ == bdd_solver_options::bdd_solver_precision::single_prec)
             //    for (int i = 0; i < options.num_gpus; i++) {
             //        solver_arr[i] = std::move(multi_gpu<float>(bdd_collection_arr[i], i, costs.begin(), costs.end()));
@@ -500,6 +500,7 @@ namespace LPMP {
                 //LPMP::multi_gpu<double> mg(bdd_collection_arr[i], i, costs.begin(), costs.end());
                 //multi_gpu<double> mg(bdd_collection_arr[i], i, costs.begin(), costs.end());
                 solver_arr.emplace_back(bdd_collection_arr[i], i, costs.begin(), costs.end());
+                solver_arr[i].setnbpv(nbpv, i);
                 //solver_arr.emplace_back(mg);
             }
                 // solver = std::move(multi_gpu<double>(bdd_pre.get_bdd_collection(), costs.begin(), costs.end()));
@@ -706,7 +707,7 @@ namespace LPMP {
                     else if constexpr( // GPU rounding
                             std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<double>>
-                            || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<float>>
+                            //|| std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<double>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_lbfgs_cuda_mma<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_lbfgs_cuda_mma<double>>
@@ -750,7 +751,7 @@ namespace LPMP {
                     else if constexpr( // GPU rounding
                             std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, bdd_cuda<double>>
-                            || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<float>>
+                            //|| std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<float>>
                             || std::is_same_v<std::remove_reference_t<decltype(s)>, multi_gpu<double>>
                             )
                     {

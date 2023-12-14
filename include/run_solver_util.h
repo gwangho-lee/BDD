@@ -39,6 +39,7 @@ namespace LPMP {
             {
                 for (int i = 0; i < num_gpus; i++) {
                     s[i].forward_mm();
+                    s[i].print();
                 }
                 for (int i = 0; i < num_gpus; i++) {
                     s[i].normalize_delta();

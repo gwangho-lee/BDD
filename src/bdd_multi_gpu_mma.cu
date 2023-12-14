@@ -5,6 +5,32 @@
 namespace LPMP {
 
     template<typename REAL>
+        bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col) : bdd_cuda_base<REAL>(bdd_col)
+    {
+        init();
+    }
+
+    template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::print()
+        {
+            printf("TEST || num_bdds_per_var size : %d\n", this->num_bdds_per_var_.size());
+            for (int i = 0; i < this->num_bdds_per_var_.size(); i++) {
+                std::cout<<this->num_bdds_per_var_[i]<<" ";
+            }
+            std::cout<<std::endl;
+            printf("TEST || delta_lo_hi size : %d\n", this->delta_lo_hi_.size());
+            for (int i = 0; i < this->delta_lo_hi_.size(); i++) {
+                std::cout<<this->delta_lo_hi_[i]<<" ";
+            }
+            std::cout<<std::endl;
+            printf("TEST || deffered_mm_diff size : %d\n", this->deffered_mm_diff_.size());
+            for (int i = 0; i < this->deffered_mm_diff_.size(); i++) {
+                std::cout<<this->deffered_mm_diff_[i]<<" ";
+            }
+            std::cout<<std::endl;
+        }
+
+    template<typename REAL>
         bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID) : deviceID(deviceID), bdd_cuda_base<REAL>(bdd_col, deviceID)
     {
         fprintf(stderr, "TEST || deviceID: %d\n", deviceID);
@@ -15,6 +41,18 @@ namespace LPMP {
         //cudaSetDevice(deviceID);
         init();
     }
+
+    template<typename REAL>
+        thrust::device_vector<int> bdd_multi_gpu_mma<REAL>::nbpv()
+        {
+            return this->num_bdds_per_var_;
+        }
+
+    template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::setnbpv(thrust::device_vector<int> nbpv)
+        {
+            this->num_bdds_per_var_ = nbpv;
+        }
 
     template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::init()

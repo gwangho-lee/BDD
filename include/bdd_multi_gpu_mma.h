@@ -10,10 +10,15 @@ namespace LPMP {
         public:
             // using bdd_cuda_base::bdd_cuda_base; // inherit base constructor
 
+            thrust::device_vector<int> nbpv();
+            void setnbpv(thrust::device_vector<int> nbpv);
+
             void init();
             bdd_multi_gpu_mma() {}
+            bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col);
             bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID);
 
+            void print();
             void iteration(const REAL omega = 0.5);
             void iteration(const int num_gpus, const size_t max_ter, const double lb_initial, const REAL omega = 0.5);
 

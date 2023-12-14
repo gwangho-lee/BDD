@@ -33,16 +33,16 @@ namespace LPMP {
     {
         assert(bdd_col.nr_bdds() > 0);
         initialize(bdd_col);
-        thrust::device_vector<int> bdd_hop_dist_root, bdd_depth;
-        std::tie(bdd_hop_dist_root, bdd_depth) = populate_bdd_nodes(bdd_col);
-        reorder_bdd_nodes(bdd_hop_dist_root, bdd_depth);
-        compress_bdd_nodes_to_layer(bdd_hop_dist_root);
-        reorder_within_bdd_layers();
-        set_special_nodes_indices(bdd_hop_dist_root);
-        set_special_nodes_costs();
-        find_primal_variable_ordering();
-        print_num_bdd_nodes_per_hop();
-        deffered_mm_diff_ = thrust::device_vector<REAL>(this->nr_layers(), 0.0); // Initially deferred min-marginals are zero.
+        //thrust::device_vector<int> bdd_hop_dist_root, bdd_depth;
+        //std::tie(bdd_hop_dist_root, bdd_depth) = populate_bdd_nodes(bdd_col);
+        //reorder_bdd_nodes(bdd_hop_dist_root, bdd_depth);
+        //compress_bdd_nodes_to_layer(bdd_hop_dist_root);
+        //reorder_within_bdd_layers();
+        //set_special_nodes_indices(bdd_hop_dist_root);
+        //set_special_nodes_costs();
+        //find_primal_variable_ordering();
+        //print_num_bdd_nodes_per_hop();
+        //deffered_mm_diff_ = thrust::device_vector<REAL>(this->nr_layers(), 0.0); // Initially deferred min-marginals are zero.
     }
 
     template<typename REAL>

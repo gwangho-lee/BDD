@@ -129,7 +129,7 @@ namespace LPMP {
             using solver_type = std::variant<
                 bdd_mma<float>, bdd_mma<double>, bdd_mma_smooth<float>, bdd_mma_smooth<double>,
                 bdd_cuda<float>, bdd_cuda<double>,
-                multi_gpu<float>, multi_gpu<double>,
+                multi_gpu<double>,
                 bdd_parallel_mma<float>, bdd_parallel_mma<double>, bdd_parallel_mma_smooth<float>, bdd_parallel_mma_smooth<double>,
                 bdd_multi_parallel_mma<float>, bdd_multi_parallel_mma<double>,
                 bdd_lbfgs_parallel_mma<double>,

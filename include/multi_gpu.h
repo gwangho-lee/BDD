@@ -9,9 +9,12 @@ namespace LPMP {
     template<typename REAL>
     class multi_gpu {
         public:
+            multi_gpu(BDD::bdd_collection& bdd_col);
             multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID);
             template<typename ITERATOR>
             multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID, ITERATOR cost_begin, ITERATOR cost_end);
+            template<typename ITERATOR>
+            multi_gpu(BDD::bdd_collection& bdd_col, ITERATOR cost_begin, ITERATOR cost_end);
             multi_gpu(multi_gpu&&);
             multi_gpu& operator=(multi_gpu&&);
             ~multi_gpu();
@@ -26,8 +29,12 @@ namespace LPMP {
             void normalize_delta();
             void backward_run(); 
 
+            std::vector<int> nbpv();
+            void setnbpv(std::vector<int> nbpv, const int deviceID);
+
             std::vector<char> incremental_mm_agreement_rounding(const double init_delta, const double delta_grwoth_rate, const int num_itr_lb, const int num_rounds = 500);
 
+            void print();
         private:
 
             class impl;
@@ -42,4 +49,11 @@ namespace LPMP {
             update_costs(cost_begin, cost_begin, cost_begin, cost_end);
         }
 
+    template<typename REAL>
+        template<typename ITERATOR>
+        multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, ITERATOR cost_begin, ITERATOR cost_end)
+        : multi_gpu(bdd_col)
+        {
+            update_costs(cost_begin, cost_begin, cost_begin, cost_end);
+        }
 };

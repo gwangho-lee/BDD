@@ -10,7 +10,7 @@ namespace LPMP {
     template<typename REAL>
     class multi_gpu<REAL>::impl {
         public:
-            impl(BDD::bdd_collection& bdd_col, const int deviceID);
+            impl(BDD::bdd_collection& bdd_col, const int deviceID = 0);
 
 #ifdef WITH_CUDA
             bdd_multi_gpu_mma<REAL> pmma;
@@ -25,6 +25,17 @@ namespace LPMP {
     {
 #ifndef WITH_CUDA
         throw std::runtime_error("bdd solver not compiled with CUDA support");
+#endif
+    }
+
+    template<typename REAL>
+    multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col)
+    {
+#ifdef WITH_CUDA
+        MEASURE_FUNCTION_EXECUTION_TIME; 
+        pimpl = std::make_unique<impl>(bdd_col);
+#else
+        throw std::runtime_error("bdd_solver not compiled with CUDA support");
 #endif
     }
 
@@ -65,13 +76,13 @@ namespace LPMP {
     }
 
     // Need to have explicit instantiation in the base.
-    template void multi_gpu<float>::update_costs(double*, double*, double*, double*);
-    template void multi_gpu<float>::update_costs(std::vector<double>::iterator, std::vector<double>::iterator, std::vector<double>::iterator, std::vector<double>::iterator);
-    template void multi_gpu<float>::update_costs(std::vector<double>::const_iterator, std::vector<double>::const_iterator, std::vector<double>::const_iterator, std::vector<double>::const_iterator);
+    //template void multi_gpu<float>::update_costs(double*, double*, double*, double*);
+    //template void multi_gpu<float>::update_costs(std::vector<double>::iterator, std::vector<double>::iterator, std::vector<double>::iterator, std::vector<double>::iterator);
+    //template void multi_gpu<float>::update_costs(std::vector<double>::const_iterator, std::vector<double>::const_iterator, std::vector<double>::const_iterator, std::vector<double>::const_iterator);
 
-    template void multi_gpu<float>::update_costs(float*, float*, float*, float*);
-    template void multi_gpu<float>::update_costs(std::vector<float>::iterator, std::vector<float>::iterator, std::vector<float>::iterator, std::vector<float>::iterator);
-    template void multi_gpu<float>::update_costs(std::vector<float>::const_iterator, std::vector<float>::const_iterator, std::vector<float>::const_iterator, std::vector<float>::const_iterator);
+    //template void multi_gpu<float>::update_costs(float*, float*, float*, float*);
+    //template void multi_gpu<float>::update_costs(std::vector<float>::iterator, std::vector<float>::iterator, std::vector<float>::iterator, std::vector<float>::iterator);
+    //template void multi_gpu<float>::update_costs(std::vector<float>::const_iterator, std::vector<float>::const_iterator, std::vector<float>::const_iterator, std::vector<float>::const_iterator);
 
     template void multi_gpu<double>::update_costs(double*, double*, double*, double*);
     template void multi_gpu<double>::update_costs(std::vector<double>::iterator, std::vector<double>::iterator, std::vector<double>::iterator, std::vector<double>::iterator);
@@ -80,6 +91,41 @@ namespace LPMP {
     template void multi_gpu<double>::update_costs(float*, float*, float*, float*);
     template void multi_gpu<double>::update_costs(std::vector<float>::iterator, std::vector<float>::iterator, std::vector<float>::iterator, std::vector<float>::iterator);
     template void multi_gpu<double>::update_costs(std::vector<float>::const_iterator, std::vector<float>::const_iterator, std::vector<float>::const_iterator, std::vector<float>::const_iterator);
+
+    template<typename REAL>
+    void multi_gpu<REAL>::print()
+    {
+#ifdef WITH_CUDA
+        pimpl->pmma.print();
+#endif
+    }
+
+    template<typename REAL>
+    std::vector<int> multi_gpu<REAL>::nbpv()
+    {
+#ifdef WITH_CUDA
+        thrust::device_vector<int> temp = pimpl->pmma.nbpv();
+        
+        int N = temp.size();
+
+        std::vector<int> h_vec(N);
+
+        thrust::copy(temp.begin(), temp.end(), h_vec.begin());
+        return h_vec;
+#endif
+    }
+
+    template<typename REAL>
+    void multi_gpu<REAL>::setnbpv(std::vector<int> nbpv, const int deviceID)
+    {
+#ifdef WITH_CUDA
+        int N = nbpv.size();
+        cudaSetDevice(deviceID);
+        thrust::device_vector<int> d_nbpv(nbpv.begin(), nbpv.end());
+
+        pimpl->pmma.setnbpv(d_nbpv);
+#endif
+    }
 
     template<typename REAL>
     void multi_gpu<REAL>::backward_run()
@@ -156,7 +202,7 @@ namespace LPMP {
         return {};
     }
 
-    template class multi_gpu<float>;
+    //template class multi_gpu<float>;
     template class multi_gpu<double>;
 
 }
