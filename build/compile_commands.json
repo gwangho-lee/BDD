@@ -16,11 +16,6 @@
 },
 {
   "directory": "/home/gl9102/BDD/build/src",
-  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../..  -Xcompiler -fopenmp -Xlinker -fgomp --generate-code=arch=compute_80,code=[compute_80,sm_80] -Xcompiler=-fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -std=c++17 -x cu -c /home/gl9102/BDD/src/bdd_cuda_parallel_mma.cu -o CMakeFiles/bdd_cuda_parallel_mma.dir/bdd_cuda_parallel_mma.cu.o",
-  "file": "/home/gl9102/BDD/src/bdd_cuda_parallel_mma.cu"
-},
-{
-  "directory": "/home/gl9102/BDD/build/src",
   "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/bdd_solver.dir/bdd_solver.cpp.o -c /home/gl9102/BDD/src/bdd_solver.cpp",
   "file": "/home/gl9102/BDD/src/bdd_solver.cpp"
 },
@@ -46,6 +41,11 @@
 },
 {
   "directory": "/home/gl9102/BDD/build/src",
+  "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/transitive_closure_dag.dir/transitive_closure_dag.cpp.o -c /home/gl9102/BDD/src/transitive_closure_dag.cpp",
+  "file": "/home/gl9102/BDD/src/transitive_closure_dag.cpp"
+},
+{
+  "directory": "/home/gl9102/BDD/build/src",
   "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/lineq_bdd.dir/lineq_bdd.cpp.o -c /home/gl9102/BDD/src/lineq_bdd.cpp",
   "file": "/home/gl9102/BDD/src/lineq_bdd.cpp"
 },
@@ -53,11 +53,6 @@
   "directory": "/home/gl9102/BDD/build/src",
   "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../..  -Xcompiler -fopenmp -Xlinker -fgomp --generate-code=arch=compute_80,code=[compute_80,sm_80] -Xcompiler=-fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -std=c++17 -x cu -c /home/gl9102/BDD/src/bdd_multi_parallel_mma_base.cu -o CMakeFiles/bdd_multi_parallel_mma_base.dir/bdd_multi_parallel_mma_base.cu.o",
   "file": "/home/gl9102/BDD/src/bdd_multi_parallel_mma_base.cu"
-},
-{
-  "directory": "/home/gl9102/BDD/build/src",
-  "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/transitive_closure_dag.dir/transitive_closure_dag.cpp.o -c /home/gl9102/BDD/src/transitive_closure_dag.cpp",
-  "file": "/home/gl9102/BDD/src/transitive_closure_dag.cpp"
 },
 {
   "directory": "/home/gl9102/BDD/build/src",
@@ -111,6 +106,11 @@
 },
 {
   "directory": "/home/gl9102/BDD/build/src",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../..  -Xcompiler -fopenmp -Xlinker -fgomp --generate-code=arch=compute_80,code=[compute_80,sm_80] -Xcompiler=-fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -std=c++17 -x cu -c /home/gl9102/BDD/src/bdd_cuda_parallel_mma.cu -o CMakeFiles/bdd_cuda_parallel_mma.dir/bdd_cuda_parallel_mma.cu.o",
+  "file": "/home/gl9102/BDD/src/bdd_cuda_parallel_mma.cu"
+},
+{
+  "directory": "/home/gl9102/BDD/build/src",
   "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIC -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/bdd_parallel_mma.dir/bdd_parallel_mma.cpp.o -c /home/gl9102/BDD/src/bdd_parallel_mma.cpp",
   "file": "/home/gl9102/BDD/src/bdd_parallel_mma.cpp"
 },
@@ -128,6 +128,11 @@
   "directory": "/home/gl9102/BDD/build/src",
   "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIE -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/convert_opb_to_lp.dir/convert_opb_to_lp.cpp.o -c /home/gl9102/BDD/src/convert_opb_to_lp.cpp",
   "file": "/home/gl9102/BDD/src/convert_opb_to_lp.cpp"
+},
+{
+  "directory": "/home/gl9102/BDD/build/src",
+  "command": "/usr/bin/c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DWITH_CUDA -I/usr/local/cuda-12.2/targets/x86_64-linux/include -I/home/gl9102/BDD/include -I/home/gl9102/BDD/build/_deps/pegtl-src/include -I/home/gl9102/BDD/build/_deps/cli11-src/include -I/home/gl9102/BDD/build/_deps/eigen-src -I/home/gl9102/BDD/build/_deps/robin-map-src/include -I/home/gl9102/BDD/build/_deps/cereal-src/include -I/home/gl9102/BDD/build/_deps/thrust-src/thrust/cmake/../.. -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/libcudacxx/include -I/home/gl9102/BDD/build/_deps/thrust-src/dependencies/cub/cub/cmake/../.. -isystem /opt/intel/oneapi/mpi/2021.3.1/include -fPIE -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fopenmp -std=gnu++17 -o CMakeFiles/bdd_solver_mpi.dir/bdd_solver_mpi.cpp.o -c /home/gl9102/BDD/src/bdd_solver_mpi.cpp",
+  "file": "/home/gl9102/BDD/src/bdd_solver_mpi.cpp"
 },
 {
   "directory": "/home/gl9102/BDD/build/src",

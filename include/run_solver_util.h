@@ -4,6 +4,7 @@
 #include <iostream>
 #include <numeric>
 #include "bdd_logging.h"
+#include <omp.h>
 
 namespace LPMP {
     
@@ -35,38 +36,30 @@ namespace LPMP {
                 auto time = std::chrono::steady_clock::now();
                 bdd_log << ", time = " << (double) std::chrono::duration_cast<std::chrono::milliseconds>(time - start_time).count() / 1000 << " s\n";
             }
-            for(size_t iter=0; iter<max_iter; ++iter)
-            {
-                for (int i = 0; i < num_gpus; i++) {
-                    s[i].forward_mm();
+
+            const size_t nr_threads = num_gpus;
+
+#pragma omp parallel for ordered schedule(static) num_threads(nr_threads)
+            //for(size_t iter=0; iter<max_iter; ++iter) {
+            //    for (int i = 0; i < num_gpus; i++) {
+            for (int tid = 0; tid < num_gpus; ++tid) {
+                for(size_t iter=0; iter<max_iter; ++iter) {
+                    s[tid].forward_mm();
                     //s[i].print();
-                }
-                if (num_gpus == 2) {
-                    s[0].distribute(s[1]);
-                    s[1].distribute(s[0]);
-                }
-                else if (num_gpus == 4) {
-                    s[0].distribute(s[1]);
-                    s[1].distribute(s[0]);
-                    s[2].distribute(s[3]);
-                    s[3].distribute(s[2]);
-                    s[0].distribute(s[2]);
-                    s[2].distribute(s[0]);
-                    s[1].distribute(s[3]);
-                    s[3].distribute(s[1]);
-                }
-                for (int i = 0; i < num_gpus; i++) {
-                    s[i].normalize_delta();
-                }
-                for (int i = 0; i < num_gpus; i++) {
-                    s[i].backward_mm();
-                }
-                for (int i = 0; i < num_gpus; i++) {
-                    s[i].normalize_delta();
-                }
+
+                    if (tid == 0) {
+                        s[tid].distribute(s[tid + 1]);
+                    }
+                    else {
+                        s[tid].distribute(s[tid - 1]);
+                    }
+                    
+                    s[tid].normalize_delta();
+                    s[tid].backward_mm();
+                    s[tid].normalize_delta();
 
                 lb_prev = lb_post;
-                lb_post = s[0].lower_bound();
+                lb_post = s[tid].lower_bound();
                 if(iter == 0)
                     lb_first_iter = lb_post;
                 if(verbose)
@@ -99,6 +92,7 @@ namespace LPMP {
                         bdd_log << "[fast solver] problem infeasible\n";
                     break;
                 }
+            }
             }
             if(verbose)
                 bdd_log << "[fast solver] final lower bound = " << s[0].lower_bound() << "\n"; 

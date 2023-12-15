@@ -237,6 +237,19 @@ bdd_parallel_mma/fast:
 .PHONY : bdd_parallel_mma/fast
 
 #=============================================================================
+# Target rules for targets named bdd_cuda_parallel_mma
+
+# Build rule for target.
+bdd_cuda_parallel_mma: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_cuda_parallel_mma
+.PHONY : bdd_cuda_parallel_mma
+
+# fast build rule for target.
+bdd_cuda_parallel_mma/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_parallel_mma.dir/build.make src/CMakeFiles/bdd_cuda_parallel_mma.dir/build
+.PHONY : bdd_cuda_parallel_mma/fast
+
+#=============================================================================
 # Target rules for targets named incremental_mm_agreement_rounding_cuda
 
 # Build rule for target.
@@ -380,19 +393,6 @@ OPB_parser/fast:
 .PHONY : OPB_parser/fast
 
 #=============================================================================
-# Target rules for targets named transitive_closure_dag
-
-# Build rule for target.
-transitive_closure_dag: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 transitive_closure_dag
-.PHONY : transitive_closure_dag
-
-# fast build rule for target.
-transitive_closure_dag/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/transitive_closure_dag.dir/build.make src/CMakeFiles/transitive_closure_dag.dir/build
-.PHONY : transitive_closure_dag/fast
-
-#=============================================================================
 # Target rules for targets named bdd_multi_parallel_mma_base
 
 # Build rule for target.
@@ -430,6 +430,32 @@ convert_opb_to_lp: cmake_check_build_system
 convert_opb_to_lp/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
 .PHONY : convert_opb_to_lp/fast
+
+#=============================================================================
+# Target rules for targets named transitive_closure_dag
+
+# Build rule for target.
+transitive_closure_dag: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 transitive_closure_dag
+.PHONY : transitive_closure_dag
+
+# fast build rule for target.
+transitive_closure_dag/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/transitive_closure_dag.dir/build.make src/CMakeFiles/transitive_closure_dag.dir/build
+.PHONY : transitive_closure_dag/fast
+
+#=============================================================================
+# Target rules for targets named bdd_solver_mpi
+
+# Build rule for target.
+bdd_solver_mpi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_solver_mpi
+.PHONY : bdd_solver_mpi
+
+# fast build rule for target.
+bdd_solver_mpi/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_mpi.dir/build.make src/CMakeFiles/bdd_solver_mpi.dir/build
+.PHONY : bdd_solver_mpi/fast
 
 #=============================================================================
 # Target rules for targets named bdd_cuda_learned_mma
@@ -521,19 +547,6 @@ bdd_solver: cmake_check_build_system
 bdd_solver/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver.dir/build.make src/CMakeFiles/bdd_solver.dir/build
 .PHONY : bdd_solver/fast
-
-#=============================================================================
-# Target rules for targets named bdd_cuda_parallel_mma
-
-# Build rule for target.
-bdd_cuda_parallel_mma: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bdd_cuda_parallel_mma
-.PHONY : bdd_cuda_parallel_mma
-
-# fast build rule for target.
-bdd_cuda_parallel_mma/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_parallel_mma.dir/build.make src/CMakeFiles/bdd_cuda_parallel_mma.dir/build
-.PHONY : bdd_cuda_parallel_mma/fast
 
 #=============================================================================
 # Target rules for targets named convert_pb_to_bdd
@@ -1657,6 +1670,7 @@ help:
 	@echo "... bdd_preprocessor"
 	@echo "... bdd_solver"
 	@echo "... bdd_solver_cl"
+	@echo "... bdd_solver_mpi"
 	@echo "... bdd_solver_py"
 	@echo "... bdd_subgradient"
 	@echo "... bdd_var"

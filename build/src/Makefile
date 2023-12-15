@@ -89,6 +89,15 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Devel\" \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -130,15 +139,6 @@ test:
 # Special rule for the target test
 test/fast: test
 .PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Devel\" \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -198,6 +198,20 @@ bdd_parallel_mma: src/CMakeFiles/bdd_parallel_mma.dir/rule
 bdd_parallel_mma/fast:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_parallel_mma.dir/build.make src/CMakeFiles/bdd_parallel_mma.dir/build
 .PHONY : bdd_parallel_mma/fast
+
+# Convenience name for target.
+src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule
+.PHONY : src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule
+
+# Convenience name for target.
+bdd_cuda_parallel_mma: src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule
+.PHONY : bdd_cuda_parallel_mma
+
+# fast build rule for target.
+bdd_cuda_parallel_mma/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_parallel_mma.dir/build.make src/CMakeFiles/bdd_cuda_parallel_mma.dir/build
+.PHONY : bdd_cuda_parallel_mma/fast
 
 # Convenience name for target.
 src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/rule:
@@ -354,20 +368,6 @@ OPB_parser/fast:
 .PHONY : OPB_parser/fast
 
 # Convenience name for target.
-src/CMakeFiles/transitive_closure_dag.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/transitive_closure_dag.dir/rule
-.PHONY : src/CMakeFiles/transitive_closure_dag.dir/rule
-
-# Convenience name for target.
-transitive_closure_dag: src/CMakeFiles/transitive_closure_dag.dir/rule
-.PHONY : transitive_closure_dag
-
-# fast build rule for target.
-transitive_closure_dag/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/transitive_closure_dag.dir/build.make src/CMakeFiles/transitive_closure_dag.dir/build
-.PHONY : transitive_closure_dag/fast
-
-# Convenience name for target.
 src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
 .PHONY : src/CMakeFiles/bdd_multi_parallel_mma_base.dir/rule
@@ -408,6 +408,34 @@ convert_opb_to_lp: src/CMakeFiles/convert_opb_to_lp.dir/rule
 convert_opb_to_lp/fast:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/convert_opb_to_lp.dir/build.make src/CMakeFiles/convert_opb_to_lp.dir/build
 .PHONY : convert_opb_to_lp/fast
+
+# Convenience name for target.
+src/CMakeFiles/transitive_closure_dag.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/transitive_closure_dag.dir/rule
+.PHONY : src/CMakeFiles/transitive_closure_dag.dir/rule
+
+# Convenience name for target.
+transitive_closure_dag: src/CMakeFiles/transitive_closure_dag.dir/rule
+.PHONY : transitive_closure_dag
+
+# fast build rule for target.
+transitive_closure_dag/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/transitive_closure_dag.dir/build.make src/CMakeFiles/transitive_closure_dag.dir/build
+.PHONY : transitive_closure_dag/fast
+
+# Convenience name for target.
+src/CMakeFiles/bdd_solver_mpi.dir/rule:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_solver_mpi.dir/rule
+.PHONY : src/CMakeFiles/bdd_solver_mpi.dir/rule
+
+# Convenience name for target.
+bdd_solver_mpi: src/CMakeFiles/bdd_solver_mpi.dir/rule
+.PHONY : bdd_solver_mpi
+
+# fast build rule for target.
+bdd_solver_mpi/fast:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_mpi.dir/build.make src/CMakeFiles/bdd_solver_mpi.dir/build
+.PHONY : bdd_solver_mpi/fast
 
 # Convenience name for target.
 src/CMakeFiles/bdd_cuda_learned_mma.dir/rule:
@@ -506,20 +534,6 @@ bdd_solver: src/CMakeFiles/bdd_solver.dir/rule
 bdd_solver/fast:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver.dir/build.make src/CMakeFiles/bdd_solver.dir/build
 .PHONY : bdd_solver/fast
-
-# Convenience name for target.
-src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule
-.PHONY : src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule
-
-# Convenience name for target.
-bdd_cuda_parallel_mma: src/CMakeFiles/bdd_cuda_parallel_mma.dir/rule
-.PHONY : bdd_cuda_parallel_mma
-
-# fast build rule for target.
-bdd_cuda_parallel_mma/fast:
-	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_cuda_parallel_mma.dir/build.make src/CMakeFiles/bdd_cuda_parallel_mma.dir/build
-.PHONY : bdd_cuda_parallel_mma/fast
 
 # Convenience name for target.
 src/CMakeFiles/convert_pb_to_bdd.dir/rule:
@@ -1147,6 +1161,30 @@ bdd_solver_cl.cpp.s:
 	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_cl.dir/build.make src/CMakeFiles/bdd_solver_cl.dir/bdd_solver_cl.cpp.s
 .PHONY : bdd_solver_cl.cpp.s
 
+bdd_solver_mpi.o: bdd_solver_mpi.cpp.o
+.PHONY : bdd_solver_mpi.o
+
+# target to build an object file
+bdd_solver_mpi.cpp.o:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_mpi.dir/build.make src/CMakeFiles/bdd_solver_mpi.dir/bdd_solver_mpi.cpp.o
+.PHONY : bdd_solver_mpi.cpp.o
+
+bdd_solver_mpi.i: bdd_solver_mpi.cpp.i
+.PHONY : bdd_solver_mpi.i
+
+# target to preprocess a source file
+bdd_solver_mpi.cpp.i:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_mpi.dir/build.make src/CMakeFiles/bdd_solver_mpi.dir/bdd_solver_mpi.cpp.i
+.PHONY : bdd_solver_mpi.cpp.i
+
+bdd_solver_mpi.s: bdd_solver_mpi.cpp.s
+.PHONY : bdd_solver_mpi.s
+
+# target to generate assembly for a file
+bdd_solver_mpi.cpp.s:
+	cd /home/gl9102/BDD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/bdd_solver_mpi.dir/build.make src/CMakeFiles/bdd_solver_mpi.dir/bdd_solver_mpi.cpp.s
+.PHONY : bdd_solver_mpi.cpp.s
+
 bdd_solver_py.o: bdd_solver_py.cpp.o
 .PHONY : bdd_solver_py.o
 
@@ -1422,6 +1460,7 @@ help:
 	@echo "... bdd_preprocessor"
 	@echo "... bdd_solver"
 	@echo "... bdd_solver_cl"
+	@echo "... bdd_solver_mpi"
 	@echo "... bdd_solver_py"
 	@echo "... bdd_subgradient"
 	@echo "... convert_lp_to_opb"
@@ -1498,6 +1537,9 @@ help:
 	@echo "... bdd_solver_cl.o"
 	@echo "... bdd_solver_cl.i"
 	@echo "... bdd_solver_cl.s"
+	@echo "... bdd_solver_mpi.o"
+	@echo "... bdd_solver_mpi.i"
+	@echo "... bdd_solver_mpi.s"
 	@echo "... bdd_solver_py.o"
 	@echo "... bdd_solver_py.i"
 	@echo "... bdd_solver_py.s"
