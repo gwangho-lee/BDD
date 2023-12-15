@@ -10,8 +10,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "CMakeLists.txt"
   "cereal-populate-prefix/tmp/cereal-populate-cfgcmd.txt.in"
+  "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake"
+  "/usr/share/cmake/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake/Modules/ExternalProject-gitupdate.cmake.in"
@@ -29,6 +31,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "cereal-populate-prefix/src/cereal-populate-stamp/cereal-populate-gitinfo.txt"
   "cereal-populate-prefix/tmp/cereal-populate-gitupdate.cmake"
   "cereal-populate-prefix/tmp/cereal-populate-cfgcmd.txt"

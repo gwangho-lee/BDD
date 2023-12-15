@@ -31,17 +31,14 @@ namespace LPMP {
     template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::print()
         {
-            printf("TEST || num_bdds_per_var size : %d\n", this->num_bdds_per_var_.size());
             for (int i = 0; i < this->num_bdds_per_var_.size(); i++) {
                 std::cout<<this->num_bdds_per_var_[i]<<" ";
             }
             std::cout<<std::endl;
-            printf("TEST || delta_lo_hi size : %d\n", this->delta_lo_hi_.size());
             for (int i = 0; i < this->delta_lo_hi_.size(); i++) {
                 std::cout<<this->delta_lo_hi_[i]<<" ";
             }
             std::cout<<std::endl;
-            printf("TEST || deffered_mm_diff size : %d\n", this->deffered_mm_diff_.size());
             for (int i = 0; i < this->deffered_mm_diff_.size(); i++) {
                 std::cout<<this->deffered_mm_diff_[i]<<" ";
             }
@@ -136,12 +133,6 @@ namespace LPMP {
                 const REAL cur_c_from_root = cost_from_root[bdd_node_idx];
                 const int layer_idx = bdd_node_to_layer_map[bdd_node_idx];
 
-                printf("TEST || cur_c_from_root: %f\n", cur_c_from_root);
-                printf("TEST || lo_cost[%d]: %f\n", layer_idx, lo_cost[layer_idx]);
-                printf("TEST || hi_cost[%d]: %f\n", layer_idx, hi_cost[layer_idx]);
-                printf("TEST || cost_from_terminal[%d]: %f\n", next_lo_node, cost_from_terminal[next_lo_node]);
-                printf("TEST || cost_from_terminal[%d]: %f\n", next_hi_node, cost_from_terminal[next_hi_node]);
-
                 atomicMin(&mm_lo_local[layer_idx - start_offset_layer], cur_c_from_root + lo_cost[layer_idx] + cost_from_terminal[next_lo_node]);
                 atomicMin(&mm_hi[layer_idx], cur_c_from_root + hi_cost[layer_idx] + cost_from_terminal[next_hi_node]);
             }
@@ -162,8 +153,6 @@ namespace LPMP {
             const int start_offset_layer = hop_index > 0 ? this->cum_nr_layers_per_hop_dist_[hop_index - 1]: 0;
             const int end_offset_layer = this->cum_nr_layers_per_hop_dist_[hop_index];
             const int cur_num_layers = end_offset_layer - start_offset_layer;
-
-            printf("TEST || cur_num_layers : %d\n", cur_num_layers);
 
             min_marginals_from_directional_costs_cuda<<<blockCount, NUM_THREADS_CUDA>>>(cur_num_bdd_nodes, num_nodes_processed, start_offset_layer,
                     thrust::raw_pointer_cast(this->lo_bdd_node_index_.data()),
@@ -207,10 +196,6 @@ namespace LPMP {
         void bdd_multi_gpu_mma<REAL>::iteration(const REAL omega)
         {
             MEASURE_CUMULATIVE_FUNCTION_EXECUTION_TIME;
-            //if(delta_lo_hi_.size() == 0) {
-                //printf("TEST || delta_lo_hi_\n");
-                //delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);
-            //}
 
             //forward_mm(omega, delta_lo_hi_);
             forward_mm(omega);
@@ -304,8 +289,6 @@ namespace LPMP {
             thrust::scatter(thrust::make_constant_iterator<REAL>(0.0), thrust::make_constant_iterator<REAL>(0.0) + this->root_indices_.size(), this->root_indices_.begin(), this->cost_from_root_.begin());
 
             //flush_mm(this->deffered_mm_diff_.data());
-            printf("TEST || mm_lo_local_ size : %d\n", mm_lo_local_.size());
-            printf("TEST || this->nr_layers : %d\n", this->nr_layers());
             thrust::fill(mm_lo_local_.begin(), mm_lo_local_.end(), CUDART_INF_F_HOST);
             thrust::fill(this->deffered_mm_diff_.data(), this->deffered_mm_diff_.data() + this->nr_layers(), CUDART_INF_F_HOST);
 

@@ -163,16 +163,9 @@ namespace LPMP {
     void multi_gpu<REAL>::distribute(multi_gpu<REAL>& solver)
     {
 #ifdef WITH_CUDA
-        fprintf(stderr, "TEST || cudaMemcpyPeer start\n");
         cudaMemcpyPeer(thrust::raw_pointer_cast(solver.get_temp_delta_lo_hi_().data()), solver.getdeviceID(), thrust::raw_pointer_cast(pimpl->pmma.get_delta_lo_hi_().data()), this->deviceID, pimpl->pmma.get_delta_lo_hi_().size() * sizeof(REAL));
-      
-        fprintf(stderr, "TEST || solver deviceID: %d\n", solver.getdeviceID());
-        fprintf(stderr, "TEST || this deviceID: %d\n", this->deviceID);
 
-        fprintf(stderr, "TEST || cudaMemcpyPeer end\n");
-        fprintf(stderr, "TEST || merge start\n");
         pimpl->pmma.merge_delta_lo_hi_();
-        fprintf(stderr, "TEST || merge end\n");
 #endif
     }
 

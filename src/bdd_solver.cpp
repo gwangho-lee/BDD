@@ -313,10 +313,6 @@ namespace LPMP {
 
         costs = options.ilp.objective();
 
-        for (size_t i = 0; i < costs.size(); i++) {
-            printf("TEST || cost[%d]: %f\n", i, costs[i]);
-        }
-
         if(options.take_cost_logarithms)
         {
             bdd_log << "[bdd solver] Take logarithms of costs\n";

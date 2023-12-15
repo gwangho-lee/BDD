@@ -171,7 +171,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Fortran compiler
-CMAKE_Fortran_COMPILER:STRING=/usr/bin/gfortran
+CMAKE_Fortran_COMPILER:FILEPATH=/usr/bin/gfortran
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
