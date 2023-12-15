@@ -11,6 +11,12 @@ namespace LPMP {
     }
 
     template<typename REAL>
+        thrust::device_vector<REAL>& bdd_multi_gpu_mma<REAL>::get_temp_delta_lo_hi_()
+        {
+            return this->temp_delta_lo_hi_;
+        }
+
+    template<typename REAL>
         void bdd_multi_gpu_mma<REAL>::print()
         {
             printf("TEST || num_bdds_per_var size : %d\n", this->num_bdds_per_var_.size());
@@ -278,7 +284,7 @@ namespace LPMP {
            //cudaDeviceEnablePeerAccess(deviceID, dID);
            //cudaDeviceEnablePeerAccess(dID, deviceID);
             
-           cudaMemcpyPeer(thrust::raw_pointer_cast(solver->temp_delta_lo_hi_.data()), solver->getdeviceID(), thrust::raw_pointer_cast(this->delta_lo_hi_.data()), deviceID, this->delta_lo_hi_.size() * sizeof(REAL));
+           cudaMemcpyPeer(thrust::raw_pointer_cast(solver.get_temp_delta_lo_hi_().data()), solver.deviceID, thrust::raw_pointer_cast(this->delta_lo_hi_.data()), deviceID, this->delta_lo_hi_.size() * sizeof(REAL));
         
            thrust::transform(this->delta_lo_hi_.begin(), this->delta_lo_hi_.end(), this->temp_delta_lo_hi_.begin(), this->temp_delta_lo_hi_.begin(), thrust::plus<double>());
         }

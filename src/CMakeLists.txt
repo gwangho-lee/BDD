@@ -48,7 +48,7 @@ if(WITH_CUDA)
     target_link_libraries(bdd_cuda_parallel_mma bdd_cuda_base incremental_mm_agreement_rounding_cuda LPMP-BDD) 
 
     add_library(bdd_multi_gpu_mma bdd_multi_gpu_mma.cu)
-    target_link_libraries(bdd_multi_gpu_mma bdd_cuda_parallel_mma bdd_cuda_base incremental_mm_agreement_rounding_cuda LPMP-BDD) 
+    target_link_libraries(bdd_multi_gpu_mma multi_gpu bdd_cuda_parallel_mma bdd_cuda_base incremental_mm_agreement_rounding_cuda LPMP-BDD) 
     
     add_library(bdd_multi_parallel_mma_base bdd_multi_parallel_mma_base.cu)
     target_link_libraries(bdd_multi_parallel_mma_base bdd_cuda_base bdd_cuda_parallel_mma bdd_multi_gpu_mma LPMP-BDD)

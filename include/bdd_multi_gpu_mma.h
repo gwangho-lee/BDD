@@ -1,5 +1,5 @@
 #pragma once
-
+#include "multi_gpu.h"
 #include "bdd_cuda_base.h"
 #include "bdd_cuda_parallel_mma.h"
 
@@ -19,6 +19,7 @@ namespace LPMP {
             bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID);
 
             void print();
+            thrust::device_vector<REAL>& get_temp_delta_lo_hi_();
             void iteration(const REAL omega = 0.5);
             void iteration(const int num_gpus, const size_t max_ter, const double lb_initial, const REAL omega = 0.5);
 

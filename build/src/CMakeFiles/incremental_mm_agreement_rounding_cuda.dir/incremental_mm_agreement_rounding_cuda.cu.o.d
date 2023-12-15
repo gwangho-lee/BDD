@@ -1786,6 +1786,7 @@ src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/incremental_mm_agreeme
     /usr/include/c++/8/sstream \
     /usr/include/c++/8/bits/sstream.tcc \
     /home/gl9102/BDD/include/bdd_multi_gpu_mma.h \
+    /home/gl9102/BDD/include/multi_gpu.h \
     /home/gl9102/BDD/include/bdd_cuda_learned_mma.h \
     /home/gl9102/BDD/include/lbfgs.h \
     /usr/include/c++/8/deque \

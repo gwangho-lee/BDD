@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/gl9102/BDD/build/src/CMakeFiles/multi_gpu.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_cuda_parallel_mma.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_cuda_base.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/incremental_mm_agreement_rounding_cuda.dir/DependInfo.cmake"
@@ -29,7 +30,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_parallel_mma.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_parallel_mma_smooth.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_cuda.dir/DependInfo.cmake"
-  "/home/gl9102/BDD/build/src/CMakeFiles/multi_gpu.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_multi_parallel_mma.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_lbfgs_parallel_mma.dir/DependInfo.cmake"
   "/home/gl9102/BDD/build/src/CMakeFiles/bdd_lbfgs_cuda_mma.dir/DependInfo.cmake"

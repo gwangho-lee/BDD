@@ -177,30 +177,6 @@ src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o: \
  /usr/include/c++/8/unordered_set /usr/include/c++/8/bits/unordered_set.h \
  /usr/include/c++/8/iostream \
  /home/gl9102/BDD/include/two_dimensional_variable_array.hxx \
- /home/gl9102/BDD/include/bdd_multi_gpu_mma.h \
- /home/gl9102/BDD/include/bdd_cuda_base.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_runtime.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/crt/host_config.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/builtin_types.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/device_types.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/crt/host_defines.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/driver_types.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/vector_types.h \
- /usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
- /usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/surface_types.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/texture_types.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/library_types.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/channel_descriptor.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_runtime_api.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_device_runtime_api.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/driver_functions.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/vector_functions.h \
- /usr/local/cuda-12.2/targets/x86_64-linux/include/vector_functions.hpp \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/device_vector.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/config.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/version.h \
@@ -534,6 +510,12 @@ src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o: \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/../climits \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/../__cuda/climits_prelude.h \
  /usr/include/c++/8/climits \
+ /usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/../version \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/make_signed.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/../__type_traits/apply_cv.h \
@@ -864,6 +846,14 @@ src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o: \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__tuple_dir/tuple_size.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cub/detail/detect_cuda_runtime.cuh \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_runtime_api.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/crt/host_defines.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/builtin_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/device_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/driver_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/vector_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/surface_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/texture_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_device_runtime_api.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/allocator_aware_execution_policy.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/execute_with_allocator_fwd.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/execute_with_dependencies.h \
@@ -1014,6 +1004,9 @@ src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o: \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda.h \
  /usr/include/c++/8/stdlib.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_fp16.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/vector_functions.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_runtime_api.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/vector_functions.hpp \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_fp16.hpp \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_bf16.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_fp16.h \
@@ -1186,6 +1179,13 @@ src/CMakeFiles/multi_gpu.dir/multi_gpu.cpp.o: \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/mr/new.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/mr/fancy_pointer_resource.h \
  /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/cpp/pointer.h \
+ /home/gl9102/BDD/include/bdd_multi_gpu_mma.h \
+ /home/gl9102/BDD/include/bdd_cuda_base.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_runtime.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/crt/host_config.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/library_types.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/channel_descriptor.h \
+ /usr/local/cuda-12.2/targets/x86_64-linux/include/driver_functions.h \
  /home/gl9102/BDD/build/_deps/cereal-src/include/cereal/types/vector.hpp \
  /home/gl9102/BDD/build/_deps/cereal-src/include/cereal/cereal.hpp \
  /home/gl9102/BDD/build/_deps/cereal-src/include/cereal/macros.hpp \

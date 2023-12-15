@@ -101,6 +101,14 @@ namespace LPMP {
     }
 
     template<typename REAL>
+    thrust::device_vector<REAL>& multi_gpu<REAL>::get_temp_delta_lo_hi_()
+    {
+#ifdef WITH_CUDA
+        return pimpl->pmma.get_temp_delta_lo_hi_();
+#endif
+    }
+
+    template<typename REAL>
     std::vector<int> multi_gpu<REAL>::nbpv()
     {
 #ifdef WITH_CUDA
