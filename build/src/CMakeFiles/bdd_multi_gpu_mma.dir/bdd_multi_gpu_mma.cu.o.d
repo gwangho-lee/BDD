@@ -178,11 +178,9 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o : /home/gl9102/BDD/s
     /usr/include/c++/8/bits/stl_relops.h \
     /usr/include/c++/8/initializer_list \
     /home/gl9102/BDD/include/bdd_multi_gpu_mma.h \
-    /home/gl9102/BDD/include/multi_gpu.h \
-    /home/gl9102/BDD/include/bdd_collection/bdd_collection.h \
-    /home/gl9102/BDD/include/bdd_collection/../bdd_manager/bdd_mgr.h \
-    /home/gl9102/BDD/include/bdd_collection/../bdd_manager/bdd_node.h \
-    /usr/include/c++/8/random \
+    /home/gl9102/BDD/include/bdd_cuda_base.h \
+    /usr/include/c++/8/array \
+    /usr/include/c++/8/stdexcept \
     /usr/include/c++/8/string \
     /usr/include/c++/8/bits/stringfwd.h \
     /usr/include/c++/8/bits/memoryfwd.h \
@@ -240,6 +238,10 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o : /home/gl9102/BDD/s
     /usr/include/asm-generic/errno-base.h \
     /usr/include/bits/types/error_t.h \
     /usr/include/c++/8/bits/basic_string.tcc \
+    /home/gl9102/BDD/include/bdd_collection/bdd_collection.h \
+    /home/gl9102/BDD/include/bdd_collection/../bdd_manager/bdd_mgr.h \
+    /home/gl9102/BDD/include/bdd_collection/../bdd_manager/bdd_node.h \
+    /usr/include/c++/8/random \
     /usr/include/c++/8/bits/random.h \
     /usr/include/c++/8/vector \
     /usr/include/c++/8/bits/stl_construct.h \
@@ -255,8 +257,6 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o : /home/gl9102/BDD/s
     /usr/include/c++/8/cassert \
     /usr/include/c++/8/functional \
     /usr/include/c++/8/tuple \
-    /usr/include/c++/8/array \
-    /usr/include/c++/8/stdexcept \
     /usr/include/c++/8/bits/uses_allocator.h \
     /usr/include/c++/8/bits/invoke.h \
     /usr/include/c++/8/bits/refwrap.h \
@@ -1575,7 +1575,6 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o : /home/gl9102/BDD/s
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/mr/new.h \
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/mr/fancy_pointer_resource.h \
     /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/cpp/pointer.h \
-    /home/gl9102/BDD/include/bdd_cuda_base.h \
     /home/gl9102/BDD/build/_deps/cereal-src/include/cereal/types/vector.hpp \
     /home/gl9102/BDD/build/_deps/cereal-src/include/cereal/cereal.hpp \
     /home/gl9102/BDD/build/_deps/cereal-src/include/cereal/macros.hpp \

@@ -41,9 +41,12 @@ namespace LPMP {
                     s[i].forward_mm();
                     s[i].print();
                 }
+                fprintf(stderr, "TEST || forward done\n");
                 if (num_gpus == 2) {
+                    fprintf(stderr, "TEST || distribute start\n");
                     s[0].distribute(s[1]);
                     s[1].distribute(s[0]);
+                    fprintf(stderr, "TEST || distribute end\n");
                 }
                 else if (num_gpus == 4) {
                     s[0].distribute(s[1]);

@@ -181,11 +181,9 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o: ../src/bdd_multi_gp
   /usr/include/c++/8/bits/stl_relops.h \
   /usr/include/c++/8/initializer_list \
   ../include/bdd_multi_gpu_mma.h \
-  ../include/multi_gpu.h \
-  ../include/bdd_collection/bdd_collection.h \
-  ../include/bdd_manager/bdd_mgr.h \
-  ../include/bdd_manager/bdd_node.h \
-  /usr/include/c++/8/random \
+  ../include/bdd_cuda_base.h \
+  /usr/include/c++/8/array \
+  /usr/include/c++/8/stdexcept \
   /usr/include/c++/8/string \
   /usr/include/c++/8/bits/stringfwd.h \
   /usr/include/c++/8/bits/memoryfwd.h \
@@ -243,6 +241,10 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o: ../src/bdd_multi_gp
   /usr/include/asm-generic/errno-base.h \
   /usr/include/bits/types/error_t.h \
   /usr/include/c++/8/bits/basic_string.tcc \
+  ../include/bdd_collection/bdd_collection.h \
+  ../include/bdd_manager/bdd_mgr.h \
+  ../include/bdd_manager/bdd_node.h \
+  /usr/include/c++/8/random \
   /usr/include/c++/8/bits/random.h \
   /usr/include/c++/8/vector \
   /usr/include/c++/8/bits/stl_construct.h \
@@ -258,8 +260,6 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o: ../src/bdd_multi_gp
   /usr/include/c++/8/cassert \
   /usr/include/c++/8/functional \
   /usr/include/c++/8/tuple \
-  /usr/include/c++/8/array \
-  /usr/include/c++/8/stdexcept \
   /usr/include/c++/8/bits/uses_allocator.h \
   /usr/include/c++/8/bits/invoke.h \
   /usr/include/c++/8/bits/refwrap.h \
@@ -319,7 +319,6 @@ src/CMakeFiles/bdd_multi_gpu_mma.dir/bdd_multi_gpu_mma.cu.o: ../src/bdd_multi_gp
   /usr/include/c++/8/bits/unordered_set.h \
   /usr/include/c++/8/iostream \
   ../include/two_dimensional_variable_array.hxx \
-  ../include/bdd_cuda_base.h \
   /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/device_vector.h \
   /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/config.h \
   /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/version.h \
@@ -2477,8 +2476,6 @@ _deps/cereal-src/include/cereal/access.hpp:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/cuda/detail/parallel_for.h:
 
-/usr/include/c++/8/atomic:
-
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/config/exec_check_disable.h:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/sequential/swap_ranges.h:
@@ -2593,8 +2590,6 @@ _deps/cereal-src/include/cereal/access.hpp:
 
 /usr/include/c++/8/bits/std_function.h:
 
-/usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/rank.h:
-
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/mr/device_memory_resource.h:
 
 /usr/include/c++/8/tuple:
@@ -2617,10 +2612,6 @@ _deps/cereal-src/include/cereal/access.hpp:
 
 /usr/include/c++/8/x86_64-redhat-linux/bits/opt_random.h:
 
-/usr/include/c++/8/stdexcept:
-
-/usr/include/c++/8/bits/uniform_int_dist.h:
-
 /usr/local/cuda-12.2/targets/x86_64-linux/include/cub/block/block_exchange.cuh:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/alignment.h:
@@ -2628,6 +2619,16 @@ _deps/cereal-src/include/cereal/access.hpp:
 /usr/include/c++/8/bits/vector.tcc:
 
 /usr/include/c++/8/vector:
+
+/usr/include/c++/8/random:
+
+/usr/include/c++/8/bits/stl_vector.h:
+
+../include/bdd_manager/bdd_node.h:
+
+../include/bdd_manager/bdd_mgr.h:
+
+/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/iterator/detail/device_system_tag.h:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/void_t.h:
 
@@ -2664,6 +2665,10 @@ _deps/cereal-src/include/cereal/access.hpp:
 /usr/include/c++/8/cstring:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/remove_reference.h:
+
+/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/adl/swap_ranges.h:
+
+/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/error_code.h:
 
 /usr/include/bits/setjmp.h:
 
@@ -2807,25 +2812,11 @@ _deps/cereal-src/include/cereal/types/vector.hpp:
 
 /usr/include/c++/8/string:
 
-/usr/include/c++/8/random:
+/usr/include/c++/8/bits/uniform_int_dist.h:
 
-/usr/include/c++/8/bits/stl_vector.h:
+/usr/include/c++/8/stdexcept:
 
-../include/bdd_manager/bdd_node.h:
-
-../include/bdd_manager/bdd_mgr.h:
-
-/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/iterator/detail/device_system_tag.h:
-
-/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/adl/swap_ranges.h:
-
-/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/error_code.h:
-
-../include/multi_gpu.h:
-
-/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/adl/malloc_and_free.h:
-
-/usr/include/bits/stdio_lim.h:
+/usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__type_traits/rank.h:
 
 /usr/include/bits/types/struct_timeval.h:
 
@@ -3010,6 +3001,10 @@ _deps/cereal-src/include/cereal/details/static_object.hpp:
 /usr/include/c++/8/bits/localefwd.h:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda/std/detail/libcxx/include/__utility/move.h:
+
+/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/config/namespace.h:
+
+/usr/local/cuda-12.2/targets/x86_64-linux/include/cub/util_macro.cuh:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/cpp/detail/find.h:
 
@@ -3521,7 +3516,13 @@ _deps/cereal-src/include/cereal/details/static_object.hpp:
 
 /usr/include/c++/8/tr1/modified_bessel_func.tcc:
 
+/usr/include/c++/8/atomic:
+
 /usr/local/cuda-12.2/targets/x86_64-linux/include/sm_60_atomic_functions.h:
+
+/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/adl/malloc_and_free.h:
+
+/usr/include/bits/stdio_lim.h:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/system/detail/adl/generate.h:
 
@@ -3562,10 +3563,6 @@ _deps/cereal-src/include/cereal/details/static_object.hpp:
 /usr/include/bits/waitflags.h:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/crt/device_double_functions.hpp:
-
-/usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/detail/config/namespace.h:
-
-/usr/local/cuda-12.2/targets/x86_64-linux/include/cub/util_macro.cuh:
 
 /usr/local/cuda-12.2/targets/x86_64-linux/include/thrust/pair.h:
 

@@ -11,9 +11,21 @@ namespace LPMP {
     }
 
     template<typename REAL>
+        thrust::device_vector<REAL>& bdd_multi_gpu_mma<REAL>::get_delta_lo_hi_()
+        {
+            return this->delta_lo_hi_;
+        }
+
+    template<typename REAL>
         thrust::device_vector<REAL>& bdd_multi_gpu_mma<REAL>::get_temp_delta_lo_hi_()
         {
             return this->temp_delta_lo_hi_;
+        }
+
+    template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::merge_delta_lo_hi_()
+        {
+            thrust::transform(this->delta_lo_hi_.begin(), this->delta_lo_hi_.end(), this->temp_delta_lo_hi_.begin(), this->temp_delta_lo_hi_.begin(), thrust::plus<double>());
         }
 
     template<typename REAL>
@@ -64,6 +76,7 @@ namespace LPMP {
             mm_lo_local_ = thrust::device_vector<REAL>(*std::max_element(this->cum_nr_layers_per_hop_dist_.begin(), this->cum_nr_layers_per_hop_dist_.end())); // size of largest layer.
 
             delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);
+            temp_delta_lo_hi_ = thrust::device_vector<REAL>(this->nr_variables() * 2, 0.0);
             
             // Copy from arc costs because it contains infinity for arcs to bot sink
             hi_cost_out_ = thrust::device_vector<REAL>(this->hi_cost_);
@@ -276,17 +289,6 @@ namespace LPMP {
                 lo_cost_out[layer_idx] = cur_lo_cost;
                 hi_cost_out[layer_idx] = cur_hi_cost;
             }
-        }
-
-    template<typename REAL>
-        void bdd_multi_gpu_mma<REAL>::distribute(multi_gpu<REAL>& solver)
-        {
-           //cudaDeviceEnablePeerAccess(deviceID, dID);
-           //cudaDeviceEnablePeerAccess(dID, deviceID);
-            
-           cudaMemcpyPeer(thrust::raw_pointer_cast(solver.get_temp_delta_lo_hi_().data()), solver.deviceID, thrust::raw_pointer_cast(this->delta_lo_hi_.data()), deviceID, this->delta_lo_hi_.size() * sizeof(REAL));
-        
-           thrust::transform(this->delta_lo_hi_.begin(), this->delta_lo_hi_.end(), this->temp_delta_lo_hi_.begin(), this->temp_delta_lo_hi_.begin(), thrust::plus<double>());
         }
 
     template<typename REAL>

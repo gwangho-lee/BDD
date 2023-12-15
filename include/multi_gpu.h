@@ -36,10 +36,10 @@ namespace LPMP {
 
             std::vector<char> incremental_mm_agreement_rounding(const double init_delta, const double delta_grwoth_rate, const int num_itr_lb, const int num_rounds = 500);
             void print();
-            
+            int getdeviceID();
             thrust::device_vector<REAL>& get_temp_delta_lo_hi_();
 
-        //private:
+        private:
             int deviceID;
             class impl;
             std::unique_ptr<impl> pimpl;
