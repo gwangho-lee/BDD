@@ -41,6 +41,20 @@ namespace LPMP {
                     s[i].forward_mm();
                     s[i].print();
                 }
+                if (num_gpus == 2) {
+                    s[0].distribute(s[1]);
+                    s[1].distribute(s[0]);
+                }
+                else if (num_gpus == 4) {
+                    s[0].distribute(s[1]);
+                    s[1].distribute(s[0]);
+                    s[2].distribute(s[3]);
+                    s[3].distribute(s[2]);
+                    s[0].distribute(s[2]);
+                    s[2].distribute(s[0]);
+                    s[1].distribute(s[3]);
+                    s[3].distribute(s[1]);
+                }
                 for (int i = 0; i < num_gpus; i++) {
                     s[i].normalize_delta();
                 }

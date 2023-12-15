@@ -40,7 +40,7 @@ namespace LPMP {
     }
 
     template<typename REAL>
-    multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID)
+    multi_gpu<REAL>::multi_gpu(BDD::bdd_collection& bdd_col, const int deviceID) : deviceID(deviceID)
     {
 #ifdef WITH_CUDA
         MEASURE_FUNCTION_EXECUTION_TIME; 
@@ -140,6 +140,14 @@ namespace LPMP {
     {
 #ifdef WITH_CUDA
         pimpl->pmma.iteration();
+#endif
+    }
+
+    template<typename REAL>
+    void multi_gpu<REAL>::distribute(multi_gpu<REAL>& solver)
+    {
+#ifdef WITH_CUDA
+        pimpl->pmma.distribute(solver);
 #endif
     }
 

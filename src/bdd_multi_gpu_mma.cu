@@ -33,12 +33,6 @@ namespace LPMP {
     template<typename REAL>
         bdd_multi_gpu_mma<REAL>::bdd_multi_gpu_mma(const BDD::bdd_collection& bdd_col, const int deviceID) : deviceID(deviceID), bdd_cuda_base<REAL>(bdd_col, deviceID)
     {
-        fprintf(stderr, "TEST || deviceID: %d\n", deviceID);
-        int deviceCount = 0;
-        cudaGetDeviceCount(&deviceCount);
-
-        fprintf(stderr, "TEST || # GPUs: %d\n", deviceCount);
-        //cudaSetDevice(deviceID);
         init();
     }
 
@@ -276,6 +270,17 @@ namespace LPMP {
                 lo_cost_out[layer_idx] = cur_lo_cost;
                 hi_cost_out[layer_idx] = cur_hi_cost;
             }
+        }
+
+    template<typename REAL>
+        void bdd_multi_gpu_mma<REAL>::distribute(multi_gpu<REAL>& solver)
+        {
+           //cudaDeviceEnablePeerAccess(deviceID, dID);
+           //cudaDeviceEnablePeerAccess(dID, deviceID);
+            
+           cudaMemcpyPeer(thrust::raw_pointer_cast(solver->temp_delta_lo_hi_.data()), solver->getdeviceID(), thrust::raw_pointer_cast(this->delta_lo_hi_.data()), deviceID, this->delta_lo_hi_.size() * sizeof(REAL));
+        
+           thrust::transform(this->delta_lo_hi_.begin(), this->delta_lo_hi_.end(), this->temp_delta_lo_hi_.begin(), this->temp_delta_lo_hi_.begin(), thrust::plus<double>());
         }
 
     template<typename REAL>

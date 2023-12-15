@@ -22,6 +22,7 @@ namespace LPMP {
             void iteration(const REAL omega = 0.5);
             void iteration(const int num_gpus, const size_t max_ter, const double lb_initial, const REAL omega = 0.5);
 
+            void distribute(multi_gpu<REAL>& solver);
             void forward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi);
             void forward_mm(const REAL omega = 0.5);
             void backward_mm(const REAL omega, thrust::device_vector<REAL>& delta_lo_hi);
@@ -58,7 +59,7 @@ namespace LPMP {
 
             // Deferred min-marginal sums.
             thrust::device_vector<REAL> delta_lo_hi_; // Two entries per primal variable. Even indices contain delta_lo and odd indices contain delta_hi.
-
+            thrust::device_vector<REAL> temp_delta_lo_hi_;
 
         private:
             int deviceID = 0;
